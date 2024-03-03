@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./abdulsaidStyle (1).css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/abdulsaidStyle.css">
+    <script src="https://kit.fontawesome.com/8b54351f60.js" crossorigin="anonymous"></script>
+    <style>
+        .centered-text{
+           text-align: center;
+        }
+       
+        
+    
+    
+    body._lock {
+        overflow: hidden;
+    }
+    header {
+        position: relative;
+        background-color:white;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 55px;
+        z-index: 10;
+    }
+
+    .header__container {
+        margin-right: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 55px;
+    }
+
+    #logo__img {
+        width: 50px;
+        height: 50px;
+        margin-left: 50px;
+        align-items: center;
+        z-index: 2;
+    }
+
+    @media screen and (min-width: 768px) {
+        .header__ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+            align-items: center;
+        }
+        .header__list,
+        .header__link {
+            text-decoration: none;
+            color: black;
+            transition: transform 0.5s;
+            font-weight: bolder;
+        }
+        #cz {
+            color: red;
+        }
+        .header__list:hover {
+            transform: translateY(-10px);
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .burger {
+            z-index: 5;
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .burger .burger__span,
+        .burger::before,
+        .burger::after {
+            left: 0;
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            transition: all 0.3s ease 0s;
+            background-color: black;
+        }
+
+        .burger::before,
+        .burger::after {
+            content: '';
+        }
+
+        .burger::before {
+            top: 0;
+        }
+
+        .burger::after {
+            bottom: 0;
+        }
+
+        .burger .burger__span {
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+        .burger._active .burger__span {
+            transform: scale(0) translate(0px, -50%);
+            background-color: white;
+        }
+        .burger._active::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0px, -50%);
+            background-color: white;
+        }
+        .burger._active::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0px, 50%);
+            background-color: white;
+        }
+
+        .menu {
+            position: fixed;
+            text-align: center;
+            padding-top: 20%;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            transition: right 0.3s ease 0s;
+            overflow: auto;
+        }
+
+        .menu._active {
+            right: 0;
+        }
+        .menu::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            top: 0;
+
+            left: 0;
+            height: 50px;
+        }
+
+        .header__ul {
+            font-size: 24px;
+            position: relative;
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .header__list,
+        .header__link {
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+        }
+        #cz {
+            color: red;
+        }
+        .header__list:hover {
+            transform: translateY(-10px);
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <img
+                src="/img/jslogo.png"
+                alt="logo"
+                id="logo__img"
+            />
+
+            <div class="burger">
+                <span class="burger__span"></span>
+            </div>
+
+            <nav class="menu">
+                <ul class="header__ul">
+                    <li class="header__list">
+                        <a href="/index.html" class="header__link">Home</a>
+                    </li>
+                    <li class="header__list">
+                        <a href="/html/contact.html" class="header__link">Contact</a>
+                    </li>
+                    
+                    <li class="header__list">
+                        <a
+                            href="https://www.cizup.dev"
+                            target="_blank"
+                            id="cz"
+                            class="header__link"
+                            >CizUp</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script>
+        const menuButton = document.querySelector('.burger')
+			if (menuButton) {
+				const menuBody = document.querySelector('.menu')
+				menuButton.addEventListener('click', function (e) {
+					document.body.classList.toggle('_lock')
+					menuButton.classList.toggle('_active')
+					menuBody.classList.toggle('_active')
+				})
+			}
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+    
+   <main>
+    <img  style="width: 360px; " src="/img/photoes/absaid.png" class="rounded float-end" alt="">
+   <div class="centered-text" style="color: rgb(146, 136, 136);">
+        <h3>Assalaumunaleikum <span id="displayUserName"></span></h3>
+
+   
+        <p>
+            <h1>Hakkımda:</h1><h3>Benim adım Avdulsaid Andirash. Ben 15 yaşındayım. Aslında ben kazakhım ama Moğolistanlıyım. Ben 10 
+            sınıf öğrencisiyim ve Türkiye Anadolu Kayseri İmam Hatip Lisesinde okuyorum. Codlama öğrenmeyi 
+            yeni başladım. Codlamayı başladığıma yaklaşık 2 ay oldu. Aslında codlama kolay olduşunu saniyordum.
+            Ama öyle deşilmiş. Zor olsun kolay olsun yapacağam.</h3>
+
+           <h2>Hobbilerim:</h2> <h3>Benim hobbilarıma gelirsek bir şeyle uğraşmayı, futbol ve basketbol oynamayı yanı 
+            sporları severim. Birde gezmeyide. </h3>
+        </p>
+       
+        <h2>Projelerim: </h2>
+  
+        <a href="https://futurecurry.netlify.app/"><img src="/img/abdulsaidProject.jpg" class="step" style="width: 150px; "></a>
+      </div>
+    </main>
+
+    <script>
+        // Get the user name from localStorage
+        var userName = localStorage.getItem('userName');
+
+        // Display the user name
+        document.getElementById('displayUserName').innerText = userName;
+    </script>
+
+<div class="footer">
+    <footer>
+        <div class="footer-con">
+            <div class="footer-w">
+                <div class="1foot foot">
+                    <div class="p-p">
+                        <img src="/img/jslogo.png" class="jsimg" alt="">
+                        <h1>Cizup</h1>
+                    </div>
+                    <hr style="height: 3px; background-color: white; width: 100%;">
+                    <h2>"Your dream, My passion"</h2>   
+                    
+                
+                </div>
+                    
+                <div class="both-foot">
+                    <div class="foot">
+                        <ul class="footer_list">
+                            <li><a class="footer_li_p" href="/html/Abdulkhamid/abdulkhamidProfile.html">Abdulkhamid</a></li>
+                            <li><a class="footer_li_p" href="/html/Talha/Talha.html">Talha</a></li>
+                            <li><a class="footer_li_p" href="/html/Minhazul/minhaz.html">Minhaz</a></li>
+                            <li><a class="footer_li_p" href="/html/Ibrahim/ibrahim.html">Ibrahim</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="foot">
+                        <ul class="footer_list">
+                            <li><a class="footer_li_p" href="/html/Wanna/wanna.html">Wanna</a></li>
+                            <li><a class="footer_li_p" href="/html/Abdullah/abdullah.html">Abdullah Sunulu</a></li>
+                            <li><a class="footer_li_p" href="/html/Mubarak/mubarak.html">Mubarak</a></li>
+                            <li><a class="footer_li_p" href="/html/Abdulsaid/saıdadyazpro.html">Absaid</a></li>
+                        </ul>
+                    </div>
+    
+                </div>   
+                   
+    
+    
+    
+                <div class="fourthfoot">
+                    <ul>
+                        <li><p>telephone :03522213729</p></li>
+                        <li><p>email : support@cizup.dev</p></li>
+                        <li><p>link : https://cizup.dev</p></li>
+                    </ul> 
+                        <div class="link-icons">
+                            <li><a href="support@cizup.dev"><i class='bx bx-envelope' ></i></a></li>
+                            <li><a href="03522213729"><i class='bx bx-phone' ></i></a></li>
+                            <li><a href="https://cizup.dev"><i class='bx bx-link-alt'></i></a></li>
+                            <li><a href="https://github.com/cizup"><i class='bx bxl-github' ></i></a></li>
+                        </div>
+                    
+                </div>
+    
+            </div>
+        </div>
+    </footer>
+
+</div> 
+</body>
+</html>
