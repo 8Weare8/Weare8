@@ -30,19 +30,40 @@
 		></script>
 	</head>
 	<style>
+		:root {
+			--text-color: black;
+			--bg-color: white;
+			--menu-btn-color: black;
+			--nav-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+		}
+		button,
+		button:active,
+		button:focus {
+			border: none;
+		}
+
 		body {
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
-			background-color: #fff;
+			background-color: var(--bg-color);
 		}
 
 		body._lock {
 			overflow: hidden;
 		}
+
+		.dark {
+			--text-color: white;
+			--bg-color: #252526;
+			--nav--color: black;
+			--menu-btn-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+		}
 		header {
 			position: relative;
-			background-color: white;
+			background-color: var(--nav--color);
 			width: 100%;
 			top: 0;
 			left: 0;
@@ -51,20 +72,60 @@
 		}
 
 		.header__container {
-			margin-right: 50px;
+			margin-right: 20px;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-end;
 			height: 55px;
+			column-gap: 30px;
 		}
 
 		#logo__img {
 			width: 50px;
 			height: 50px;
 			margin-left: 50px;
+			margin-right: auto;
 			align-items: center;
 			z-index: 2;
 		}
+
+		/* Dark Mode Btn */
+		.dark-mode-btn {
+			order: 9;
+			z-index: 2;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			width: 51px;
+			height: 26px;
+			padding: 5px;
+			border-radius: 50px;
+			background-color: #272727;
+		}
+		.dark-mode-btn::before {
+			content: '';
+
+			position: absolute;
+			top: 1px;
+			left: 1px;
+
+			display: flex;
+			width: 24px;
+			height: 24px;
+
+			border-radius: 50%;
+			background-color: white;
+
+			transition: left 0.2s ease-in;
+		}
+		.dark-mode-btn--active::before {
+			left: 26px;
+		}
+		.dark-mode-btn__icon {
+			position: relative;
+			z-index: 9;
+		}
+
 		a:hover {
 			text-decoration: none;
 			color: currentColor;
@@ -82,8 +143,7 @@
 
 			.header__list,
 			.header__link {
-				text-decoration: none;
-				color: black;
+				color: var(--text-color);
 				font-weight: bolder;
 				transition: transform 0.5s;
 			}
@@ -95,6 +155,10 @@
 			}
 		}
 		@media screen and (max-width: 768px) {
+			.dark-mode-btn {
+				order: 0;
+			}
+
 			.burger {
 				z-index: 5;
 				display: block;
@@ -112,7 +176,7 @@
 				height: 10%;
 				width: 100%;
 				transition: all 0.3s ease 0s;
-				background-color: black;
+				background-color: var(--menu-btn-color);
 			}
 
 			.burger::before,
@@ -182,7 +246,7 @@
 			.header__list,
 			.header__link {
 				text-decoration: none;
-				color: #fff;
+				color: white;
 				margin-bottom: 50px;
 				transition: transform 0.5s;
 			}
@@ -206,7 +270,7 @@
 		}
 		.name {
 			text-align: center;
-			color: black;
+			color: var(--text-color);
 		}
 		.col-3 {
 			transition: transform 0.5s;
@@ -472,7 +536,20 @@
 		<!-- Header -->
 		<header>
 			<div class="header__container">
-				<img src="img/jslogo.png" alt="logo" id="logo__img" />
+				<img src="/img/logo/light-logo-small.jpg" alt="logo" id="logo__img" />
+
+				<button class="dark-mode-btn">
+					<img
+						src="/icons/sun.svg"
+						alt="Light Mode"
+						class="dark-mode-btn__icon"
+					/>
+					<img
+						src="/icons/moon.svg"
+						alt="Dark Mode"
+						class="dark-mode-btn__icon"
+					/>
+				</button>
 
 				<div class="burger">
 					<span></span>
@@ -589,8 +666,8 @@
 				<div class="footer-w">
 					<div class="1foot foot">
 						<div class="p-p">
-							<img src="/img/jslogo.png" class="jsimg" alt="" />
-							<h1 class="footer_title_1">Cizup-JS Bulls</h1>
+							<img src="/img/logo/light-logo-small.jpg" class="jsimg" alt="" />
+							<h1 class="footer_title_1">Weare8</h1>
 						</div>
 						<hr />
 						<h2 class="footer_title_2">"Your dream, My passion"</h2>
@@ -687,6 +764,9 @@
 
 		<script>
 			const menuButton = document.querySelector('.burger')
+			const btnDarkMode = document.querySelector('.dark-mode-btn')
+			const themeIcon = document.getElementById('logo__img')
+
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -694,6 +774,61 @@
 					menuButton.classList.toggle('_active')
 					menuBody.classList.toggle('_active')
 				})
+			}
+
+			// cheking dark mode from system settings
+			if (
+				window.matchMedia &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches
+			) {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+			}
+
+			// checking dark mode from local storage
+			if (localStorage.getItem('darkMode') === 'dark') {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-logo-small.jpg'
+			} else if (localStorage.getItem('darkMode') === 'light') {
+				btnDarkMode.classList.remove('dark-mode-btn--active')
+				document.body.classList.remove('dark')
+				themeIcon.src = '/img/logo/light-logo-small.jpg'
+			}
+
+			// if system settings change, change the scheme
+
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) => {
+					const newColorScheme = event.matches ? 'dark' : 'light'
+
+					if (newColorScheme === 'dark') {
+						btnDarkMode.classList.add('dark-mode-btn--active')
+						document.body.classList.add('dark')
+						localStorage.setItem('darkMode', 'dark')
+						themeIcon.src = '/img/logo/dark-logo-small.jpg'
+					} else {
+						btnDarkMode.classList.remove('dark-mode-btn--active')
+						document.body.classList.remove('dark')
+						localStorage.setItem('darkMode', 'light')
+						themeIcon.src = '/img/logo/light-logo-small.jpg'
+					}
+				})
+
+			// turn on dark mode when button is clicked
+
+			btnDarkMode.onclick = function () {
+				btnDarkMode.classList.toggle('dark-mode-btn--active')
+				const isDark = document.body.classList.toggle('dark')
+
+				if (isDark) {
+					themeIcon.src = '/img/logo/dark-logo-small.jpg'
+					localStorage.setItem('darkMode', 'dark')
+				} else {
+					themeIcon.src = '/img/logo/light-logo-small.jpg'
+					localStorage.setItem('darkMode', 'light')
+				}
 			}
 		</script>
 	</body>
