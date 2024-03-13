@@ -12,6 +12,11 @@
 			rel="stylesheet"
 		/>
 		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
 			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 			rel="stylesheet"
 		/>
@@ -22,11 +27,42 @@
 		></script>
 
 		<style>
+			:root {
+				--text-color: black;
+				--bg-color: white;
+				--menu-btn-color: black;
+				--nav-color: white;
+				--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+				--form-border-color: #f1f1f1;
+				--input-background-color: #f1f1f1;
+				--input-focused-background-color: #ddd;
+
+				--input-caret-color: black;
+			}
+			button,
+			button:active,
+			button:focus {
+				border: none;
+			}
+			.dark {
+				--text-color: white;
+				--bg-color: #252526;
+				--nav-color: black;
+				--menu-btn-color: white;
+				--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+				--form-border-color: #464648;
+				--input-background-color: #454444;
+				--input-focused-background-color: #2a2a2a;
+
+				--input-caret-color: white;
+			}
+
 			html,
 			body {
 				display: flex;
 				min-height: 100vh;
 				width: auto;
+				height: 100%;
 				flex-direction: column;
 				margin: 0;
 			}
@@ -45,7 +81,7 @@
 				height: 55px;
 				width: 100%;
 
-				background-color: white;
+				background-color: var(--nav-color);
 
 				letter-spacing: normal;
 				font-family: 'DM Sans', sans-serif;
@@ -71,7 +107,46 @@
 
 				align-items: center;
 				z-index: 2;
+				border-radius: 50%;
 			}
+
+			/* dark mode button  */
+			.dark-mode-btn {
+				order: 9;
+				z-index: 2;
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				width: 51px;
+				height: 26px;
+				padding: 5px;
+				border-radius: 50px;
+				background-color: #272727;
+			}
+			.dark-mode-btn::before {
+				content: '';
+
+				position: absolute;
+				top: 1px;
+				left: 1px;
+
+				display: flex;
+				width: 24px;
+				height: 24px;
+
+				border-radius: 50%;
+				background-color: white;
+
+				transition: left 0.2s ease-in;
+			}
+			.dark-mode-btn--active::before {
+				left: 26px;
+			}
+			.dark-mode-btn__icon {
+				position: relative;
+				z-index: 9;
+			}
+
 			@media screen and (min-width: 670px) {
 				.nav__ul {
 					display: flex;
@@ -85,7 +160,7 @@
 				.nav__list,
 				.nav__link {
 					text-decoration: none;
-					color: black;
+					color: var(--text-color);
 					font-weight: bolder;
 					transition: transform 0.5s;
 				}
@@ -97,6 +172,9 @@
 				}
 			}
 			@media (max-width: 670px) {
+				.dark-mode-btn {
+					order: 0;
+				}
 				.burger {
 					z-index: 5;
 					display: block;
@@ -114,7 +192,7 @@
 					height: 10%;
 					width: 100%;
 					transition: all 0.3s ease 0s;
-					background-color: black;
+					background-color: var(--menu-btn-color);
 				}
 
 				.burger::before,
@@ -201,6 +279,14 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				background-color: var(--bg-color);
+			}
+			h1,
+			b {
+				color: var(--text-color);
 			}
 
 			.open-button {
@@ -219,10 +305,7 @@
 			/* The popup form - hidden by default */
 			.form-popup {
 				display: block;
-
-				bottom: 250px;
-				right: 800px;
-				border: 3px solid #f1f1f1;
+				border: 3px solid var(--form-border-color);
 				z-index: 9;
 			}
 
@@ -230,7 +313,7 @@
 			.form-container {
 				max-width: 300px;
 				padding: 10px;
-				background-color: white;
+				background-color: var(--bg-color);
 			}
 
 			/* Full-width input fields */
@@ -240,19 +323,20 @@
 				padding: 15px;
 				margin: 5px 0 22px 0;
 				border: none;
-				background: #f1f1f1;
+				background: var(--input-background-color);
+				caret-color: var(--input-caret-color);
 			}
 
 			/* When the inputs get focus, do something */
 			.form-container input[type='text']:focus,
 			.form-container input[type='password']:focus {
-				background-color: #ddd;
+				background-color: var(--input-focused-background-color);
 				outline: none;
 			}
 
 			/* Set a style for the submit/login button */
 			.form-container .btn {
-				background-color: #04aa6d;
+				background-color: #54bb8a;
 				color: white;
 				padding: 16px 20px;
 				border: none;
@@ -273,24 +357,18 @@
 				opacity: 1;
 			}
 
-			/* footer style  */
+			/* footer styles */
 			footer {
 				margin-top: auto;
 			}
-
-			li {
-				list-style: none;
-			}
-			a {
-				text-decoration: none;
-			}
-
 			@media screen and (min-width: 786px) {
 				.both-foot {
 					display: flex;
 				}
 
 				.footer-con {
+					padding: 1rem;
+
 					margin: auto;
 					background-color: rgb(22, 0, 36);
 					height: 285px;
@@ -325,6 +403,7 @@
 					height: 70px;
 					object-fit: cover;
 					margin-left: 1rem;
+					border-radius: 50%;
 				}
 
 				.footer_title_1 {
@@ -374,9 +453,9 @@
 				.foot a {
 					color: #a674af;
 				}
-
 				.footer-con {
-					width: 100%;
+					padding: 1rem;
+
 					margin: auto;
 					background-color: rgb(22, 0, 36);
 					height: auto;
@@ -485,8 +564,8 @@
 			.foot ul {
 				display: flex;
 				flex-direction: column;
-				row-gap: 30px;
 
+				row-gap: 30px;
 				padding: 1rem;
 				color: rgb(152, 112, 170);
 				font-size: 0.8rem;
@@ -511,14 +590,38 @@
 			.footer_title_2 {
 				font-family: oswald;
 			}
+			li {
+				list-style: none;
+			}
+			hr {
+				width: 100%;
+				height: 2px;
+				border: 0;
+				background-color: white;
+			}
+			a {
+				text-decoration: none;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- navigation -->
 		<nav>
 			<div class="nav__container">
-				<img src="/img/jslogo.png" alt="logo" id="logo__img" />
+				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo__img" />
 
+				<button class="dark-mode-btn">
+					<img
+						src="/icons/sun.svg"
+						alt="Light Mode"
+						class="dark-mode-btn__icon"
+					/>
+					<img
+						src="/icons/moon.svg"
+						alt="Dark Mode"
+						class="dark-mode-btn__icon"
+					/>
+				</button>
 				<div class="burger">
 					<span></span>
 				</div>
@@ -593,34 +696,35 @@
 				<div class="footer-w">
 					<div class="1foot foot">
 						<div class="p-p">
-							<img src="/img/jslogo.png" class="jsimg" alt="" />
-							<h1 class="footer_title_1">Cizup-JS Bulls</h1>
+							<img src="/img/logo/light-small-logo.jpg" class="jsimg" alt="" />
+							<h1 class="footer_title_1">Weare8</h1>
 						</div>
-						<hr style="height: 2px; background-color: white; width: 100%" />
+						<hr />
 						<h2 class="footer_title_2">"Your dream, My passion"</h2>
 					</div>
 
 					<div class="both-foot">
-						<
 						<div class="foot">
 							<ul class="footer_list">
 								<li>
 									<a
-										class="footer_li_p"
-										href="/html/Abdulkhamid/abdulkhamidProfile.html"
+										class="footer_li_a"
+										href="./html/Abdulkhamid/abdulkhamidProfile.html"
 										>Abdulkhamid</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Talha/Talha.html">Talha</a>
+									<a class="footer_li_a" href="./html/Talha/Talha.html"
+										>Talha</a
+									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Minhazul/minhaz.html"
+									<a class="footer_li_a" href="./html/Minhazul/minhaz.html"
 										>Minhaz</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Ibrahim/ibrahim.html"
+									<a class="footer_li_a" href="./html/Ibrahim/ibrahim.html"
 										>Ibrahim</a
 									>
 								</li>
@@ -630,22 +734,24 @@
 						<div class="foot">
 							<ul class="footer_list">
 								<li>
-									<a class="footer_li_p" href="/html/Wanna/wanna.html">Wanna</a>
+									<a class="footer_li_a" href="./html/Wanna/wanna.html"
+										>Wanna</a
+									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Abdullah/abdullah.html"
+									<a class="footer_li_a" href="./html/Abdullah/abdullah.html"
 										>Abdullah Sunulu</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Mubarak/mubarak.html"
+									<a class="footer_li_a" href="./html/Mubarak/mubarak.html"
 										>Mubarak</a
 									>
 								</li>
 								<li>
 									<a
-										class="footer_li_p"
-										href="/html/Abdulsaid/saıdadyazpro.html"
+										class="footer_li_a"
+										href="./html/Abdulsaid/saıdadyazpro.html"
 										>Absaid</a
 									>
 								</li>
@@ -688,6 +794,9 @@
 
 		<script>
 			const menuButton = document.querySelector('.burger')
+			const btnDarkMode = document.querySelector('.dark-mode-btn')
+			const themeIcon = document.getElementById('logo__img')
+
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -696,6 +805,62 @@
 					menuBody.classList.toggle('_active')
 				})
 			}
+			// cheking dark mode from system settings
+			if (
+				window.matchMedia &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches
+			) {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-logo-small.jpg'
+			}
+
+			// checking dark mode from local storage
+			if (localStorage.getItem('darkMode') === 'dark') {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+			} else if (localStorage.getItem('darkMode') === 'light') {
+				btnDarkMode.classList.remove('dark-mode-btn--active')
+				document.body.classList.remove('dark')
+				themeIcon.src = '/img/logo/light-small-logo.jpg'
+			}
+
+			// if system settings change, change the scheme
+
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) => {
+					const newColorScheme = event.matches ? 'dark' : 'light'
+
+					if (newColorScheme === 'dark') {
+						btnDarkMode.classList.add('dark-mode-btn--active')
+						document.body.classList.add('dark')
+						localStorage.setItem('darkMode', 'dark')
+						themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					} else {
+						btnDarkMode.classList.remove('dark-mode-btn--active')
+						document.body.classList.remove('dark')
+						localStorage.setItem('darkMode', 'light')
+						themeIcon.src = '/img/logo/light-small-logo.jpg'
+					}
+				})
+
+			// turn on dark mode when button is clicked
+
+			btnDarkMode.onclick = function () {
+				btnDarkMode.classList.toggle('dark-mode-btn--active')
+				const isDark = document.body.classList.toggle('dark')
+
+				if (isDark) {
+					themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					localStorage.setItem('darkMode', 'dark')
+				} else {
+					themeIcon.src = '/img/logo/light-small-logo.jpg'
+					localStorage.setItem('darkMode', 'light')
+				}
+			}
+
 			/* posta güvercini V 1.0 */
 			function sendMessage() {
 				const request = new XMLHttpRequest()
