@@ -38,9 +38,14 @@
 		:root {
 			--text-color: black;
 			--bg-color: white;
+			--footer-bg-color: white;
 			--menu-btn-color: black;
 			--nav-color: white;
 			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: white;
+			--footer-link-hover-background-color: black;
+			--footer-link-hover-border-color: black;
 		}
 		button,
 		button:active,
@@ -62,13 +67,18 @@
 		.dark {
 			--text-color: white;
 			--bg-color: #252526;
-			--nav--color: black;
+			--footer-bg-color: black;
+			--nav-color: black;
 			--menu-btn-color: white;
 			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: black;
+			--footer-link-hover-background-color: white;
+			--footer-link-hover-border-color: white;
 		}
 		header {
 			position: relative;
-			background-color: var(--nav--color);
+			background-color: var(--nav-color);
 			width: 100%;
 			top: 0;
 			left: 0;
@@ -86,7 +96,7 @@
 			column-gap: 30px;
 		}
 
-		#logo__img {
+		#logo_img1 {
 			width: 55px;
 			height: 55px;
 			margin-left: 50px;
@@ -310,7 +320,7 @@
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				background-color: var(--footer-bg-color);
 				height: 285px;
 				overflow: hidden;
 			}
@@ -335,10 +345,10 @@
 				margin: 8px;
 				align-items: stretch;
 				font-size: 15px;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 			}
 
-			.jsimg {
+			#logo_img2 {
 				width: 70px;
 				height: 70px;
 				object-fit: cover;
@@ -348,7 +358,7 @@
 
 			.footer_title_1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				font-family: oswald;
 			}
 			.footer_title_2 {
@@ -356,12 +366,12 @@
 			}
 
 			.foot a {
-				color: #a674af;
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
 			.fourthfoot {
-				color: #a674af;
+				color: var(--text-color);
 				list-style: none;
 			}
 
@@ -378,7 +388,7 @@
 
 			.link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -391,13 +401,13 @@
 
 		@media screen and (max-width: 786px) {
 			.foot a {
-				color: #a674af;
+				color: var(--text-color);
 			}
 			.footer-con {
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				background-color: var(--footer-bg-color);
 				height: auto;
 				overflow: hidden;
 			}
@@ -429,13 +439,13 @@
 
 			.footer_title_1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
 			.footer_title_2 {
 				font-family: oswald;
-				color: #a674af;
+				color: var(--text-color);
 				text-align: center;
 				padding: 1rem;
 				font-size: 22.5px;
@@ -455,7 +465,7 @@
 
 			.fourthfoot {
 				display: flex;
-				color: #a674af;
+				color: var(--text-color);
 				list-style: none;
 				justify-content: space-between;
 				width: 100%;
@@ -468,7 +478,7 @@
 
 			.fourthfoot ul li p {
 				padding: 0.3rem;
-				color: #a674af;
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
@@ -482,7 +492,7 @@
 
 			.link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-start;
@@ -494,10 +504,10 @@
 		}
 
 		.link-icons a:hover {
-			color: black;
-			background-color: #fff;
+			color: var(--footer-link-hover-color);
+			background-color: var(--footer-link-hover-background-color);
 			border-radius: 50%;
-			border: 2px solid black;
+			border: 2px solid var(--footer-link-hover-border-color);
 			transition: all 0.35s ease-in-out;
 		}
 
@@ -507,7 +517,7 @@
 
 			row-gap: 30px;
 			padding: 1rem;
-			color: rgb(152, 112, 170);
+			color: var(--text-color);
 			font-size: 0.8rem;
 			font-family: oswald;
 		}
@@ -537,14 +547,14 @@
 			width: 100%;
 			height: 2px;
 			border: 0;
-			background-color: white;
+			background-color: var(--hr-color);
 		}
 	</style>
 	<body>
 		<!-- Header -->
 		<header>
 			<div class="header__container">
-				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo__img" />
+				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
 
 				<button class="dark-mode-btn">
 					<img
@@ -674,7 +684,11 @@
 				<div class="footer-w">
 					<div class="1foot foot">
 						<div class="p-p">
-							<img src="/img/logo/light-small-logo.jpg" class="jsimg" alt="" />
+							<img
+								src="/img/logo/light-small-logo.jpg"
+								id="logo_img2"
+								alt="logo"
+							/>
 							<h1 class="footer_title_1">Weare8</h1>
 						</div>
 						<hr />
@@ -773,8 +787,8 @@
 		<script>
 			const menuButton = document.querySelector('.burger')
 			const btnDarkMode = document.querySelector('.dark-mode-btn')
-			const themeIcon = document.getElementById('logo__img')
-
+			const themeIcon = document.getElementById('logo_img1')
+			const themeIcon2 = document.getElementById('logo_img2')
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -791,7 +805,8 @@
 			) {
 				btnDarkMode.classList.add('dark-mode-btn--active')
 				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-logo-small.jpg'
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 			}
 
 			// checking dark mode from local storage
@@ -799,10 +814,12 @@
 				btnDarkMode.classList.add('dark-mode-btn--active')
 				document.body.classList.add('dark')
 				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 			} else if (localStorage.getItem('darkMode') === 'light') {
 				btnDarkMode.classList.remove('dark-mode-btn--active')
 				document.body.classList.remove('dark')
 				themeIcon.src = '/img/logo/light-small-logo.jpg'
+				themeIcon2.src = '/img/logo/light-small-logo.jpg'
 			}
 
 			// if system settings change, change the scheme
@@ -817,11 +834,13 @@
 						document.body.classList.add('dark')
 						localStorage.setItem('darkMode', 'dark')
 						themeIcon.src = '/img/logo/dark-small-logo.jpg'
+						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 					} else {
 						btnDarkMode.classList.remove('dark-mode-btn--active')
 						document.body.classList.remove('dark')
 						localStorage.setItem('darkMode', 'light')
 						themeIcon.src = '/img/logo/light-small-logo.jpg'
+						themeIcon2.src = '/img/logo/light-small-logo.jpg'
 					}
 				})
 
@@ -833,9 +852,11 @@
 
 				if (isDark) {
 					themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 					localStorage.setItem('darkMode', 'dark')
 				} else {
 					themeIcon.src = '/img/logo/light-small-logo.jpg'
+					themeIcon2.src = '/img/logo/light-small-logo.jpg'
 					localStorage.setItem('darkMode', 'light')
 				}
 			}
