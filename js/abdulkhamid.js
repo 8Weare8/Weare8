@@ -1,5 +1,7 @@
 const menuButton = document.querySelector('.burger')
 const btnDarkMode = document.querySelector('.dark-mode-btn')
+const themeIcon = document.getElementById('logo_img1')
+const themeIcon2 = document.getElementById('logo_img2')
 
 // cheking dark mode from system settings
 if (
@@ -8,15 +10,21 @@ if (
 ) {
 	btnDarkMode.classList.add('dark-mode-btn--active')
 	document.body.classList.add('dark')
+	themeIcon.src = '/img/logo/dark-small-logo.jpg'
+	themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 }
 
 // checking dark mode from local storage
 if (localStorage.getItem('darkMode') === 'dark') {
 	btnDarkMode.classList.add('dark-mode-btn--active')
 	document.body.classList.add('dark')
+	themeIcon.src = '/img/logo/dark-small-logo.jpg'
+	themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 } else if (localStorage.getItem('darkMode') === 'light') {
 	btnDarkMode.classList.remove('dark-mode-btn--active')
 	document.body.classList.remove('dark')
+	themeIcon.src = '/img/logo/light-small-logo.jpg'
+	themeIcon2.src = '/img/logo/light-small-logo.jpg'
 }
 
 // if system settings change, change the scheme
@@ -30,10 +38,14 @@ window
 			btnDarkMode.classList.add('dark-mode-btn--active')
 			document.body.classList.add('dark')
 			localStorage.setItem('darkMode', 'dark')
+			themeIcon.src = '/img/logo/dark-small-logo.jpg'
+			themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 		} else {
 			btnDarkMode.classList.remove('dark-mode-btn--active')
 			document.body.classList.remove('dark')
 			localStorage.setItem('darkMode', 'light')
+			themeIcon.src = '/img/logo/light-small-logo.jpg'
+			themeIcon2.src = '/img/logo/light-small-logo.jpg'
 		}
 	})
 
@@ -53,7 +65,11 @@ btnDarkMode.onclick = function () {
 
 	if (isDark) {
 		localStorage.setItem('darkMode', 'dark')
+		themeIcon.src = '/img/logo/dark-small-logo.jpg'
+		themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 	} else {
 		localStorage.setItem('darkMode', 'light')
+		themeIcon.src = '/img/logo/light-small-logo.jpg'
+		themeIcon2.src = '/img/logo/light-small-logo.jpg'
 	}
 }
