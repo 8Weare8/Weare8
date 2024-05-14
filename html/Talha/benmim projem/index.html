@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>İlge İpek</title>
+    <style>
+        
+        
+        .başlık{
+            text-align: center;
+            color: #152336 ; 
+        } 
+         
+        body{
+            background-color: #9DB2BF ;
+            font-family: serif;
+        }
+    
+        .ilge{
+            border: 5px solid;
+            border-radius: 50%;
+        }
+        .foto{
+            text-align: center;
+        }
+        .paragraf{
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: x-large;
+        }
+        
+        
+        
+.arduino{
+display: flex;
+    width: 40vh;
+    height: 40vh;
+background-color: #47657c;
+border-radius: 10px;
+border: 5px solid;
+justify-content: space-between;
+text-align: center;
+margin: 5px;
+
+             
+}
+        .liste{
+            list-style-type:none;
+            
+        }
+        .foto-3{
+            display: flex;
+            width: 40vh;
+            border-radius: 10px;
+            height: 40vh;
+            border: 5px solid;
+            margin: 5px;
+           
+        }
+        #bilgi{
+            text-align: center;
+            font-size: xx-large;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .sayfa-2{
+            color:#152336;
+        }
+     
+     
+     .kutu-1{
+        background-color: #47657c;
+        margin: 10px;
+        border: solid 5px;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+     }
+     .kutu-2{
+        background-color: #47657c;
+        margin: 10px;
+        border: solid 5px;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+     }
+     .kutu-3{
+        background-color: #47657c;
+        margin: 10px;
+        border: solid 5px;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+     }
+     .BAŞLIK{
+        margin: 0;
+        text-align: center;
+        
+     }
+     .başlık-2{
+        margin: 0;
+        text-align: center;
+     }
+     .başlık-3{
+        text-align: center;
+        margin: 0;
+     }
+     @media  screen and (max-width:700px) { 
+     .üst{
+        display: flex;
+        flex-direction:column;
+     }
+    }
+     @media screen and (max-width:4000px) {
+       .üst{
+        display: flex;
+        justify-content: space-between;
+        
+       }
+     }
+     @media  screen and (max-width:700px){
+        .üst-2{
+            display: flex;
+        flex-direction:column;
+        align-items: center;
+        }
+     }
+     @media screen and (max-width:4000px) {
+       .üst-2{
+        display: flex;
+        justify-content: space-between;
+       }
+    }
+    .menü{
+        background-color: #152336;
+        text-align: center;
+        list-style-type: none; 
+        padding: 1px;
+    border-radius: 7px;
+    border: solid;
+
+    }
+    #menü{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .öge{
+        margin-right: 20px;
+        padding: 5px;
+
+    }
+    .menü ul li a{
+        text-decoration: none;
+        color: whitesmoke;
+        
+    }
+    .menü ul li:hover{
+        background-color: #526D82;
+        border-radius: 7PX;
+    }
+    .bi{
+        padding-right: 2px;
+    }
+   
+   
+
+    </style>
+</head>
+<body>
+    <div class="menü">
+        <ul id="menü">
+        <li class="öge"><a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-house" viewBox="1 0 16 14">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+          </svg>Anasayfa</a></li>
+        
+        <li class="öge"><a href="./arduino.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
+            <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+          </svg>Arduino</a></li> 
+        <li class="öge"><a href="./c++.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 11">
+            <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z"/>
+          </svg>C++</a></li> 
+        <li class="öge"><a href="./hakkımızda.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+            <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>Hakkımızda</a></li> 
+    </ul>
+    </div>
+    <h1 class="başlık">BİYOGRAFİ </h1>
+    <div class="foto">
+    <img class="ilge" src="	https://www.burakbayram.me/wp-content/uploads/2022/04/KreatifDurak-Ilge-Ipek-Podcast-1060x707.jpg" style="width: 40%;" />
+    <h2>İlge İpek</h2>
+    <p class="paragraf"><strong>Çocukluğumda başlayan bu süreç beni mekatronik mühendisi yaptı. Bu sebeple özellikle meslek seçiminde sevdiğiniz işi yapmanın da neye merak duyduğunuzu farketmekte geçtiğine eminim. Şuanda çalıştığım firmada elektronik ve yazılım üzerine içerikler üretmekteyim. Bu işleri yaparken mutfak kısmını da göstermek istiyorum.</strong></p>
+</div>
+
+    <div > 
+        <section class="üst-2">
+  <img class="foto-3" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg" />   
+<div class="arduino"> <ul class="liste" ><li><strong>ARDUİNO PROJELERİ</strong></li>
+<li class="öge-2">Servo Motor Kullanımı</li>
+<li class="öge-2">LCD Ekran kullanımı</li>
+<li class="öge-2">Potasyum Metre Kullanımı</li>
+<li class="öge-2">Arduino Manyetik Dedektör</li>
+<li class="öge-2">Arduino Nabız Ölçme Projesi</li>
+<li class="öge-2">Arduino Park Sensörü</li>
+<li class="öge-2">Buton İle RGB Led Kontrolü</li>
+<li class="öge-2">Sesleri LCD Ekrana Yazdırma</li>
+<li class="öge-2">Arduino LCD Nem ve Sıcaklık</li>
+<li class="öge-2">Arduino Trafik Lambası</li>
+<li class="öge-2">Arduino XY Çizim robotu</li>
+<li class="öge-2">Arduino ile Batarya Seviye</li>
+</ul>
+</div>
+</div>
+</ul></div>
+</section>
+<hr>
+<p id="bilgi">Şuan robotistanda megatronik mühendisi olarak çalışıyorum ve insanlara yardımcı olacak içerikler yüklediğim bir youtube kanalım var ayrıyeten kendi içeriklerimi çektiğimde bir kanalım var.<a class="sayfa-2" href="./arduino.html"> Arduino </a> üzerinde yüksek bilgi ve tecrübeye sahibim.</p>
+<section class="üst">
+<div class="kutu-1" > <h3 class="BAŞLIK"> SERVO </h3>Servo, herhangi bir mekanizmanın işleyişini hatayı algılayarak yan bir geri besleme düzeneğinin yardımıyla denetleyen ve hatayı gideren otomatik aygıttır. Robot teknolojisinde en çok kullanılan motor çeşididir. Bu sistemler mekanik olabileceği gibi elektronik, hidrolik, pnömatik veya başka alanlarda da kullanılabilmektedir.</div>
+<div class="kutu-2"> <h3 class="başlık-2">LCD</h3> Yani kısacası alanına uygun olarak istediğiniz her türlü görüntüyü bu ekrana taşıyabilirsiniz. TV ekranları, telefon ekranları yada CNC ekranları Grafik LCD ekranlara örnek verilebilir. Her türlü yüksek kalite de ekran görüntüsü alınması gereken yerlerde kullanılır.</div>
+<div class="kutu-3"> <h3 class="başlık-3">Breadboard</h3>Breadboard, devrelerin lehimleme işleminden önce test edilmesini sağlayan bir araçtır. Özellikle plaketlerin üzerine aktarılmadan önce tüm devrelerin incelenmesini sağlayan bir araçtır. Bu şekilde sistemlerin çalışıp çalışmadığını öğrenmek mümkündür. Bu da sistemlerin kurulmadan önce test edilmesini sağlar.</div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Arduino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+  .sayfa-2{
+       color: #7b6c4c; 
+  }
+  body{
+    background-color:#BBAB8C ;
+    
+  }
+  .container{
+    display: grid;
+  }
+  
+  .menü{
+        background-color: #7b6c4c ;
+        text-align: center;
+        list-style-type: none; 
+        padding: 1px;
+    border-radius: 7px;
+ border: solid 3px;
+margin-top: 10px ;
+    }
+    #menü{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        
+        
+    }
+    .öge{
+        margin-right: 20px;
+        padding: 5px;
+
+    }
+    .menü ul li a{
+        text-decoration: none;
+        color: whitesmoke;
+        
+    }
+    .menü ul li:hover{
+        background-color: #BBAB8C;
+        border-radius: 7PX;
+    }
+    .resim{
+      border: solid;
+      border-radius: 7px;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    #arduino-2{
+       text-align: center;
+       background-color: #FDF7E4;
+       border: solid;
+       border-radius: 7px;
+       margin-top: 10px;
+    }
+    #yazı{
+      font-size: x-large;
+      
+    }
+  
+   .resim-2{
+    border: solid ;
+        border-radius: 7px;
+        
+   
+   }
+   .resim-3{
+    border: solid ;
+        border-radius: 7px;
+   
+   }
+   .resim-4{
+    border: solid ;
+        border-radius: 7px;
+   
+   }
+   .hücre{ 
+    margin: 5px;
+   }
+   .hücre-2{
+    margin: 5px;
+   }
+   .hücre-3{
+    margin: 5px;
+   }
+   
+   @media screen and (max-width:700px) {
+          .row-2{
+            display: grid;
+            width: 300%;
+            height: 50%;
+          }
+   }
+   @media screen and (max-width:700px){
+   .row-3{ 
+    display: grid;
+    width: 350%;
+    
+    }
+   }
+   @media screen and (max-width:700px){
+   .secondbölüm{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+     }}
+    .öge{
+      margin-top: 10px;
+    }
+</style>
+<body>
+  <div class="container">
+    <div class="menü">
+      <ul id="menü">
+      <li class="öge"><a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-house" viewBox="1 0 16 20">
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+        </svg>Anasayfa</a></li>
+      
+      <li class="öge"><a href="./arduino.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 20">
+          <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+        </svg>Arduino</a></li> 
+      <li class="öge"><a href="./c++.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 20">
+          <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z"/>
+        </svg>C++</a></li> 
+      <li class="öge"><a href="./hakkımızda.html"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 20">
+          <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+          <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+        </svg>Hakkımızda</a></li> 
+        
+  </ul>
+  </div>
+ 
+<div class="ilkbölüm">
+<h1 id="arduino-2">ARDUİNO NEDİR</h1>
+ <img src="https://cdn.hosting.com.tr/blog/wp-content/uploads/2021/10/arduino-nedir.jpeg" width="40%" class="resim" />
+     <p id="yazı">Arduino için Entegre Geliştirme Ortamı(IDE), C ve <a class="sayfa-2" href="./c++.html">C ++</a> dilleri ile yazılmış bir platformlar arası uygulamadır (Linux, macOS, Windows için,). Arduino uyumlu kartlara program yazmak ve yüklemek için kullanılır, aynı zamanda 3. taraf çekirdekler ve satıcıların geliştirme kartları için de kullanılabilir.</p>
+</div>
+<div class="secondbölüm">
+     <div class="row row-2">
+      <div class="col-4"><img src="    https://productimages.hepsiburada.net/s/19/550/9824841498674.jpg/format:webp" width="100%" height="90%" class="resim-2" />  </div>
+              <div class="col-4"><img src="    https://market.samm.com/arduino-esplora-orijinal-arduino-modelleri-arduino-1318-50-B.jpg" height="90%" width="100%"  class="resim-3"/> </div>
+           <div class="col-4"> <img src="    https://productimages.hepsiburada.net/s/24/550/10076217802802.jpg/format:webp" width="100%" height="90%" class="resim-4"/> </div>
+         </div> 
+        <div class="row row-3">
+          <div class="col-4"> <strong> Arduino Nano; Atmega328 Temelli Bir Mikrodenetleyici Karttır. Üzerinde 14 Adet Dijital Giriş/Çıkış Pini (6 Tanesi Pwm Çıkışı Olarak Kullanılabilir), 8 Analog Giriş, 16Mhz Kristal, Usb Soketi, Icsp Konektörü Ve Reset Tuşu Bulundurmaktadır. </strong> </div>
+          <div class="col-4"> <strong> Arduino Esplora, Arduino Leonardo 'dan türetilen bir mikrodenetleyici kartıdır. Arduino Esplora 'nın diğer tüm kartlardan farkı kendi üzerinde kullanıma hazır sensörler bulundurmasıdır.</strong></div>
+         <div class="col-4"> <strong> Yun, Atmega32U4 tabanlı klasik Arduino Leonardo ile üzerinde Wifi barındıran ve Linino ( MIPS GNU/Linux lisanlı OpenWrt tabanlı bir dağıtım.) çalıştıran Atheros AR9331 'in bir bileşimidir. Bridge kütüphanesi sayesinde iki işlemci arası haberleşme gerçekleşir.</strong></div>
+    </div>
+ </div>
+</body>
+</html>
+  
