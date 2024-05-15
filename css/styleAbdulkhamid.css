@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './footer.css';
+@import './dropdowncss.css';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
 /* font-family: "DM Sans", sans-serif;
@@ -179,9 +180,14 @@ nav {
 	line-height: 1.4;
 }
 
-.header__title em {
+em {
 	font-style: normal;
 	color: var(--accent);
+
+	margin-bottom: 20px;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.4;
 }
 .name_click {
 	display: flex;
@@ -469,6 +475,9 @@ nav {
 		color: var(--white);
 		margin-bottom: 50px;
 		transition: transform 0.5s;
+	}
+	.dropbtn{
+		color: var(--white);
 	}
 	#cz {
 		color: var(--red);
