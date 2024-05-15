@@ -67,10 +67,7 @@ footer{
 		list-style: none;
 	}
 
-	.fourthfoot ul {
-		padding: 1rem;
-		font-family: oswald;
-	}
+
 
 	.link-icons {
 		display: flex;
