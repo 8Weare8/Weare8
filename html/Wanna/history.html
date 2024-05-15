@@ -1456,26 +1456,64 @@ border: 1px solid rgba(0, 0, 0, 0.23);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
             cursor: pointer; 
         }
+
+			/* Dropdown Button */
+			.dropbtn {
+			background-color: var(--bg-color);
+			
+			color: var(--text-color);
+			padding: 13px;
+			font-weight: bolder;
+			font-size: 16px;
+			border: none;
+			}
+
+			/* The container <div> - needed to position the dropdown content */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+
+			/* Dropdown Content (Hidden by Default) */
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: var(--footer-bg-color);
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+			}
+
+			/* Links inside the dropdown */
+			.dropdown-content a {
+			color: var(--text-color);
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			cursor: pointer;
+			}
+
+			/* Change color of dropdown links on hover */
+			.dropdown-content a:hover {background-color: #00847d;}
+
+			/* Show the dropdown menu on hover */
+			.dropdown:hover .dropdown-content {display: block;}
+
+			/* Change the background color of the dropdown button when the dropdown content is shown */
+			.dropdown:hover .dropbtn {background-color: #00918a57;}
 		</style>
 	</head>
 
 	<body>
+
 		<header>
+			
 			<div class="header__container">
+
+
 				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
 
-				<button class="dark-mode-btn">
-					<img
-						src="/icons/sun.svg"
-						alt="Light Mode"
-						class="dark-mode-btn__icon"
-					/>
-					<img
-						src="/icons/moon.svg"
-						alt="Dark Mode"
-						class="dark-mode-btn__icon"
-					/>
-				</button>
+			
 				
 				<nav class="menu">
 									<ul class="nav-items">
@@ -1495,14 +1533,45 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 												>CizUp</a
 											>
 										</li>
+										<li>
+											<div class="dropdown">
+												<button class="dropbtn">
+													Lang
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+														<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-4.468 12.528c.7-.914 1.683-1.53 2.839-1.666.591-.07 1.21-.08 1.836-.03 1.223.09 2.369.49 3.348 1.138a7.003 7.003 0 0 0 2.209-4.97A7 7 0 0 0 8 1zm5.912 7.275c-.117.88-.384 1.707-.769 2.444a6.978 6.978 0 0 1-2.731 2.806c-.683-.506-1.531-.842-2.463-.976-.734-.105-1.503-.082-2.268.082-1.15.246-2.26.96-3.087 1.879A7 7 0 0 1 1 8a7 7 0 0 1 12.912-.725zM3.15 6.5c-.447 0-.785.373-.746.82.057.683.182 1.354.372 2.007a6.992 6.992 0 0 0 2.22 3.513c.888-.655 1.893-1.085 2.956-1.259a1.986 1.986 0 0 1-.48-.743c-.093-.295-.186-.595-.276-.894-.109-.368-.236-.73-.379-1.086-.148-.37-.318-.724-.505-1.061a7.021 7.021 0 0 0-.853-1.209c-.42-.51-.92-.914-1.479-1.168-.56-.254-1.151-.368-1.75-.368zm4.31 2.45c.25-.556.6-1.059 1.04-1.458.495-.452 1.078-.755 1.705-.855.65-.104 1.324-.085 1.976.08-.31.567-.697 1.105-1.153 1.598-.501.548-1.091.97-1.735 1.226-.645.256-1.337.33-2.024.203-.543-.102-1.075-.335-1.558-.7-.174-.131-.333-.276-.48-.432.146-.243.294-.488.439-.737zm3.65 4.037c.61-.266 1.19-.661 1.711-1.169.52-.508.987-1.101 1.385-1.755-.45.065-.89.158-1.319.275-.481.133-.946.31-1.392.523-.438.208-.857.47-1.253.79-.221.177-.422.376-.616.586.174.166.353.324.538.472.186.149.376.286.57.406zm-.927-2.4c-.102-.368-.23-.72-.38-1.057-.152-.343-.322-.672-.505-.99a6.988 6.988 0 0 0-.849-1.25c-.338-.413-.729-.758-1.155-1.015-.431-.262-.893-.417-1.364-.49-.233-.038-.47-.058-.707-.058.448.09.882.235 1.294.429.428.199.833.452 1.2.75.293.246.57.524.832.823.19.215.368.442.542.676.175.235.338.482.498.735.16.254.315.515.465.783z"/>
+													</svg>
+												</button>
+												
+												
+												<div class="dropdown-content">
+													<a onclick="translateturkish()">Türkçe</a>
+													<a onclick="translateenglish()">English</a>
+												</div>
+							</div>
+										</li>
 									</ul>
 				</nav>
-				<img id="myImg00" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png">
+
+				<button class="dark-mode-btn">
+					<img
+						src="/icons/sun.svg"
+						alt="Light Mode"
+						class="dark-mode-btn__icon"
+					/>
+					<img
+						src="/icons/moon.svg"
+						alt="Dark Mode"
+						class="dark-mode-btn__icon"
+					/>
+				</button>
+
+
 
 				<div class="burger">
 					<span></span>
 				</div>
 			</div>
+			
 		</header>
 
 		<div class="side-container">
@@ -1810,72 +1879,43 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 				})
 			}
 
-		
+			function translateturkish() {
+    let second00 = "Bir YouTube kanalı, dijital sanat ve mimari yapılar hakkında.";
+    let second0 = "İlk web projem. Birçok hatam oldu ve birçok ders öğrendim.";
+    let second1 = "Benim portföyüm";
+    let second2 = "Burada, zaman yönetiminin değerini öğrendim. Ancak, özellikle JavaScript'te birçok hatayla karşılaştım.";
+    let second3 = "Yakında";
+    let second4 = "Gelecek projelerim için çok heyecanlıyım. Ve mümkün olduğunca çok şey öğrenmeye hazırım.";
+    let slogan = "Senin rüyan, benim tutkum";
 
-			//loader
+    document.getElementById("second00").innerHTML = second00;
+    document.getElementById("second0").innerHTML = second0;
+    document.getElementById("second1").innerHTML = second1;
+    document.getElementById("second2").innerHTML = second2;
+    document.getElementById("second3").innerHTML = second3;
+    document.getElementById("second4").innerHTML = second4;
+    document.getElementById("slogan").innerHTML = slogan;
+}
 
-		
+function translateenglish() {
+    let second00 = "A Youtube channel about digital art and architure building.";
+    let second0 = "My first web project. I did a lots of mistake and learn a lot of lesson.";
+    let second1 = "My Portfolio";
+    let second2 = "Here, I learned the value of time-management .But also faced a lot of errors. Especially JavaScript";
+    let second3 = "Coming";
+    let second4 = "I am very excited for my future projects. And ready to learn as much as I can.";
+    let slogan = "Your dream, my passion";
 
+    document.getElementById("second00").innerHTML = second00;
+    document.getElementById("second0").innerHTML = second0;
+    document.getElementById("second1").innerHTML = second1;
+    document.getElementById("second2").innerHTML = second2;
+    document.getElementById("second3").innerHTML = second3;
+    document.getElementById("second4").innerHTML = second4;
+    document.getElementById("slogan").innerHTML = slogan;
+}
 
-			    // Toggle language when flag is clicked
-				function toggleLanguage() {
-            const currentLanguage = document.documentElement.lang;
-            const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
-
-            // Update document language
-            document.documentElement.lang = newLanguage;
-
-            // Update flag image
-            document.getElementById('myImg00').src = newLanguage === 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png' : 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg' ;
-
-            // Update title and paragraph content
-            const translations = {
-                'en': {
-                    'second00': "A Youtube channel about digital art and architure building.",
-                    'second0': "My first web project. I did a lots of mistake and learn a lot of lesson.",
-                    'second1': "My Portfolio",
-                    'second2': "Here, I learned the value of time-management .But also faced a lot of errors. Especially JavaScript",
-					'second3': "Coming",
-                    'second4': "I am very excited for my future projects. And ready to learn as much as I can.",
-					'slogan': "Your dream, my passion"
-
-                    
-                },
-                'tr': {
-                    'second00': "Bir YouTube kanalı, dijital sanat ve mimari yapılar hakkında.",
-                    'second0': "İlk web projem. Birçok hatam oldu ve birçok ders öğrendim.",
-                    'second1': "Benim portföyüm",
-                    'second2': "Burada, zaman yönetiminin değerini öğrendim. Ancak, özellikle JavaScript'te birçok hatayla karşılaştım.",
-					'second3': "Yakında",
-                    'second4': "Gelecek projelerim için çok heyecanlıyım. Ve mümkün olduğunca çok şey öğrenmeye hazırım.",
-					'slogan': "Senin rüyan, benim tutkum"
-	
-					
-
-				}
-
-
-
-            };
-
-
-            document.getElementById('second00').textContent = translations[newLanguage]['second00'];
-            document.getElementById('second0').textContent = translations[newLanguage]['second0'];
-            document.getElementById('second1').textContent = translations[newLanguage]['second1'];
-            document.getElementById('second2').textContent = translations[newLanguage]['second2'];
-            document.getElementById('second3').textContent = translations[newLanguage]['second3'];
-            document.getElementById('second4').textContent = translations[newLanguage]['second4'];
-            document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
-
-
-
-
-        }
-
-        // Event listener to toggle flag and language when the image is clicked
-		const myImg = document.getElementById("myImg00");
-		myImg.addEventListener("click", toggleLanguage);
-
+          
 
 		</script>
 	</body>
