@@ -33,14 +33,33 @@
 			src="https://kit.fontawesome.com/8b54351f60.js"
 			crossorigin="anonymous"
 		></script>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
 	</head>
 	<style>
 		:root {
 			--text-color: black;
 			--bg-color: white;
+			--footer-bg-color: white;
 			--menu-btn-color: black;
 			--nav-color: white;
 			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: white;
+			--footer-link-hover-background-color: black;
+			--footer-link-hover-border-color: black;
 		}
 		button,
 		button:active,
@@ -62,13 +81,18 @@
 		.dark {
 			--text-color: white;
 			--bg-color: #252526;
-			--nav--color: black;
+			--footer-bg-color: black;
+			--nav-color: black;
 			--menu-btn-color: white;
 			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: black;
+			--footer-link-hover-background-color: white;
+			--footer-link-hover-border-color: white;
 		}
 		header {
 			position: relative;
-			background-color: var(--nav--color);
+			background-color: var(--nav-color);
 			width: 100%;
 			top: 0;
 			left: 0;
@@ -86,7 +110,7 @@
 			column-gap: 30px;
 		}
 
-		#logo__img {
+		#logo_img1 {
 			width: 55px;
 			height: 55px;
 			margin-left: 50px;
@@ -137,6 +161,52 @@
 			text-decoration: none;
 			color: currentColor;
 		}
+		/* Dropdown Button */
+.dropbtn {
+  
+  background-color: var(--nav-color);
+
+  color: var(--text-color);
+  padding: 13px;
+  font-weight: bolder;
+  font-size: 16px;
+  border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--footer-bg-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #00847d;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #00918a57;}
 
 		@media screen and (min-width: 768px) {
 			.nav-items {
@@ -164,6 +234,10 @@
 		@media screen and (max-width: 768px) {
 			.dark-mode-btn {
 				order: 0;
+			}
+			.dropbtn{
+				background-color: rgba(0, 0, 0, 0.9);
+				color: white;
 			}
 
 			.burger {
@@ -310,7 +384,7 @@
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				background-color: var(--footer-bg-color);
 				height: 285px;
 				overflow: hidden;
 			}
@@ -335,10 +409,10 @@
 				margin: 8px;
 				align-items: stretch;
 				font-size: 15px;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 			}
 
-			.jsimg {
+			#logo_img2 {
 				width: 70px;
 				height: 70px;
 				object-fit: cover;
@@ -348,7 +422,7 @@
 
 			.footer_title_1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				font-family: oswald;
 			}
 			.footer_title_2 {
@@ -356,12 +430,12 @@
 			}
 
 			.foot a {
-				color: #a674af;
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
 			.fourthfoot {
-				color: #a674af;
+				color: var(--text-color);
 				list-style: none;
 			}
 
@@ -378,7 +452,7 @@
 
 			.link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -391,13 +465,13 @@
 
 		@media screen and (max-width: 786px) {
 			.foot a {
-				color: #a674af;
+				color: var(--text-color);
 			}
 			.footer-con {
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				background-color: var(--footer-bg-color);
 				height: auto;
 				overflow: hidden;
 			}
@@ -429,13 +503,13 @@
 
 			.footer_title_1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
 			.footer_title_2 {
 				font-family: oswald;
-				color: #a674af;
+				color: var(--text-color);
 				text-align: center;
 				padding: 1rem;
 				font-size: 22.5px;
@@ -455,7 +529,7 @@
 
 			.fourthfoot {
 				display: flex;
-				color: #a674af;
+				color: var(--text-color);
 				list-style: none;
 				justify-content: space-between;
 				width: 100%;
@@ -468,7 +542,7 @@
 
 			.fourthfoot ul li p {
 				padding: 0.3rem;
-				color: #a674af;
+				color: var(--text-color);
 				font-family: oswald;
 			}
 
@@ -482,7 +556,7 @@
 
 			.link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: var(--text-color);
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-start;
@@ -494,10 +568,10 @@
 		}
 
 		.link-icons a:hover {
-			color: black;
-			background-color: #fff;
+			color: var(--footer-link-hover-color);
+			background-color: var(--footer-link-hover-background-color);
 			border-radius: 50%;
-			border: 2px solid black;
+			border: 2px solid var(--footer-link-hover-border-color);
 			transition: all 0.35s ease-in-out;
 		}
 
@@ -507,7 +581,7 @@
 
 			row-gap: 30px;
 			padding: 1rem;
-			color: rgb(152, 112, 170);
+			color: var(--text-color);
 			font-size: 0.8rem;
 			font-family: oswald;
 		}
@@ -537,14 +611,14 @@
 			width: 100%;
 			height: 2px;
 			border: 0;
-			background-color: white;
+			background-color: var(--hr-color);
 		}
 	</style>
 	<body>
 		<!-- Header -->
 		<header>
 			<div class="header__container">
-				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo__img" />
+				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
 
 				<button class="dark-mode-btn">
 					<img
@@ -580,6 +654,29 @@
 								class="header__link"
 								>CizUp</a
 							>
+						</li>
+						<li>
+							<div class="dropdown">
+								<button class="dropbtn">
+									Lang
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-globe"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+										/>
+									</svg>
+								</button>
+								<div class="dropdown-content">
+									<a onclick="translateturkish()">Türkçe</a>
+									<a onclick="translateenglish()">English</a>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</nav>
@@ -674,7 +771,11 @@
 				<div class="footer-w">
 					<div class="1foot foot">
 						<div class="p-p">
-							<img src="/img/logo/light-small-logo.jpg" class="jsimg" alt="" />
+							<img
+								src="/img/logo/light-small-logo.jpg"
+								id="logo_img2"
+								alt="logo"
+							/>
 							<h1 class="footer_title_1">Weare8</h1>
 						</div>
 						<hr />
@@ -773,8 +874,8 @@
 		<script>
 			const menuButton = document.querySelector('.burger')
 			const btnDarkMode = document.querySelector('.dark-mode-btn')
-			const themeIcon = document.getElementById('logo__img')
-
+			const themeIcon = document.getElementById('logo_img1')
+			const themeIcon2 = document.getElementById('logo_img2')
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -791,7 +892,8 @@
 			) {
 				btnDarkMode.classList.add('dark-mode-btn--active')
 				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-logo-small.jpg'
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 			}
 
 			// checking dark mode from local storage
@@ -799,10 +901,12 @@
 				btnDarkMode.classList.add('dark-mode-btn--active')
 				document.body.classList.add('dark')
 				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 			} else if (localStorage.getItem('darkMode') === 'light') {
 				btnDarkMode.classList.remove('dark-mode-btn--active')
 				document.body.classList.remove('dark')
 				themeIcon.src = '/img/logo/light-small-logo.jpg'
+				themeIcon2.src = '/img/logo/light-small-logo.jpg'
 			}
 
 			// if system settings change, change the scheme
@@ -817,11 +921,13 @@
 						document.body.classList.add('dark')
 						localStorage.setItem('darkMode', 'dark')
 						themeIcon.src = '/img/logo/dark-small-logo.jpg'
+						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 					} else {
 						btnDarkMode.classList.remove('dark-mode-btn--active')
 						document.body.classList.remove('dark')
 						localStorage.setItem('darkMode', 'light')
 						themeIcon.src = '/img/logo/light-small-logo.jpg'
+						themeIcon2.src = '/img/logo/light-small-logo.jpg'
 					}
 				})
 
@@ -833,9 +939,11 @@
 
 				if (isDark) {
 					themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
 					localStorage.setItem('darkMode', 'dark')
 				} else {
 					themeIcon.src = '/img/logo/light-small-logo.jpg'
+					themeIcon2.src = '/img/logo/light-small-logo.jpg'
 					localStorage.setItem('darkMode', 'light')
 				}
 			}

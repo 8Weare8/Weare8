@@ -18,6 +18,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="footer.css">
 		<style>
+			:root {
+	--black-pure: #000;
+	--black: #171718;
+	--white: #fff;
+	--purple: #5c62ec;
+	--black-header: #171718;
+	--dark-bg: var(--black);
+	--dark-header: var(--black-header);
+	--header-text: var(--white);
+	--accent: var(--purple);
+	--red: red;
+
+	/* Light Mode  */
+	--page-bg: var(--white);
+	--text-color: var(--black);
+
+	--title-1: var(--accent);
+	--nav-bg: var(--white);
+	--project-card-bg: var(--white);
+	--project-card-text: var(--black);
+	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+	--burger: var(--black);
+}
+
+.dark {
+	/* Dark MOde */
+	--page-bg: #252526;
+	--text-color: var(--white);
+	--nav-bg: var(--black-pure);
+	--project-card-bg: var(--black);
+	--project-card-text: var(--white);
+	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+	--burger: var(--white);
+}
 			body._lock {
 				overflow: hidden;
 			}
@@ -327,13 +361,48 @@
 			.content{
 				padding-bottom: 258px;
 			}
+			.dark-mode-btn {
+	order: 9;
+	z-index: 2;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 51px;
+	height: 26px;
+	padding: 5px;
+	border-radius: 50px;
+	background-color: #272727;
+}
+.dark-mode-btn::before {
+	content: '';
+
+	position: absolute;
+	top: 1px;
+	left: 1px;
+
+	display: flex;
+	width: 24px;
+	height: 24px;
+
+	border-radius: 50%;
+	background-color: var(--white);
+
+	transition: left 0.2s ease-in;
+}
+.dark-mode-btn--active::before {
+	left: 26px;
+}
+.dark-mode-btn__icon {
+	position: relative;
+	z-index: 9;
+}
 		</style>
 	</head>
 	<body>
 		<header>
 			<div class="header__container">
 				<img
-					src="/img/jslogo.png"
+					src="./img/jslogo.png"
 					alt="logo"
 					id="logo__img"
 				/>
@@ -343,6 +412,18 @@
 				</div>
 
 				<nav class="menu">
+					<button class="dark-mode-btn">
+						<img
+							src="/Weare8/icons/sun.svg"
+							alt="Light Mode"
+							class="dark-mode-btn__icon"
+						/>
+						<img
+							src="/Weare8/icons/moon.svg"
+							alt="Dark Mode"
+							class="dark-mode-btn__icon"
+						/>
+					</button>
 					<ul>
 						<ul>
 						<li>
@@ -358,18 +439,18 @@
 						  </div>
 						</li>
 						</ul>
-						<li><a href="/index.html">Home</a></li>
-						<li><a href="/html/contact.html">Contact</a></li>
-
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="#">About Us</a></li>
 						<li>
 							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
 						</li>
+
 					</ul>
 				</nav>
 			</div>
 		</header>
 		<main>
-        <img src="/img/photoes/abdullah.jpg" alt="picture" id="mypic">
+        <img src="./img/IMG_20230814_121817.jpg" alt="picture" id="mypic">
             <h2 id="name">Abdullah Sunulu</h2>
             <div id="paragraph">Merhabalar! Ben Abdullah Sunulu 15 yaşındayım, yazılım ve siber güvenlik ile uğraşıyorum. Yazılım hayatım 2015 - 2016 da başladı, ilk zamanlar basit batch programları yazıyordum daha sonra arduino ile tanıştım arduino'dan sonra temel düzeyde C# öğrendim şu an javascript öğreniyorum ve javascript öğrendikten sonra BackEnd developing'e adım atmayı düşünüyorum</div>
             
@@ -440,7 +521,7 @@ function closeForm() {
       const mailto = mail.value
       var msg = document.getElementById("msg");
       const message = msg.value;
-      request.open("POST", "");
+      request.open("POST", "https://discord.com/api/webhooks/1206996140185231360/rgmviBb0uA92BqZOHDQPF5Hes8p4UP4558U2xIqAiVKiMeovzpiChMCMunYDAv1FnKgW");
 
       request.setRequestHeader('Content-type', 'application/json');
 
@@ -456,8 +537,38 @@ function closeForm() {
 
 
 		</script>
-     	</body>
+		 	</body>
 		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="footer.css">
+    <script src="https://kit.fontawesome.com/8b54351f60.js" crossorigin="anonymous"></script>
+	<script
+	async
+	src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+></script>
+<script>
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
+
+	gtag('config', 'G-69T39QB2S5')
+</script>
+</head>
+
+<script src="/Weare8/js/abdulkhamid.js"></script>
+</body>
+</html>
 </html>
 
     <title>Abdullah Sunulu</title>
