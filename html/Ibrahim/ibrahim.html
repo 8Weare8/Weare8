@@ -56,14 +56,15 @@
     background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
 }
 .footer-con{
-	background-color:  #aad9bb;
+	background-color:  white;
+	color: black;
 }
 .foot{
 	
-	color: white;
+	color: black;
 }
 .foot a {
-	color: white;
+	color: black;
 }
 		.baslık {
 			text-decoration: underline;
@@ -112,7 +113,13 @@
 			align-items: center;
 			z-index: 2;
 		}
+#logo {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-right: auto;
 
+}
 		@media screen and (min-width: 768px) {
 			ul {
 				display: flex;
@@ -131,7 +138,7 @@
 			li,
 			a {
 				text-decoration: none;
-				color: white;
+				color: black;
 				transition: transform 0.5s;
 				font-weight: bolder;
 			}
@@ -315,6 +322,7 @@
 			align-items: center;
 			z-index: 2;
 			border-radius: 50%;
+			
 		}
 
 		/* Dark Mode Btn */
@@ -551,9 +559,9 @@
 
 			<div class="header__container">
 			
-			
+			<a href="/index.html">
 			<img  src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
-			
+			</a>
 			
 			
 			<nav class="menu">
@@ -574,14 +582,20 @@
 			>CizUp</a
 			>
 			</li>
-			<li>
-			<div class="dropdown">
-			<button class="dropbtn">
-			Lang
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
-			<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-4.468 12.528c.7-.914 1.683-1.53 2.839-1.666.591-.07 1.21-.08 1.836-.03 1.223.09 2.369.49 3.348 1.138a7.003 7.003 0 0 0 2.209-4.97A7 7 0 0 0 8 1zm5.912 7.275c-.117.88-.384 1.707-.769 2.444a6.978 6.978 0 0 1-2.731 2.806c-.683-.506-1.531-.842-2.463-.976-.734-.105-1.503-.082-2.268.082-1.15.246-2.26.96-3.087 1.879A7 7 0 0 1 1 8a7 7 0 0 1 12.912-.725zM3.15 6.5c-.447 0-.785.373-.746.82.057.683.182 1.354.372 2.007a6.992 6.992 0 0 0 2.22 3.513c.888-.655 1.893-1.085 2.956-1.259a1.986 1.986 0 0 1-.48-.743c-.093-.295-.186-.595-.276-.894-.109-.368-.236-.73-.379-1.086-.148-.37-.318-.724-.505-1.061a7.021 7.021 0 0 0-.853-1.209c-.42-.51-.92-.914-1.479-1.168-.56-.254-1.151-.368-1.75-.368zm4.31 2.45c.25-.556.6-1.059 1.04-1.458.495-.452 1.078-.755 1.705-.855.65-.104 1.324-.085 1.976.08-.31.567-.697 1.105-1.153 1.598-.501.548-1.091.97-1.735 1.226-.645.256-1.337.33-2.024.203-.543-.102-1.075-.335-1.558-.7-.174-.131-.333-.276-.48-.432.146-.243.294-.488.439-.737zm3.65 4.037c.61-.266 1.19-.661 1.711-1.169.52-.508.987-1.101 1.385-1.755-.45.065-.89.158-1.319.275-.481.133-.946.31-1.392.523-.438.208-.857.47-1.253.79-.221.177-.422.376-.616.586.174.166.353.324.538.472.186.149.376.286.57.406zm-.927-2.4c-.102-.368-.23-.72-.38-1.057-.152-.343-.322-.672-.505-.99a6.988 6.988 0 0 0-.849-1.25c-.338-.413-.729-.758-1.155-1.015-.431-.262-.893-.417-1.364-.49-.233-.038-.47-.058-.707-.058.448.09.882.235 1.294.429.428.199.833.452 1.2.75.293.246.57.524.832.823.19.215.368.442.542.676.175.235.338.482.498.735.16.254.315.515.465.783z"/>
-			</svg>
-			</button>
+			<ul>
+				<li>
+					<div class="dropdown">
+					<button class="dropbtn">Lang <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+						<path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+					  </svg></button>
+					<div class="dropdown-content">
+					  <a onclick="translateturkish(); birinci(); ikinci(); üçüncü(); dördüncü(); beşinci(); altıncı(); yedinci(); sekizinci(); dokuzuncu(); onuncu();">Türkçe</a>
+					  <a onclick="translateenglish(); first(); second(); third(); fourth(); fifth(); sixth(); seventh();  eighth(); ninth(); tenth(); ">English</a>
+					</div>
+				  </div>
+				</li>
+				</ul>
+				
 			
 			
 			
@@ -627,8 +641,8 @@
 			onclick="showAdditionalContent()"
 			style="cursor: pointer"
 		>
-			Hoşgeldiniz Ben İbrahim Talha ÜYEL
-			<p class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
+			<h1  id="hg"   style="font-size: xx-large;">Hoşgeldiniz Ben İbrahim Talha ÜYEL</h1>
+			<p  id="tıkla" class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
 		</div>
 		<div id="helloText"></div>
 
@@ -641,8 +655,8 @@
 				</div>
 				<div class="metin">
 					<h1 class="baslık">İbrahim Talha ÜYEL</h1>
-					<h2>İbrahim Talha ÜYEL Kimdir</h2>
-					<p>
+					<div><h2 id="paragraf">İbrahim Talha ÜYEL Kimdir</h2></div>
+					<p id="metin">
 						2008 yılında Nevşehir'de doğdum ve yaşamıma Kayseri'de devam
 						etmekteyim. Ortaokul ve liseyi imamhatip eğitim programında okudum
 						ve hala okumaya devam etmekteyim. Yazılımın hayatıma nereden
@@ -655,11 +669,12 @@
 						sistemden daha verimli olan eğitim programı olan cizup ile devam
 						etmekteyim. Kısaca hayatım böyle ve hala böyle devam etmekte.
 					</p>
-					<h2>Önceden Yaptığım Proje Linkleri</h2>
-					<p><a href="https://motorsitesi.netlify.app/">Motor sitem</a></p>
+					<h2 id="baslık">Önceden Yaptığım Proje Linkleri</h2>
+					<p id="motorsitesi"><a href="https://motorsitesi.netlify.app/">Motor sitem</a></p>
 
-					<h2>Hobilerim</h2>
-					<p>
+					<h2 id="hobi">Hobilerim</h2>
+					
+					<p id="hobimetni">
 						Hobilerim en başında motor sevdam gelmektedir. Sebebini bilmeden
 						çocukluktan beri en büyük hayalimdir ve hala o hayalimdeki motora
 						ulaşmak için çabalıyorum ve çabalamaya devam edeceğim. Diğer çok
@@ -677,7 +692,7 @@
 							>Edit Hesabım</a
 						>.
 					</p>
-					<h2>En Sevdiğim Motorların Güç Sıralaması</h2>
+					<h2 id="güç">En Sevdiğim Motorların Güç Sıralaması</h2>
 					<div id="siralamaSonucu"></div>
 				</div>
 			</div>
@@ -723,8 +738,8 @@
 			</script>
 			<!-- Yaş Hesaplama bölümü -->
 			<div class="metin">
-				<h2>Yaş Hesaplama</h2>
-				<label for="dob">Doğum Tarihi:</label>
+				<h2 id="yaş">Yaş Hesaplama</h2>
+				<label for="dob" id="doğum">Doğum Tarihi:</label>
 				<input type="date" id="dob" />
 				<button onclick="hesaplaYas()">Bu Tuşa Basarak Yaşını Hesapla</button>
 				<p id="sonuc"></p>
@@ -844,6 +859,101 @@
 				</div>
 			</footer>
 		</div>
+		
+		<script>
+function translateturkish(){
+				let texttr = "İbrahim Talha ÜYEL Kimdir"
+				document.getElementById("paragraf").innerHTML = texttr;
+			}
+			function translateenglish(){
+				let texten ="Who is Ibrahm Talha Member ?"
+				document.getElementById("paragraf").innerHTML = texten;
+			}
+function birinci() {
+				let tr = "2008 yılında Nevşehir'de doğdum ve yaşamıma Kayseri'de devam etmekteyim. Ortaokul ve liseyi imamhatip eğitim programında okudum ve hala okumaya devam etmekteyim. Yazılımın hayatıma nereden girdiğine gelecek olursak, ben 4. sınıfta iken dayımın yazılım yapmaya başladığını gördüm ve o an merak salarak yazılım yapmaya başladım ve şuanda hala aktif olarak yazılım yapmaktayım. O zamanlar Arduino ile kod yazmaya başlamıştım. Örnek vermek gerekirse; duvara çarpmayan araba, trafik lambası, ısı sensörü, hareket sensörü vb. Şu anda ise 2023 yılında okulumuza gelerek bize yeni nesil ve normal sistemden daha verimli olan eğitim programı olan cizup ile devam etmekteyim. Kısaca hayatım böyle ve hala böyle devam etmekteyim"
+				document.getElementById("metin").innerHTML = tr;
+			}
+			function first(){
+				let en ="I was born in Nevşehir in 2008 and I continue my life in Kayseri. I attended secondary school and high school in the imam-hatip education program and I still continue to study. As for where software came into my life, when I was in the 4th grade, I saw that my uncle started making software, and at that moment I got curious and started making software, and I am still actively making software. At that time, I started writing code with Arduino. For example; car that does not hit the wall, traffic light, heat sensor, motion sensor, etc. Currently, I am coming to our school in 2023 and continuing with Cizup, which is a new generation and more efficient education program than the normal system. In short, my life is like this and I still continue like this."
+				document.getElementById("metin").innerHTML = en;
+			}		
+			function ikinci() {
+				let tr = "Önceden Yaptığım Proje Linkleri"
+				document.getElementById("baslık").innerHTML = tr;
+			}
+			function second(){
+				let en ="Links to Projects I've Done Before"
+				document.getElementById("baslık").innerHTML = en;
+			}		
+			function üçüncü() {
+				let tr = "Motor sitem"
+				document.getElementById("motorsitesi").innerHTML = tr;
+			}
+			function third(){
+				let en ="My engine system"
+				document.getElementById("motorsitesi").innerHTML = en;
+			}	
+			function dördüncü() {
+				let tr = "Hobilerim"
+				document.getElementById("hobi").innerHTML = tr;
+			}
+			function fourth(){
+				let en ="My hobbies"
+				document.getElementById("hobi").innerHTML = en;
+			}	
+			function beşinci() {
+				let tr = "Hobilerim en başında motor sevdam gelmektedir. Sebebini bilmeden çocukluktan beri en büyük hayalimdir ve hala o hayalimdeki motora ulaşmak için çabalıyorum ve çabalamaya devam edeceğim. Diğer çok sevdiğim hobim ise bisiklet sürmek ve kayak yapmak. Eğer bisiklet ile alakalı videolarımı görmek isterseniz bu linke tıklayabilirsiniz => Instagram hesabım. Bunların yanında Instagram platformunda edit sayfam var ve devamlı olarak orada motor editi yapıyorum. Oranın linki burada => Edit Hesabım."
+				document.getElementById("hobimetni").innerHTML = tr;
+			}
+			function fifth(){
+				let en ="My first hobby is my love of motorcycles. Without knowing the reason, it has been my biggest dream since childhood and I am still trying and will continue to strive to achieve that dream engine. My other favorite hobbies are cycling and skiing. If you want to see my cycling related videos, you can click on this link => My Instagram account. In addition, I have an edit page on the Instagram platform and I constantly edit engines there. The link is here => Edit My Account."
+				document.getElementById("hobimetni").innerHTML = en;
+			}	
+	
+			function altıncı() {
+				let tr = "En Sevdiğim Motorların Güç Sıralaması"
+				document.getElementById("güç").innerHTML = tr;
+			}
+			function sixth(){
+				let en ="Power Ranking of My Favorite Engines"
+				document.getElementById("güç").innerHTML = en;
+			}
+			function yedinci() {
+				let tr = "Yaş Hesaplama"
+				document.getElementById("yaş").innerHTML = tr;
+			}
+			function seventh(){
+				let en ="Age Calculation"
+				document.getElementById("yaş").innerHTML = en;
+			}
+			function sekizinci() {
+				let tr = "Doğum Tarihi:"
+				document.getElementById("doğum").innerHTML = tr;
+			}
+			function eighth(){
+				let en ="Date of birth:"
+				document.getElementById("doğum").innerHTML = en;
+			}
+		
+			function dokuzuncu() {
+				let tr = "Hoşgeldiniz Ben İbrahim Talha ÜYEL"
+				document.getElementById("hg").innerHTML = tr;
+			}
+			function ninth(){
+				let en ="Welcome, I am Ibrahim Talha Üyel"
+				document.getElementById("hg").innerHTML = en;
+			}
+		
+			function onuncu() {
+				let tr = "Bu sayfayı geçmek için yazıya tıklayabilirsiniz"
+				document.getElementById("tıkla").innerHTML = tr;
+			}
+			function tenth(){
+				let en ="You can click on the article to skip this page."
+				document.getElementById("tıkla").innerHTML = en;
+			}
+		</script>
+	
 		<script>
 			
 			
