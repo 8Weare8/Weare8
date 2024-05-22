@@ -21,6 +21,11 @@
 			rel="stylesheet"
 		/>
 		<link
+		href="'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap'"
+		rel="stylesheet"
+		>
+		
+		<link
 			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 			rel="stylesheet"
 		/>
@@ -61,7 +66,7 @@
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				
 				height: 285px;
 				overflow: hidden;
 			}
@@ -80,13 +85,13 @@
 				padding: 8px;
 			}
 
-			#mycss .foot {
+			 .foot {
 				display: flex;
 				flex-direction: column;
 				margin: 8px;
 				align-items: stretch;
 				font-size: 15px;
-				color: rgb(152, 112, 170);
+				color: black;
 			}
 
 			#mycss .jsimg {
@@ -98,15 +103,15 @@
 
 			#mycss h1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: black;
 			}
 
-			#mycss .foot a {
-				color: #a674af;
+			 .foot a {
+				color: black;
 			}
 
-			#mycss .fourthfoot {
-				color: #a674af;
+			 .fourthfoot {
+				color: black;
 				list-style: none;
 			}
 
@@ -120,9 +125,9 @@
 				padding: 0.4rem;
 			}
 
-			#mycss .link-icons a {
+			 .link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: black;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -134,15 +139,15 @@
 		}
 
 		@media screen and (max-width: 786px) {
-			#mycss .foot a {
-				color: #a674af;
+			 .foot a {
+				color: black;
 			}
 
-			#mycss .footer-con {
+			 .footer-con {
 				padding: 1rem;
 				width: 100%;
 				margin: auto;
-				background-color: rgb(22, 0, 36);
+				background-color: white;
 				height: auto;
 				overflow: hidden;
 			}
@@ -174,12 +179,12 @@
 
 			#mycss h1 {
 				font-size: 2.5rem;
-				color: rgb(152, 112, 170);
+				color: black;
 			}
 
 			#mycss h2 {
 				font-family: oswald;
-				color: #a674af;
+				color: black;
 				text-align: center;
 				padding: 1rem;
 			}
@@ -199,9 +204,9 @@
 				padding: 3px;
 			}
 
-			#mycss .fourthfoot {
+			 .fourthfoot {
 				display: flex;
-				color: #a674af;
+				color: black;
 				list-style: none;
 				justify-content: space-between;
 				width: 100%;
@@ -212,9 +217,9 @@
 				padding: 1rem;
 			}
 
-			#mycss .fourthfoot ul li p {
+			 .fourthfoot ul li p {
 				padding: 0.3rem;
-				color: #a674af;
+				color: black;
 			}
 
 			#mycss .link-icons {
@@ -227,7 +232,7 @@
 
 			#mycss .link-icons a {
 				padding: 0.5rem;
-				color: rgb(152, 112, 170);
+				color: black;
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-start;
@@ -248,7 +253,7 @@
 
 		#mycss .foot ul {
 			padding: 1rem;
-			color: rgb(152, 112, 170);
+			color: black;
 			font-size: 0.8rem;
 		}
 
@@ -270,6 +275,13 @@
 		#mycss h2 {
 			font-family: oswald;
 		}
+.dropbtn {
+  font-weight: bolder;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 15px;
+}
 
 		.container {
 			margin-top: 55px;
@@ -344,58 +356,287 @@
 		body._lock {
 			overflow: hidden;
 		}
+	
+
+	
+		.proje {
+			text-align: center;
+		}
+		#resim {
+			margin-top: 5px;
+			border-radius: 10px;
+			transition: transform 0.5s;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+		#resim:hover {
+			transform: translateY(-10px);
+		}
+		#boykilohesap {
+			max-width: 400px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: rgb(209, 207, 207);
+			border-radius: 5px;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		#boykilohesap h1 {
+			text-align: center;
+		}
+
+		#boykilohesap div {
+			margin-bottom: 10px;
+		}
+
+		#boykilohesap label {
+			display: block;
+			font-weight: bold;
+		}
+
+		#boykilohesap input {
+			width: 100%;
+			padding: 8px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		#boykilohesap button {
+			width: 100%;
+			padding: 10px;
+			background-color: rgb(209, 207, 207);
+			color: black;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		#boykilohesap button:hover {
+			background-color: rgb(133, 131, 131);
+		}
+
+		#boykilohesap #sonuc {
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			text-align: center;
+		}
+		@media screen and (max-width: 700px) {
+			.hobiler {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.hobi {
+				width: 60%;
+				max-width: 700px;
+				margin-bottom: 20px;
+			}
+			#resim {
+				width: 50%;
+				max-width: 700px;
+			}
+		}
+		#baş {
+			text-align: center;
+			background-color: #ccc;
+			border-radius: 10px;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		nav.menu ul li a {
+			text-decoration: none;
+		}
+		@media screen and (max-width: 768px) {
+			#baş {
+				text-align: center;
+				background-color: #ccc;
+				border-radius: 10px;
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+		}
+
+
+		:root {
+			--text-color: black;
+			--bg-color: white;
+			--footer-bg-color:white;
+			--menu-btn-color: black;
+			--nav-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: white;
+			--footer-link-hover-background-color: black;
+			--footer-link-hover-border-color: black;
+			
+		}
+		button,
+		button:active,
+		button:focus {
+			border: none;
+		}
+
+		body {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-color: var(--bg-color);
+		}
+
+		body._lock {
+			overflow: hidden;
+		}
+
+		.dark {
+			--text-color: white;
+			--bg-color: #252526;
+			--footer-bg-color: black;
+			--nav-color: black;
+			--menu-btn-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: black;
+			--footer-link-hover-background-color: white;
+			--footer-link-hover-border-color: white;
+
+			
+
+		}
 		header {
-			position: fixed;
-			background-color: white;
+			position: relative;
+			background-color: var(--nav-color);
+
 			width: 100%;
 			top: 0;
 			left: 0;
 			height: 55px;
 			z-index: 10;
+			font-family: 'DM Sans', sans-serif;
 		}
 
-		.header__container {
-			margin-right: 50px;
+		 .header__container {
+			margin-right: 20px;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-end;
 			height: 55px;
+			column-gap: 30px;
 		}
 
-		#logo__img {
-			width: 50px;
-			height: 50px;
+		#logo_img1 {
+			width: 55px;
+			height: 55px;
 			margin-left: 50px;
+			margin-right: auto;
 			align-items: center;
 			z-index: 2;
+			border-radius: 50%;
+			
+		}
+
+		/* Dark Mode Btn */
+		.dark-mode-btn {
+			order: 9;
+			z-index: 2;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			width: 51px;
+			height: 26px;
+			padding: 5px;
+			border-radius: 50px;
+			background-color: #272727;
+		}
+		.dark-mode-btn::before {
+			content: '';
+
+			position: absolute;
+			top: 1px;
+			left: 1px;
+
+			display: flex;
+			width: 24px;
+			height: 24px;
+
+			border-radius: 50%;
+			background-color: white;
+
+			transition: left 0.2s ease-in;
+		}
+		.dark-mode-btn--active::before {
+			left: 26px;
+		}
+		.dark-mode-btn__icon {
+			position: relative;
+			z-index: 9;
+		}
+
+		 a:hover {
+			text-decoration: none;
+			color: currentColor;
 		}
 
 		@media screen and (min-width: 768px) {
-			ul {
+			.nav-items {
 				display: flex;
 				gap: 50px;
 				list-style: none;
 				align-items: center;
+				padding: 0px 0px 0px 0px;
+				margin: 0px 0px 0px 0px;
+				color: var(--text-color);
+
 			}
-			li,
-			a {
-				text-decoration: none;
-				transition: transform 0.5s;
+
+			.header__list,
+			.header__link {
+				color: var(--text-color);
 				font-weight: bolder;
+				transition: transform 0.5s;
 			}
 			#cz {
 				color: red;
 			}
-			li:hover {
+			.header__list:hover {
 				transform: translateY(-10px);
 			}
 		}
-		nav.menu ul li a {
-			color: black;
-		}
+		.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
 		@media screen and (max-width: 768px) {
-			nav.menu ul li a {
+			
+
+			.dropdown{
+				margin: 0;
+			}
+
+			#sarkan{
+   color: black;
+}
+#sarkan2{
+	color:black
+}
+
+			#sarkan:hover{
+   color: white;
+}
+#sarkan2:hover{
+	color:white
+}
+
+
+			.dropbtn{
 				color: white;
+				font-size: 20px;
+				font-weight: 50;
+				
+				
 			}
 
 			.burger {
@@ -415,7 +656,7 @@
 				height: 10%;
 				width: 100%;
 				transition: all 0.3s ease 0s;
-				background-color: black;
+				background-color: var(--menu-btn-color);
 			}
 
 			.burger::before,
@@ -471,154 +712,420 @@
 				position: fixed;
 				width: 100%;
 				top: 0;
-
 				left: 0;
 				height: 50px;
 			}
 
-			ul {
+			.nav-items {
 				font-size: 24px;
 				position: relative;
 				list-style: none;
 				padding-left: 0px;
 			}
 
-			li,
-			a {
-				color: #fff;
+			.header__list,
+			.header__link {
+				text-decoration: none;
+				color: white;
 				margin-bottom: 50px;
 				transition: transform 0.5s;
-				text-decoration: none;
 			}
 			#cz {
 				color: red;
 			}
-			li:hover {
+			.header__list:hover {
 				transform: translateY(-10px);
 			}
 		}
-		.proje {
-			text-align: center;
+/* footer styles */
+footer {
+			margin-top: auto;
 		}
-		#resim {
-			margin-top: 5px;
-			border-radius: 10px;
-			transition: transform 0.5s;
-			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-		}
-		#resim:hover {
-			transform: translateY(-10px);
-		}
-		#boykilohesap {
-			max-width: 400px;
-			margin: 50px auto;
-			padding: 20px;
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-		}
+		@media screen and (min-width: 786px) {
+			.both-foot {
+				display: flex;
+			}
 
-		#boykilohesap h1 {
-			text-align: center;
-		}
+			.footer-con {
+				padding: 1rem;
+				width: 100%;
+				margin: auto;
+				background-color: var(--footer-bg-color);
+				height: 285px;
+				overflow: hidden;
+			}
 
-		#boykilohesap div {
-			margin-bottom: 10px;
-		}
+			.footer-w {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+			}
+			.footer_list {
+				font-family: oswald;
+			}
 
-		#boykilohesap label {
-			display: block;
-			font-weight: bold;
-		}
+			.footer_li_p {
+				padding: 8px;
+				font-family: oswald;
+			}
 
-		#boykilohesap input {
-			width: 100%;
-			padding: 8px;
-			border-radius: 5px;
-			border: 1px solid #ccc;
-		}
-
-		#boykilohesap button {
-			width: 100%;
-			padding: 10px;
-			background-color: rgb(209, 207, 207);
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-
-		#boykilohesap button:hover {
-			background-color: rgb(133, 131, 131);
-		}
-
-		#boykilohesap #sonuc {
-			margin-top: 20px;
-			padding: 10px;
-			border-radius: 5px;
-			text-align: center;
-		}
-		@media screen and (max-width: 700px) {
-			.hobiler {
+			.foot {
 				display: flex;
 				flex-direction: column;
+				margin: 8px;
+				align-items: stretch;
+				font-size: 15px;
+				color: var(--text-color);
+			}
+
+			#logo_img2 {
+				width: 70px;
+				height: 70px;
+				object-fit: cover;
+				margin-left: 1rem;
+				border-radius: 50%;
+			}
+
+			.footer_title_1 {
+				font-size: 2.5rem;
+				color: var(--text-color);
+				font-family: oswald;
+			}
+			.footer_title_2 {
+				font-size: 22.5px;
+			}
+
+			.foot a {
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.fourthfoot {
+				color: var(--text-color);
+				list-style: none;
+			}
+
+			.fourthfoot ul {
+				padding: 1rem;
+				font-family: oswald;
+			}
+
+			.link-icons {
+				display: flex;
+				justify-content: center;
+				padding: 0.4rem;
+			}
+
+			.link-icons a {
+				padding: 0.5rem;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-size: 1.5rem;
+				border-radius: 50%;
+				text-decoration: none;
+			}
+		}
+
+		@media screen and (max-width: 786px) {
+			.foot a {
+				color: var(--text-color);
+			}
+			.footer-con {
+				padding: 1rem;
+				width: 100%;
+				margin: auto;
+				background-color: var(--footer-bg-color);
+				height: auto;
+				overflow: hidden;
+			}
+
+			.footer-w {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
 				align-items: center;
 			}
-			.hobi {
-				width: 60%;
-				max-width: 700px;
-				margin-bottom: 20px;
+
+			.foot {
+				width: 100%;
 			}
-			#resim {
-				width: 50%;
-				max-width: 700px;
+
+			.foot .p-p {
+				display: flex;
+				justify-content: space-between;
+				padding: 1rem;
 			}
-		}
-		#baş {
-			text-align: center;
-			background-color: #ccc;
-			border-radius: 10px;
-			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-			margin-top: 15px;
-			margin-bottom: 15px;
+
+			.p-p img {
+				width: 50px;
+				height: 50px;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+
+			.footer_title_1 {
+				font-size: 2.5rem;
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.footer_title_2 {
+				font-family: oswald;
+				color: var(--text-color);
+				text-align: center;
+				padding: 1rem;
+				font-size: 22.5px;
+			}
+
+			.both-foot {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				width: 100%;
+			}
+
+			.footer_list_p {
+				padding: 3px;
+				font-family: oswald;
+			}
+
+			.fourthfoot {
+				display: flex;
+				color: var(--text-color);
+				list-style: none;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			.fourthfoot ul {
+				list-style: none;
+				padding: 1rem;
+			}
+
+			.fourthfoot ul li p {
+				padding: 0.3rem;
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.link-icons {
+				display: flex;
+
+				justify-content: flex-start;
+				align-items: flex-start;
+				padding: 0.4rem;
+			}
+
+			.link-icons a {
+				padding: 0.5rem;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 1.5rem;
+				border-radius: 50%;
+				text-decoration: none;
+			}
 		}
 
-		nav.menu ul li a {
+		.link-icons a:hover {
+			color: var(--footer-link-hover-color);
+			background-color: var(--footer-link-hover-background-color);
+			border-radius: 50%;
+			border: 2px solid var(--footer-link-hover-border-color);
+			transition: all 0.35s ease-in-out;
+		}
+
+		.foot ul {
+			display: flex;
+			flex-direction: column;
+
+			row-gap: 30px;
+			padding: 1rem;
+			color: var(--text-color);
+			font-size: 0.8rem;
+			font-family: oswald;
+		}
+
+		.foot ul li a p {
+			font-family: oswald;
+		}
+
+		.foot .user-foot {
+			display: flex;
 			text-decoration: none;
+			line-height: 2;
+			align-items: stretch;
 		}
-		@media screen and (max-width: 768px) {
-			#baş {
-				text-align: center;
-				background-color: #ccc;
-				border-radius: 10px;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-				margin-top: 15px;
-				margin-bottom: 15px;
-			}
+
+		.foot .user-foot i {
+			padding: 0.5rem;
 		}
+
+		.footer_title_2 {
+			font-family: oswald;
+		}
+		li {
+			list-style: none;
+		}
+		hr {
+			width: 100%;
+			height: 2px;
+			border: 0;
+			background-color: var(--hr-color);
+		}
+
+		
+
+/* Dropdown Button */
+
+/* The container <div> - needed to position the dropdown content */
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: black;
+	
+	
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+.dark{
+	--footer-bg-color: black;
+}
+.dark .dropbtn {
+    color: white;
+}
+.dark .dropdown-content a {
+	color: black;
+}
+#sarkan:hover{
+   color: white;
+}
+#sarkan2:hover{
+	color:white
+}
+
+#logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Align the logo vertically in the container */
+    margin-right: auto; /* Push the logo to the left */
+}
+
 	</style>
 	<body>
-		<header style="display: none">
-			<div class="header__container">
-				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo__img" />
 
-				<div class="burger">
-					<span></span>
-				</div>
+		<header style="display: none;">			
+            <div class="header__container">
+				
+                <div id="logo"><a href="/index.html"><img  src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" /></a></div>
 
-				<nav class="menu">
-					<ul>
-						<li><a href="/index.html">Home</a></li>
+              
 
-						<li><a href="../contact.html">Contact</a></li>
-						<li>
-							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
+                <button class="dark-mode-btn">
+                    <img
+                        src="/icons/sun.svg"
+                        alt="Light Mode"
+                        class="dark-mode-btnicon"
+                    />
+                    <img
+                        src="/icons/moon.svg"
+                        alt="Dark Mode"
+                        class="dark-mode-btnicon"
+                    />
+                </button>
+
+                <div class="burger">
+                    <span></span>
+                </div>
+
+                <nav class="menu">
+					
+                    <ul class="nav-items">
+                        <li class="header__list">
+                            <a href="/index.html" class="header__link proje-8">Ev</a>
+                        </li>
+
+                        <li class="header__list">
+                            <a href="../contact.html" class="header__link proje-9">İletişim</a>
+                        </li>
+                        <li class="header__list">
+                            <a
+                                href="https://www.cizup.dev/"
+                                target="_blank"
+                                id="cz"
+                                class="header__link"
+                                >CizUp</a
+                            >
+                        </li>
+						<li class="header__list">
+							<div class="dropdown">
+								<button class="dropbtn proje-10">
+									Dil
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-globe"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+										/>
+									</svg>
+								</button>
+								<div class="dropdown-content">
+									<a id="sarkan" onclick="translateturkish(); türkçe(); türkçe1(); türkçe2(); türkçe3(); türkçe4(); türkçe5(); türkçe6(); türkçe7(); türkçe8(); türkçe9(); türkçe10(); ">Türkçe</a>
+									<a id="sarkan2" onclick="translateenglish(); ingilizce(); ingilizce1(); ingilizce2(); ingilizce3(); ingilizce4(); ingilizce5(); ingilizce6(); ingilizce7(); ingilizce8(); ingilizce9(); ingilizce10();">English</a>
+								</div>
+							</div>
 						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+                    </ul>
+                </nav>
 
+
+				
+
+					
+
+
+
+				
+            </div>
+
+			
+
+		
+
+        </header>
 		<div id="adım1">
 			<label class="ad" for="isim"><strong>Adınızı girin:</strong></label>
 			<input class="button" type="text" id="isim" />
@@ -657,6 +1164,7 @@
 				>
 			</div>
 			<div class="proje">
+				
 				<h3
 					style="
 						text-align: center;
@@ -665,17 +1173,18 @@
 						box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 					"
 				>
-					Projelerim
+					<p class="proje-2">Projelerim</p>
 				</h3>
+				
 				<a href="./benmim projem/index.html"
 					><img
 						id="resim"
-						src="https://cdn.discordapp.com/attachments/1025085922066305075/1207738848722026526/Ekran_goruntusu_2024-02-15_201440.png?ex=65e0bd74&is=65ce4874&hm=80770ec96eebb03ffcfc127087e69d872ed19449e9b36f3285e410ce41f4280e&"
+						src="../Talha/img/Ekran_goruntusu_2024-02-15_201440.png"
 						width="20%"
 				/></a>
 			</div>
 			<div id="ort">
-				<h3 id="baş">Hobilerim</h3>
+				<h3 id="baş"><p class="proje-3">Hobilerim</p></h3>
 			</div>
 			<div class="hobiler">
 				<img
@@ -696,109 +1205,128 @@
 			</div>
 
 			<div id="boykilohesap">
-				<h1>Boy Kilo İndeksi Hesaplayıcı</h1>
+				<h1><p class="proje-4">Boy Kilo İndeksi Hesaplayıcı</p></h1>
 				<div>
-					<label for="boy">Boy (cm):</label>
+					<label for="boy"><p class="proje-5">Boy (cm):</p></label>
 					<input type="number" id="boy" placeholder="Örn: 170" />
 				</div>
 				<div>
-					<label for="kilo">Kilo (kg):</label>
+					<label for="kilo"><p class="proje-6">Kilo (kg):</p></label>
 					<input type="number" id="kilo" placeholder="Örn: 70" />
 				</div>
-				<button id="hesapla">Hesapla</button>
+				<button id="hesapla"><p class="proje-7">Hesapla</p></button>
 				<div id="sonuc"></div>
 			</div>
 		</div>
-		<footer id="mycss" style="display: none">
-			<div class="footer-con">
-				<div class="footer-w">
-					<div class="1foot foot">
-						<div class="p-p">
-							<img src="/img/logo/light-small-logo.jpg" class="jsimg" alt="" />
-							<h1>Cizup</h1>
+		<span class="darkmode-ignore"><footer id="mycss" style="display: none">
+			<footer>
+				<div class="footer-con">
+					<div class="footer-w">
+						<div class="1foot foot">
+							<div class="p-p">
+								<img
+									src="/img/logo/light-small-logo.jpg"
+									id="logo_img2"
+									alt="logo"
+								/>
+								<h1 class="footer_title_1">Weare8</h1>
+							</div>
+							<hr />
+							<h2 class="footer_title_2 proje-12>"Senin hayaliin, benim tutkum"</h2>
 						</div>
-						<hr />
-						<h2>"Your dream, My passion"</h2>
-					</div>
-
-					<div class="both-foot">
-						<div class="foot">
+	
+						<div class="both-foot">
+							<div class="foot">
+								<ul class="footer_list">
+									<li>
+										<a
+											class="footer_li_a"
+											href="./html/Abdulkhamid/abdulkhamidProfile.html"
+											>Abdulkhamid</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_a" href="./html/Talha/Talha.html"
+											>Talha</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_a" href="./html/Minhazul/minhaz.html"
+											>Minhaz</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_a" href="./html/Ibrahim/ibrahim.html"
+											>Ibrahim</a
+										>
+									</li>
+								</ul>
+							</div>
+	
+							<div class="foot">
+								<ul class="footer_list">
+									<li>
+										<a class="footer_li_a" href="./html/Wanna/wanna.html"
+											>Wanna</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_a" href="./html/Abdullah/abdullah.html"
+											>Abdullah Sunulu</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_a" href="./html/Mubarak/mubarak.html"
+											>Mubarak</a
+										>
+									</li>
+									<li>
+										<a
+											class="footer_li_a"
+											href="./html/Abdulsaid/saıdadyazpro.html"
+											>Absaid</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+	
+						<div class="fourthfoot">
 							<ul class="footer_list">
-								<li>
-									<a
-										class="footer_li_p"
-										href="/html/Abdulkhamid/abdulkhamidProfile.html"
-										>Abdulkhamid</a
-									>
-								</li>
-								<li>
-									<a class="footer_li_p" href="/html/Talha/Talha.html">Talha</a>
-								</li>
-								<li>
-									<a class="footer_li_p" href="/html/Minhazul/minhaz.html"
-										>Minhaz</a
-									>
-								</li>
-								<li>
-									<a class="footer_li_p" href="/html/Ibrahim/ibrahim.html"
-										>Ibrahim</a
-									>
-								</li>
+								<li><p class="footer_li_p proje-11">telefon :03522213729</p></li>
+								<li><p class="footer_li_p">email : support@cizup.dev</p></li>
+								<li><p class="footer_li_p">link : https://cizup.dev</p></li>
 							</ul>
-						</div>
-
-						<div class="foot">
-							<ul class="footer_list">
+							<div class="link-icons">
 								<li>
-									<a class="footer_li_p" href="/html/Wanna/wanna.html">Wanna</a>
+									<a href="support@cizup.dev" class="footer_li_a"
+										><i class="bx bx-envelope"></i
+									></a>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Abdullah/abdullah.html"
-										>Abdullah Sunulu</a
-									>
+									<a href="03522213729" class="footer_li_a"
+										><i class="bx bx-phone"></i
+									></a>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Mubarak/mubarak.html"
-										>Mubarak</a
-									>
+									<a href="https://cizup.dev" class="footer_li_a"
+										><i class="bx bx-link-alt"></i
+									></a>
 								</li>
 								<li>
-									<a
-										class="footer_li_p"
-										href="/html/Abdulsaid/saıdadyazpro.html"
-										>Absaid</a
-									>
+									<a href="https://github.com/cizup" class="footer_li_a"
+										><i class="bx bxl-github"></i
+									></a>
 								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="fourthfoot">
-						<ul>
-							<li><p>telephone :03522213729</p></li>
-							<li><p>email : support@cizup.dev</p></li>
-							<li><p>link : https://cizup.dev</p></li>
-						</ul>
-						<div class="link-icons">
-							<li>
-								<a href="support@cizup.dev"><i class="bx bx-envelope"></i></a>
-							</li>
-							<li>
-								<a href="03522213729"><i class="bx bx-phone"></i></a>
-							</li>
-							<li>
-								<a href="https://cizup.dev"><i class="bx bx-link-alt"></i></a>
-							</li>
-							<li>
-								<a href="https://github.com/cizup"
-									><i class="bx bxl-github"></i
-								></a>
-							</li>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+	
+	</span>
+		<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
 		<script>
 			document.getElementById('hesapla').addEventListener('click', function () {
 				var boy = parseFloat(document.getElementById('boy').value)
@@ -847,7 +1375,13 @@
 				document.querySelector('header').style.display = 'block'
 				document.querySelector('#mycss').style.display = 'block'
 			}
+
+
+
 			const menuButton = document.querySelector('.burger')
+			const btnDarkMode = document.querySelector('.dark-mode-btn')
+			const themeIcon = document.getElementById('logo_img1')
+			const themeIcon2 = document.getElementById('logo_img2')
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -856,6 +1390,196 @@
 					menuBody.classList.toggle('_active')
 				})
 			}
+
+			// cheking dark mode from system settings
+			if (
+				window.matchMedia &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches
+			) {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+			}
+
+			// checking dark mode from local storage
+			if (localStorage.getItem('darkMode') === 'dark') {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+			} else if (localStorage.getItem('darkMode') === 'light') {
+				btnDarkMode.classList.remove('dark-mode-btn--active')
+				document.body.classList.remove('dark')
+				themeIcon.src = '/img/logo/light-small-logo.jpg'
+				themeIcon2.src = '/img/logo/light-small-logo.jpg'
+			}
+
+			// if system settings change, change the scheme
+
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) => {
+					const newColorScheme = event.matches ? 'dark' : 'light'
+
+					if (newColorScheme === 'dark') {
+						btnDarkMode.classList.add('dark-mode-btn--active')
+						document.body.classList.add('dark')
+						localStorage.setItem('darkMode', 'dark')
+						themeIcon.src = '/img/logo/dark-small-logo.jpg'
+						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+					} else {
+						btnDarkMode.classList.remove('dark-mode-btn--active')
+						document.body.classList.remove('dark')
+						localStorage.setItem('darkMode', 'light')
+						themeIcon.src = '/img/logo/light-small-logo.jpg'
+						themeIcon2.src = '/img/logo/light-small-logo.jpg'
+					}
+				})
+
+			// turn on dark mode when button is clicked
+
+			btnDarkMode.onclick = function () {
+				btnDarkMode.classList.toggle('dark-mode-btn--active')
+				const isDark = document.body.classList.toggle('dark')
+
+				if (isDark) {
+					themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+					localStorage.setItem('darkMode', 'dark')
+				} else {
+					themeIcon.src = '/img/logo/light-small-logo.jpg'
+					themeIcon2.src = '/img/logo/light-small-logo.jpg'
+					localStorage.setItem('darkMode', 'light')
+				}
+			}
+
+			
 		</script>
+<script>
+//translate
+function translateturkish() {
+    let texttr = "ben Talha Bahçıvan, 15 yaşında bir yazılım öğrencisiyim. Kariyerime 2018'de başladım. İlk olarak Arduino Uno kartlarıyla robot yaptım. Robot yapmaktan çok kodlamayı sevdiğimi fark ettim. İlk kodlama serüvenim 2020'de başladı. Kendi çapımda eski bir bilgisayarla HTML derslerine başladım. HTML'de belli bir noktaya geldikten sonra CSS'e ucundan bakınca anladım ki kod yazmak o kadar da kolay değil. Artık tek başıma yapamıyordum.Bir öğretmene ihtiyacım vardı, öylelikle 3 yıl kadar kod yazamadım.Bu sırada yeni bir bilgisayar aldım. Lisede Cizup isimli bir sistemle tanıştım ve bu sistemin içine ben de girdim. Bir yol bulmuş oldum. Böylelikle kendime ve şu anda o yoldaki basamakları adım adım ve istikrarlı bir şekilde tırmanıyorum. Tırmanmaya da devam edeceğim."
+    document.querySelector('.paragraf').innerHTML = texttr;
+
+}
+
+function translateenglish() {
+    let texten = "Hello, I am Talha Bahçıvan, a 15 year old I am a software student. I started my career in 2018. Firstly I made a robot with Arduino Uno boards. Coding rather than building robots I realized that I love it. My first coding adventure started in 2020. Own I started HTML lessons with an old computer of my size. in HTML After reaching a certain point and looking at CSS from the bottom up, I realized that Writing code is not that easy. I couldn't do it alone anymore.I needed a teacher, so I couldn't code for about 3 years.Meanwhile, I bought a new computer. In high school, there was a girl named Cizup.I met the system and I got into this system too. found a way became. In this way, I can tell myself and the steps on that path right now, step by step.and I climb steadily. Keep climbing I will make."
+    document.querySelector('.paragraf').innerHTML = texten;
+}
+
+function türkçe() {
+    let texttr = "Projelerim"
+    document.querySelector('.proje-2').innerHTML = texttr;
+}
+
+function ingilizce() {
+    let texten = "my projects"
+    document.querySelector('.proje-2').innerHTML = texten;
+}
+
+function türkçe1() {
+    let texttr = "Hobilerim"
+    document.querySelector('.proje-3').innerHTML = texttr;
+}
+
+function ingilizce1() {
+    let texten = "my hobbies"
+    document.querySelector('.proje-3').innerHTML = texten;
+}
+function türkçe2() {
+    let texttr = "Boy Kilo İndeksi Hesaplayıcı"
+    document.querySelector('.proje-4').innerHTML = texttr;
+}
+
+function ingilizce2() {
+    let texten = "Height Weight Index Calculator"
+    document.querySelector('.proje-4').innerHTML = texten;
+}
+
+function türkçe3() {
+    let texttr = "Boy"
+    document.querySelector('.proje-5').innerHTML = texttr;
+}
+
+function ingilizce3() {
+    let texten = "Height"
+    document.querySelector('.proje-5').innerHTML = texten;
+}
+function türkçe4() {
+    let texttr = "Kilo"
+    document.querySelector('.proje-6').innerHTML = texttr;
+}
+
+function ingilizce4() {
+    let texten = "Weight"
+    document.querySelector('.proje-6').innerHTML = texten;
+}
+
+function türkçe5() {
+    let texttr = "Hesapla"
+    document.querySelector('.proje-7').innerHTML = texttr;
+}
+
+function ingilizce5() {
+    let texten = "Calculate"
+    document.querySelector('.proje-7').innerHTML = texten;
+}
+
+function türkçe6() {
+    let texttr = "Ev"
+    document.querySelector('.proje-8').innerHTML = texttr;
+}
+
+function ingilizce6() {
+    let texten = "Home"
+    document.querySelector('.proje-8').innerHTML = texten;
+}
+function türkçe7() {
+    let texttr = "İletişim"
+    document.querySelector('.proje-9').innerHTML = texttr;
+}
+
+function ingilizce7() {
+    let texten = "Content"
+    document.querySelector('.proje-9').innerHTML = texten;
+}
+function türkçe8() {
+    let texttr = "Dil"
+    document.querySelector('.proje-10').innerHTML = texttr;
+}
+
+function ingilizce8() {
+    let texten = "Lang"
+    document.querySelector('.proje-10').innerHTML = texten;
+}
+
+function türkçe9() {
+    let texttr = "Telefon"
+    document.querySelector('.proje-11').innerHTML = texttr;
+}
+
+function ingilizce9() {
+    let texten = "Telephone"
+    document.querySelector('.proje-11').innerHTML = texten;
+}
+
+function türkçe10() {
+    let texttr = "Senin hayaliin, benim tutkum"
+    document.querySelector('.proje-12').innerHTML = texttr;
+}
+
+function ingilizce10() {
+    let texten = "Your dream, My passion"
+    document.querySelector('.proje-12').innerHTML = texten;
+}
+
+
+</script>
+
+
+
+
 	</body>
 </html>
