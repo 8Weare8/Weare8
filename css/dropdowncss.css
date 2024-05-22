@@ -1,9 +1,10 @@
 /* Dropdown Button */
 .dropbtn {
+  display: flex;
   
   background-color: var(--bg-color);
-
   color: var(--text-color);
+  align-items: center;
   padding: 13px;
   font-weight: bolder;
   font-size: 16px;
