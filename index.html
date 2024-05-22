@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Profiles</title>
+		<link rel="stylesheet" href="/css/reset.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			rel="stylesheet"
@@ -61,11 +62,11 @@
 			--footer-link-hover-background-color: black;
 			--footer-link-hover-border-color: black;
 		}
-		button,
+		/* button,
 		button:active,
 		button:focus {
 			border: none;
-		}
+		} */
 
 		body {
 			min-height: 100vh;
@@ -423,9 +424,13 @@
 				font-size: 2.5rem;
 				color: var(--text-color);
 				font-family: oswald;
+				font-weight: inherit;
+				margin: 0;
 			}
 			.footer_title_2 {
 				font-size: 22.5px;
+				font-weight: inherit;
+				margin: 0;
 			}
 
 			.foot a {
@@ -441,6 +446,7 @@
 			.fourthfoot ul {
 				padding: 1rem;
 				font-family: oswald;
+				margin: 0;
 			}
 
 			.link-icons {
@@ -611,6 +617,7 @@
 			height: 2px;
 			border: 0;
 			background-color: var(--hr-color);
+			margin: 5px 0px;
 		}
 	</style>
 	<body>
@@ -875,6 +882,7 @@
 			const btnDarkMode = document.querySelector('.dark-mode-btn')
 			const themeIcon = document.getElementById('logo_img1')
 			const themeIcon2 = document.getElementById('logo_img2')
+			
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
