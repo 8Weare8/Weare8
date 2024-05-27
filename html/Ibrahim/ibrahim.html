@@ -19,11 +19,30 @@
 			src="https://kit.fontawesome.com/8b54351f60.js"
 			crossorigin="anonymous"
 		></script>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
 	</head>
 	<style>
 		body {
 			font-size: large;
 			background-color: white;
+			  min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color); /* Buradaki değişiklik */
+        transition: background-color 0.5s ease; /* Geçiş efekti ekledik */
 		}
 
 		#resim {
@@ -40,8 +59,27 @@
 		}
 		.metin {
 			background-color: #aad9bb;
-			padding: 15px;
+			padding: 10px;
 		}
+		.dark #additionalContent .metin {
+    color: white; /* Metin rengini beyaz olarak ayarlar */
+    background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
+}
+.dark #additionalContent .footer-con {
+    color: white; /* Metin rengini beyaz olarak ayarlar */
+    background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
+}
+.footer-con{
+	background-color:  white;
+	color: black;
+}
+.foot{
+	
+	color: black;
+}
+.foot a {
+	color: black;
+}
 		.baslık {
 			text-decoration: underline;
 			color: black;
@@ -89,14 +127,28 @@
 			align-items: center;
 			z-index: 2;
 		}
+#logo {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-right: auto;
 
+}
 		@media screen and (min-width: 768px) {
 			ul {
 				display: flex;
-				gap: 50px;
+				
 				list-style: none;
 				align-items: center;
 			}
+
+			.footer-3{
+				display: flex;
+				flex-direction: column;
+				list-style: none;
+				align-items: center;
+			}
+			
 			li,
 			a {
 				text-decoration: none;
@@ -211,41 +263,397 @@
 				transform: translateY(-10px);
 			}
 		}
+
+
+
+
+		:root {
+			--text-color: black;
+			--bg-color: white;
+			--footer-bg-color: white;
+			--menu-btn-color: black;
+			--nav-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: white;
+			--footer-link-hover-background-color: black;
+			--footer-link-hover-border-color: black;
+		}
+		button,
+		button:active,
+		button:focus {
+			border: none;
+		}
+
+		body {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-color: var(--bg-color);
+		}
+
+		body._lock {
+			overflow: hidden;
+		}
+
+		.dark {
+			--text-color: white;
+			--bg-color: #252526;
+			--footer-bg-color: black;
+			--nav-color: black;
+			--menu-btn-color: white;
+			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+			--hr-color: var(--text-color);
+			--footer-link-hover-color: black;
+			--footer-link-hover-background-color: white;
+			--footer-link-hover-border-color: white;
+		}
+		header {
+			position: relative;
+			background-color: var(--nav-color);
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 55px;
+			z-index: 10;
+			font-family: 'DM Sans', sans-serif;
+		}
+
+		.header__container {
+			margin-right: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 55px;
+			column-gap: 30px;
+
+		}
+
+		#logo_img1 {
+			width: 55px;
+			height: 55px;
+			margin-left: 50px;
+			margin-right: auto;
+			align-items: center;
+			z-index: 2;
+			border-radius: 50%;
+			
+		}
+
+		/* Dark Mode Btn */
+		.dark-mode-btn {
+			order: 9;
+			z-index: 2;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			width: 51px;
+			height: 26px;
+			padding: 5px;
+			border-radius: 50px;
+			background-color: #272727;
+			margin-left: -60px;
+		}
+		.dark-mode-btn::before {
+			content: '';
+
+			position: absolute;
+			top: 1px;
+			left: 1px;
+
+			display: flex;
+			width: 24px;
+			height: 24px;
+
+			border-radius: 50%;
+			background-color: white;
+
+			transition: left 0.2s ease-in;
+		}
+		.dark-mode-btn--active::before {
+			left: 26px;
+		}
+		.dark-mode-btn__icon {
+			position: relative;
+			z-index: 9;
+		}
+
+		a:hover {
+			text-decoration: none;
+			color: currentColor;
+		}
+
+		/* Dropdown Button */
+
+.dropbtn {
+    background-color: black;
+    color: var(--text-color);
+    padding: 13px;
+    font-weight: bolder;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+	margin-left: -50px;
+}
+
+.dropbtn svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px; 
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--footer-bg-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #00847d;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #00918a57;
+}
+
+
+		@media screen and (min-width: 768px) {
+			.nav-items {
+				display: flex;
+				gap: 50px;
+				list-style: none;
+				align-items: center;
+				padding: 0px 0px 0px 0px;
+				margin: 0px 0px 0px 0px;
+			}
+
+			.header__list,
+			.header__link {
+				color: var(--text-color);
+				font-weight: bolder;
+				transition: transform 0.5s;
+			}
+			#cz {
+				color: red;
+			}
+			.header__list:hover {
+				transform: translateY(-10px);
+			}
+		}
+
+		
+		@media screen and (max-width: 768px) {
+			.dark-mode-btn {
+				order: 0;
+			}
+		
+			.burger {
+				z-index: 5;
+				display: block;
+				position: relative;
+				width: 30px;
+				height: 18px;
+				cursor: pointer;
+			}
+
+			.burger span,
+			.burger::before,
+			.burger::after {
+				left: 0;
+				position: absolute;
+				height: 10%;
+				width: 100%;
+				transition: all 0.3s ease 0s;
+				background-color: var(--menu-btn-color);
+			}
+
+			.burger::before,
+			.burger::after {
+				content: '';
+			}
+
+			.burger::before {
+				top: 0;
+			}
+
+			.burger::after {
+				bottom: 0;
+			}
+
+			.burger span {
+				top: 50%;
+				transform: scale(1) translate(0px, -50%);
+			}
+			.burger._active span {
+				transform: scale(0) translate(0px, -50%);
+				background-color: white;
+			}
+			.burger._active::before {
+				top: 50%;
+				transform: rotate(-45deg) translate(0px, -50%);
+				background-color: white;
+			}
+			.burger._active::after {
+				bottom: 50%;
+				transform: rotate(45deg) translate(0px, 50%);
+				background-color: white;
+			}
+		
+			.menu {
+				position: fixed;
+				text-align: center;
+				padding-top: 20%;
+				top: 0;
+				right: -100%;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.9);
+				transition: right 0.3s ease 0s;
+				overflow: auto;
+			}
+
+			.menu._active {
+				right: 0;
+			}
+			.menu::before {
+				content: '';
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+				height: 50px;
+			}
+
+			.nav-items {
+				font-size: 24px;
+				position: relative;
+				list-style: none;
+				padding-left: 0px;
+			}
+
+			.header__list,
+			.header__link {
+				text-decoration: none;
+				color: white;
+				margin-bottom: 50px;
+				transition: transform 0.5s;
+			}
+			#cz {
+				color: red;
+			}
+			.header__list:hover {
+				transform: translateY(-10px);
+			}
+		}
 	</style>
 	<body>
 		<header>
+
 			<div class="header__container">
-				<img src="/img/jslogo.png" alt="logo" id="logo__img" />
+			
+			<a href="/index.html">
+			<img  src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
+			</a>
+			
+			
+			<nav class="menu">
+			<ul class="nav-items">
+			<li class="header__list">
+			<a   id="home"  href="/index.html" class="header__link">Home</a>
+			</li>
+			
+			<li class="header__list">
+			<a   id="iletişim"  href="../contact.html"class="header__link">Contact</a>
+			</li>
+			<li class="header__list">
+			<a
+			href="https://www.cizup.dev"
+			target="_blank"
+			id="cz"
+			class="header__link"
+			>CizUp</a
+			>
+			
+		</li>
+			
+			
+			
+			
+			<ul>
 
-				<div class="burger">
-					<span></span>
-				</div>
 
-				<nav class="menu">
-					<ul>
-						<li><a href="/index.html">Home</a></li>
 
-						<li><a href="../contact.html">Contact</a></li>
-						<li>
-							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
-						</li>
-					</ul>
-				</nav>
+
+				<li>
+					<div class="dropdown">
+					<button class="dropbtn">Lang <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+						<path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+					  </svg></button>
+					<div class="dropdown-content">
+					  <a onclick="translateturkish(); birinci(); ikinci(); üçüncü(); dördüncü(); beşinci(); altıncı(); yedinci(); sekizinci(); dokuzuncu(); onuncu(); onbirinci(); onikinci();">Türkçe</a>
+					  <a onclick="translateenglish(); first(); second(); third(); fourth(); fifth(); sixth(); seventh();  eighth(); ninth(); tenth(); eleventh(); twelfth();">English</a>
+					</div>
+				  </div>
+				</li>
+				</ul>
+				
+			<button class="dark-mode-btn">
+			<img
+			src="/icons/sun.svg"
+			alt="Light Mode"
+			class="dark-mode-btn__icon"
+			/>
+			<img
+			src="/icons/moon.svg"
+			alt="Dark Mode"
+			class="dark-mode-btn__icon"
+			/>
+			</button>
+			
+			<div class="burger"></div>
 			</div>
-		</header>
+			</li>
+			</ul>
+			</nav>
+			
+			
+			
+			
+			
+			
+			<span></span>
+			</div>
+			</div>
+			
+			</header>
 
-		<script>
-			const menuButton = document.querySelector('.burger')
-			if (menuButton) {
-				const menuBody = document.querySelector('.menu')
-				menuButton.addEventListener('click', function (e) {
-					document.body.classList.toggle('_lock')
-					menuButton.classList.toggle('_active')
-					menuBody.classList.toggle('_active')
-				})
-			}
-		</script>
-		<div class="header__container"></div>
+
+
 		<script>
 			function showAdditionalContent() {
 				document.getElementById('helloText').style.display = 'none'
@@ -259,8 +667,8 @@
 			onclick="showAdditionalContent()"
 			style="cursor: pointer"
 		>
-			Hoşgeldiniz Ben İbrahim Talha ÜYEL
-			<p class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
+			<h1  id="hg"   style="font-size: xx-large;">Hoşgeldiniz Ben İbrahim Talha ÜYEL</h1>
+			<p  id="tıkla" class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
 		</div>
 		<div id="helloText"></div>
 
@@ -273,8 +681,8 @@
 				</div>
 				<div class="metin">
 					<h1 class="baslık">İbrahim Talha ÜYEL</h1>
-					<h2>İbrahim Talha ÜYEL Kimdir</h2>
-					<p>
+					<div><h2 id="paragraf">İbrahim Talha ÜYEL Kimdir</h2></div>
+					<p id="metin">
 						2008 yılında Nevşehir'de doğdum ve yaşamıma Kayseri'de devam
 						etmekteyim. Ortaokul ve liseyi imamhatip eğitim programında okudum
 						ve hala okumaya devam etmekteyim. Yazılımın hayatıma nereden
@@ -287,11 +695,12 @@
 						sistemden daha verimli olan eğitim programı olan cizup ile devam
 						etmekteyim. Kısaca hayatım böyle ve hala böyle devam etmekte.
 					</p>
-					<h2>Önceden Yaptığım Proje Linkleri</h2>
-					<p><a href="https://motorsitesi.netlify.app/">Motor sitem</a></p>
+					<h2 id="baslık">Önceden Yaptığım Proje Linkleri</h2>
+					<p id="motorsitesi"><a href="https://motorsitesi.netlify.app/">Motor sitem</a></p>
 
-					<h2>Hobilerim</h2>
-					<p>
+					<h2 id="hobi">Hobilerim</h2>
+					
+					<p id="hobimetni">
 						Hobilerim en başında motor sevdam gelmektedir. Sebebini bilmeden
 						çocukluktan beri en büyük hayalimdir ve hala o hayalimdeki motora
 						ulaşmak için çabalıyorum ve çabalamaya devam edeceğim. Diğer çok
@@ -309,11 +718,12 @@
 							>Edit Hesabım</a
 						>.
 					</p>
-					<h2>En Sevdiğim Motorların Güç Sıralaması</h2>
+					<h2 id="güç">En Sevdiğim Motorların Güç Sıralaması</h2>
 					<div id="siralamaSonucu"></div>
 				</div>
 			</div>
-			<script>
+			
+			<script  >
 				// Motor nesnelerini içeren bir dizi
 				var motorlar = [
 					{ marka: 'Yamaha', model: 'YZF-R1', cc: 998 },
@@ -354,8 +764,8 @@
 			</script>
 			<!-- Yaş Hesaplama bölümü -->
 			<div class="metin">
-				<h2>Yaş Hesaplama</h2>
-				<label for="dob">Doğum Tarihi:</label>
+				<h2 id="yaş">Yaş Hesaplama</h2>
+				<label for="dob" id="doğum">Doğum Tarihi:</label>
 				<input type="date" id="dob" />
 				<button onclick="hesaplaYas()">Bu Tuşa Basarak Yaşını Hesapla</button>
 				<p id="sonuc"></p>
@@ -375,6 +785,9 @@
 						}
 						document.getElementById('sonuc').innerText = 'Yaşınız: ' + yas
 					}
+
+
+				
 				</script>
 			</div>
 			<footer>
@@ -382,7 +795,7 @@
 					<div class="footer-w">
 						<div class="1foot foot">
 							<div class="p-p">
-								<img src="/img/jslogo.png" class="jsimg" alt="" />
+								<img src="/img/logo/dark-small-logo.jpg" class="jsimg" alt="" />
 								<h1>Cizup</h1>
 							</div>
 							<hr style="height: 2px; background-color: white; width: 100%" />
@@ -446,7 +859,7 @@
 						</div>
 
 						<div class="fourthfoot">
-							<ul>
+							<ul class="footer-3">
 								<li><p>telephone :03522213729</p></li>
 								<li><p>email : support@cizup.dev</p></li>
 								<li><p>link : https://cizup.dev</p></li>
@@ -472,5 +885,161 @@
 				</div>
 			</footer>
 		</div>
+		
+		<script>
+function translateturkish(){
+				let texttr = "İbrahim Talha ÜYEL Kimdir"
+				document.getElementById("paragraf").innerHTML = texttr;
+			}
+			function translateenglish(){
+				let texten ="Who is Ibrahm Talha Member ?"
+				document.getElementById("paragraf").innerHTML = texten;
+			}
+function birinci() {
+				let tr = "2008 yılında Nevşehir'de doğdum ve yaşamıma Kayseri'de devam etmekteyim. Ortaokul ve liseyi imamhatip eğitim programında okudum ve hala okumaya devam etmekteyim. Yazılımın hayatıma nereden girdiğine gelecek olursak, ben 4. sınıfta iken dayımın yazılım yapmaya başladığını gördüm ve o an merak salarak yazılım yapmaya başladım ve şuanda hala aktif olarak yazılım yapmaktayım. O zamanlar Arduino ile kod yazmaya başlamıştım. Örnek vermek gerekirse; duvara çarpmayan araba, trafik lambası, ısı sensörü, hareket sensörü vb. Şu anda ise 2023 yılında okulumuza gelerek bize yeni nesil ve normal sistemden daha verimli olan eğitim programı olan cizup ile devam etmekteyim. Kısaca hayatım böyle ve hala böyle devam etmekteyim"
+				document.getElementById("metin").innerHTML = tr;
+			}
+			function first(){
+				let en ="I was born in Nevşehir in 2008 and I continue my life in Kayseri. I attended secondary school and high school in the imam-hatip education program and I still continue to study. As for where software came into my life, when I was in the 4th grade, I saw that my uncle started making software, and at that moment I got curious and started making software, and I am still actively making software. At that time, I started writing code with Arduino. For example; car that does not hit the wall, traffic light, heat sensor, motion sensor, etc. Currently, I am coming to our school in 2023 and continuing with Cizup, which is a new generation and more efficient education program than the normal system. In short, my life is like this and I still continue like this."
+				document.getElementById("metin").innerHTML = en;
+			}		
+			function ikinci() {
+				let tr = "Önceden Yaptığım Proje Linkleri"
+				document.getElementById("baslık").innerHTML = tr;
+			}
+			function second(){
+				let en ="Links to Projects I've Done Before"
+				document.getElementById("baslık").innerHTML = en;
+			}		
+			function üçüncü() {
+				let tr = "Motor sitem"
+				document.getElementById("motorsitesi").innerHTML = tr;
+			}
+			function third(){
+				let en ="My engine system"
+				document.getElementById("motorsitesi").innerHTML = en;
+			}	
+			function dördüncü() {
+				let tr = "Hobilerim"
+				document.getElementById("hobi").innerHTML = tr;
+			}
+			function fourth(){
+				let en ="My hobbies"
+				document.getElementById("hobi").innerHTML = en;
+			}	
+			function beşinci() {
+				let tr = "Hobilerim en başında motor sevdam gelmektedir. Sebebini bilmeden çocukluktan beri en büyük hayalimdir ve hala o hayalimdeki motora ulaşmak için çabalıyorum ve çabalamaya devam edeceğim. Diğer çok sevdiğim hobim ise bisiklet sürmek ve kayak yapmak. Eğer bisiklet ile alakalı videolarımı görmek isterseniz bu linke tıklayabilirsiniz => Instagram hesabım. Bunların yanında Instagram platformunda edit sayfam var ve devamlı olarak orada motor editi yapıyorum. Oranın linki burada => Edit Hesabım."
+				document.getElementById("hobimetni").innerHTML = tr;
+			}
+			function fifth(){
+				let en ="My first hobby is my love of motorcycles. Without knowing the reason, it has been my biggest dream since childhood and I am still trying and will continue to strive to achieve that dream engine. My other favorite hobbies are cycling and skiing. If you want to see my cycling related videos, you can click on this link => My Instagram account. In addition, I have an edit page on the Instagram platform and I constantly edit engines there. The link is here => Edit My Account."
+				document.getElementById("hobimetni").innerHTML = en;
+			}	
+	
+			function altıncı() {
+				let tr = "En Sevdiğim Motorların Güç Sıralaması"
+				document.getElementById("güç").innerHTML = tr;
+			}
+			function sixth(){
+				let en ="Power Ranking of My Favorite Engines"
+				document.getElementById("güç").innerHTML = en;
+			}
+			function yedinci() {
+				let tr = "Yaş Hesaplama"
+				document.getElementById("yaş").innerHTML = tr;
+			}
+			function seventh(){
+				let en ="Age Calculation"
+				document.getElementById("yaş").innerHTML = en;
+			}
+			function sekizinci() {
+				let tr = "Doğum Tarihi:"
+				document.getElementById("doğum").innerHTML = tr;
+			}
+			function eighth(){
+				let en ="Date of birth:"
+				document.getElementById("doğum").innerHTML = en;
+			}
+		
+			function dokuzuncu() {
+				let tr = "Hoşgeldiniz Ben İbrahim Talha ÜYEL"
+				document.getElementById("hg").innerHTML = tr;
+			}
+			function ninth(){
+				let en ="Welcome, I am Ibrahim Talha Üyel"
+				document.getElementById("hg").innerHTML = en;
+			}
+		
+			function onuncu() {
+				let tr = "Bu sayfayı geçmek için yazıya tıklayabilirsiniz"
+				document.getElementById("tıkla").innerHTML = tr;
+			}
+			function tenth(){
+				let en ="You can click on the article to skip this page."
+				document.getElementById("tıkla").innerHTML = en;
+			}
+			function onbirinci() {
+				let tr = "Ana Sayfa"
+				document.getElementById("home").innerHTML = tr;
+			}
+			function eleventh(){
+				let en ="Home"
+				document.getElementById("iletişim").innerHTML = en;
+			}
+			function onikinci() {
+				let tr = "İletişim"
+				document.getElementById("iletişim").innerHTML = tr;
+			}
+			function twelfth(){
+				let en ="Contact"
+				document.getElementById("iletişim").innerHTML = en;
+			}
+		</script>
+	
+		<script>
+			
+			
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.querySelector('.burger');
+        const btnDarkMode = document.querySelector('.dark-mode-btn');
+        const themeIcon = document.getElementById('logo_img1');
+        const themeIcon2 = document.getElementById('logo_img2');
+        const menuBody = document.querySelector('.menu');
+
+        if (menuButton) {
+            menuButton.addEventListener('click', function () {
+                document.body.classList.toggle('_lock');
+                menuButton.classList.toggle('_active');
+                menuBody.classList.toggle('_active');
+            });
+        }
+
+        function toggleDarkMode() {
+            const isDarkMode = document.body.classList.toggle('dark');
+            const darkMode = isDarkMode ? 'dark' : 'light';
+            btnDarkMode.classList.toggle('dark-mode-btn--active', isDarkMode);
+            localStorage.setItem('darkMode', darkMode);
+            themeIcon.src = isDarkMode ? '/img/logo/dark-small-logo.jpg' : '/img/logo/light-small-logo.jpg';
+            themeIcon2.src = isDarkMode ? '/img/logo/dark-small-logo.jpg' : '/img/logo/light-small-logo.jpg';
+        }
+
+        btnDarkMode.addEventListener('click', toggleDarkMode);
+
+        // Check dark mode from system settings
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        toggleDarkMode(darkModeQuery.matches);
+
+        // If system settings change, change the scheme
+        darkModeQuery.addEventListener('change', function (e) {
+            toggleDarkMode(e.matches);
+        });
+
+        // Checking dark mode from local storage
+        const localDarkMode = localStorage.getItem('darkMode');
+        if (localDarkMode) {
+            toggleDarkMode(localDarkMode === 'dark');
+        }
+    });
+</script>
 	</body>
 </html>
