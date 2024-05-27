@@ -35,38 +35,6 @@
 			gtag('config', 'G-69T39QB2S5')
 		</script>
 		<style>
-
-:root {
-			--text-color: black;
-			--bg-color: white;
-			--footer-bg-color: white;
-			--menu-btn-color: black;
-			--nav-color: white;
-			--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
-			--hr-color: var(--text-color);
-			--footer-link-hover-color: white;
-			--footer-link-hover-background-color: black;
-			--footer-link-hover-border-color: black;
-            --spin-gra: linear-gradient(#00395a, rgba(125, 125, 125, 0.712));
-            --spin-inside: rgb(187, 181, 108);
-            --spin-border: #40A2D8;
-		}
-        .dark {
-            --spin-gra:linear-gradient(#093752ae, rgba(87, 0, 99, 0.579));
-            --spin-border:  #232D3F;
-            --spin-inside: #008170;
-            --text-color: white;
-            --bg-color: #252526;
-            --footer-bg-color: black;
-            --nav-color: black;
-            --menu-btn-color: white;
-            --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
-            --hr-color: var(--text-color);
-            --footer-link-hover-color: black;
-            --footer-link-hover-background-color: white;
-            --footer-link-hover-border-color: white;
-        }
-
 			* {
 				padding: 0;
 				margin: 0;
@@ -178,7 +146,11 @@
 				transform: translate(-50%, -50%);
 				height: 100%;
 				width: 100vw;
-				background-image: var(--spin-gra);
+				filter: blur(3rem);
+				background-image: linear-gradient(
+					rgba(0, 6, 90, 0.508),
+					rgba(87, 0, 99, 0.579)
+				);
 			}
 
 			.spin-div {
@@ -188,8 +160,8 @@
 				transform: translate(-50%, -50%);
 				width: 35%;
 				height: 35%;
-				background-color: var(--spin-inside);
-				border: 2.5rem var(--spin-border) solid;
+				background-color: #ff0000;
+				border: 2.5rem rgb(157, 0, 255) solid;
 				filter: blur(5rem);
 				animation: spin 15s linear infinite;
 			}
