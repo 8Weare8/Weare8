@@ -16,9 +16,31 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="footer.css">
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/abdulsaidStyle.css">
+		
+		
+		<title>Abdullah Sunulu</title>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
 		<style>
+			html{
+				height: 900px;
+			}
 			:root {
+				z-index: 1;
 	--black-pure: #000;
 	--black: #171718;
 	--white: #fff;
@@ -78,15 +100,24 @@
 				height: 50px;
 				margin-left: 50px;
 				align-items: center;
-				z-index: 2;
+				z-index: 1;
 			}
 
 			@media screen and (min-width: 768px) {
+				#logo_img{
+					display: none;
+				}
 				ul {
 					display: flex;
 					gap: 50px;
 					list-style: none;
 					align-items: center;
+				}
+				.dropbtn{
+					text-decoration: none;
+					background-color: var(--bg-color);
+					transition: transform 0.5s;
+					font-weight: bolder;
 				}
 				li,
 				a {
@@ -103,6 +134,16 @@
 				}
 			}
 			@media screen and (max-width: 768px) {
+				.dropdown-content{
+					background-color:black;
+				}
+				.dropbtn{
+					text-decoration: none;
+					color: #fff;
+					margin-bottom: 50px;
+					transition: transform 0.5s;
+					background-color: var(--bg-color);
+				}
 				.burger {
 					z-index: 5;
 					display: block;
@@ -333,6 +374,7 @@
                 width: 300px;
             }
             #name{
+				color: var(--text-color);
                 position: absolute;
                 top: 520px;
                 left: 44%;
@@ -362,6 +404,171 @@
 				padding-bottom: 258px;
 			}
 			.dark-mode-btn {
+	order:8;
+	z-index: 1;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 51px;
+	height: 26px;
+	padding: 5px;
+	border-radius: 50px;
+	top: 60px;
+	background-color: #272727;
+}
+.dark-mode-btn::before {
+	content: '';
+
+	position: absolute;
+	top: 1px;
+	left: 1px;
+
+	display: flex;
+	width: 24px;
+	height: 24px;
+
+	border-radius: 50%;
+	background-color: var(--white);
+
+	transition: left 0.2s ease-in;
+}
+.dark-mode-btn--active::before {
+	left: 26px;
+}
+.dark-mode-btn__icon {
+	position: relative;
+	z-index: 9;
+}
+.foot{
+	color: var(--text-color);
+
+}
+.footer_title_1{
+	color: var(--text-color);
+}
+.foot a {
+	color: var(--text-color);
+}
+.fourthfoot{
+	color: var(--text-color);
+}
+.link-icons a {
+	color: var(--text-color);
+}
+.footer-con{
+	bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  top: 1100px;
+  background-color: var(--bg-color);
+  
+}
+.footer-w{
+	z-index: -1;
+	position: absolute;
+}
+/*DarkMode*/
+:root {
+	--black-pure: #000;
+	--black: #171718;
+	--white: #fff;
+	--purple: #5c62ec;
+	--black-header: #171718;
+	--dark-bg: var(--black);
+	--dark-header: var(--black-header);
+	--header-text: var(--white);
+	--accent: var(--purple);
+	--red: red;
+
+	/* Light Mode  */
+	--page-bg: var(--white);
+	--text-color: var(--black);
+
+	--title-1: var(--accent);
+	--nav-bg: var(--white);
+	--project-card-bg: var(--white);
+	--project-card-text: var(--black);
+	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+	--burger: var(--black);
+}
+
+.dark {
+	/* Dark MOde */
+	--page-bg: #252526;
+	--text-color: var(--white);
+	--nav-bg: var(--black-pure);
+	--project-card-bg: var(--black);
+	--project-card-text: var(--white);
+	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+	--burger: var(--white);
+}
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	letter-spacing: -0.5px;
+	width: auto;
+	/* color mode:light  */
+	background-color: var(--page-bg);
+	color: var(--text-color);
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0px 15px;
+	max-width: 1200px;
+}
+
+body._lock {
+	overflow: hidden;
+}
+
+/* nav  */
+nav {
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 10;
+
+	height: 55px;
+	width: 100%;
+
+	background-color: var(--nav-bg);
+
+	letter-spacing: normal;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.nav__container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	height: 55px;
+
+	margin-right: 20px;
+	column-gap: 30px;
+}
+
+#logo__img {
+	width: 50px;
+	height: 50px;
+
+	margin-left: 50px;
+	margin-right: auto;
+
+	align-items: center;
+	z-index: 2;
+}
+
+/* Dark Mode Btn */
+.dark-mode-btn {
 	order: 9;
 	z-index: 2;
 	position: relative;
@@ -396,15 +603,404 @@
 	position: relative;
 	z-index: 9;
 }
+
+/* header */
+
+.header {
+	padding: 40px 0;
+	min-height: 695px;
+
+	background-color: var(--dark-bg);
+	background-image: url(../img/Abstract.png);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center center;
+	color: var(--header-text);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.header__wrapper {
+	padding: 0 15px;
+	max-width: 660px;
+}
+.header__title {
+	margin-bottom: 20px;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.header__title em {
+	font-style: normal;
+	color: var(--accent);
+}
+.name_click {
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+}
+.name_click p {
+	font-size: 15px;
+	margin-left: 10px;
+	justify-content: end;
+}
+.header__text {
+	margin-bottom: 40px;
+	font-size: 17px;
+	line-height: 1.333;
+}
+
+.header__text p + p {
+	margin-top: 0.4em;
+}
+
+/* projects  */
+.section {
+	padding: 50px 0;
+	width: auto;
+}
+
+.title-1 {
+	margin-bottom: 60px;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--title-1);
+	text-align: center;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.title-2 {
+	font-size: 40px;
+
+	line-height: 1.3;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-family: 'DM Sans', sans-serif;
+}
+.projects {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	row-gap: 30px;
+}
+
+.project {
+	max-width: 370px;
+	background-color: var(--project-card-bg);
+	box-shadow: var(--box-shadow);
+	border-radius: 10px;
+	transition: transform 0.5s;
+}
+.project:hover {
+	transform: translateY(-10px);
+}
+
+.project__image {
+	border-radius: 10px;
+	max-width: auto;
+}
+.project_title {
+	padding: 15px 20px 25px;
+	margin: auto;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.3;
+	color: var(--project-card-text);
+	font-family: 'DM Sans', sans-serif;
+}
+
+/* project details */
+.project_details {
+	margin: 0 auto;
+	max-width: 865px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.project_details_img {
+	max-width: 100%;
+	margin-bottom: 40px;
+	box-shadow: var(--box-shadow);
+	border-radius: 10px;
+}
+
+.project_details_description {
+	margin-bottom: 30px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.3;
+	font-family: 'DM Sans', sans-serif;
+}
+/* btn */
+.go_back_btn {
+	color: var(--text-color);
+	font-weight: bold;
+	font-family: 'DM Sans', sans-serif;
+
+	margin-left: 30px;
+}
+.btn_container {
+	display: flex;
+	width: 500px;
+	justify-content: space-between;
+}
+.link_btn {
+	height: 48px;
+	width: 210px;
+	padding: 12px 20px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	color: #000;
+	background-color: white;
+
+	display: flex;
+	column-gap: 10px;
+	align-items: center;
+	text-decoration: none;
+	transition: 0.5s;
+	font-family: 'DM Sans', sans-serif;
+}
+
+#view_btn:hover {
+	background-color: var(--accent);
+}
+/* About me */
+
+.about_me_container {
+	display: flex;
+	justify-content: center;
+}
+.about_me_img {
+	width: 230px;
+	height: 300px;
+	border-radius: 10px;
+}
+
+.about_me_description {
+	display: flex;
+	width: 400px;
+	font-size: 25px;
+	margin-left: 40px;
+	justify-content: center;
+	align-items: center;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	font-family: 'DM Sans', sans-serif;
+}
+.skills p {
+	line-height: 5.3;
+	font-size: 25px;
+}
+@media screen and (min-width: 670px) {
+	.nav__ul {
+		display: flex;
+		gap: 50px;
+		list-style: none;
+		align-items: center;
+		padding: 0px 0px 0px 0px;
+		margin: 0px 0px 0px 0px;
+	}
+
+	.nav__list,
+	.nav__link {
+		text-decoration: none;
+		color: var(--text-color);
+		font-weight: bolder;
+		transition: transform 0.5s;
+	}
+	#cz {
+		color: var(--red);
+	}
+	.nav__list:hover {
+		transform: translateY(-10px);
+	}
+}
+
+@media (max-width: 670px) {
+	.burger {
+		z-index: 5;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+
+	.burger span,
+	.burger::before,
+	.burger::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: var(--burger);
+	}
+
+	.burger::before,
+	.burger::after {
+		content: '';
+	}
+
+	.burger::before {
+		top: 0;
+	}
+
+	.burger::after {
+		bottom: 0;
+	}
+
+	.burger span {
+		top: 50%;
+		transform: scale(1) translate(0px, -50%);
+	}
+	.burger._active span {
+		transform: scale(0) translate(0px, -50%);
+		background-color: var(--white);
+	}
+	.burger._active::before {
+		top: 50%;
+		transform: rotate(-45deg) translate(0px, -50%);
+		background-color: var(--white);
+	}
+	.burger._active::after {
+		bottom: 50%;
+		transform: rotate(45deg) translate(0px, 50%);
+		background-color: var(--white);
+	}
+
+	.menu {
+		position: fixed;
+		text-align: center;
+		padding-top: 20%;
+		top: 0;
+		right: -100px;
+		width: 100px;
+		height: 55px;
+		background-color: var(--bg-color);
+		transition: right 0.3s ease 0s;
+		overflow: auto;
+	}
+
+	.menu._active {
+		right: 0;
+	}
+	.menu::before {
+		content: '';
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 50px;
+	}
+
+	.nav__ul {
+		font-size: 24px;
+		position: relative;
+		list-style: none;
+		padding-left: 0px;
+	}
+
+	.nav__list,
+	.nav__link {
+		text-decoration: none;
+		color: var(--white);
+		margin-bottom: 50px;
+		transition: transform 0.5s;
+	}
+	#cz {
+		color: var(--red);
+	}
+	.nav__list:hover {
+		transform: translateY(-10px);
+	}
+
+	/* nav */
+	.dark-mode-btn {
+		order: 0;
+	}
+	/* header */
+
+	.header {
+		min-height: unset;
+		background-color: var(--bg-color);
+	}
+
+	.header__title {
+		font-size: 30px;
+	}
+	.name_click p {
+		font-size: 10px;
+	}
+	.section {
+		padding: 40px 0;
+	}
+	.title-1 {
+		margin-bottom: 30px;
+		font-size: 40px;
+	}
+	.title-2 {
+		font-size: 30px;
+	}
+	.project_title {
+		font-size: 22px;
+	}
+	.about_me_container {
+		display: ruby;
+	}
+	.about_me_description {
+		margin-top: 40px;
+		margin-left: 0;
+		text-align: center;
+		width: unset;
+	}
+	.skills {
+		text-align: center;
+	}
+	.skills p {
+		line-height: 1.5;
+	}
+	.go_back_btn {
+		margin-left: 5px;
+	}
+	.btn_container {
+		width: 300px;
+	}
+	.link_btn {
+		width: 125px;
+		font-size: 13px;
+	}
+}
+
+
 		</style>
 	</head>
 	<body>
 		<header>
 			<div class="header__container">
 				<img
-					src="./img/jslogo.png"
+					src="/img/logo/light-small-logo.jpg"
 					alt="logo"
 					id="logo__img"
+					onclick="location.href='/index.html'"
 				/>
 
 				<div class="burger">
@@ -414,12 +1010,12 @@
 				<nav class="menu">
 					<button class="dark-mode-btn">
 						<img
-							src="/Weare8/icons/sun.svg"
+							src="/icons/sun.svg"
 							alt="Light Mode"
 							class="dark-mode-btn__icon"
 						/>
 						<img
-							src="/Weare8/icons/moon.svg"
+							src="/icons/moon.svg"
 							alt="Dark Mode"
 							class="dark-mode-btn__icon"
 						/>
@@ -439,7 +1035,7 @@
 						  </div>
 						</li>
 						</ul>
-						<li><a href="./index.html">Home</a></li>
+						<li><a href="/index.html">Home</a></li>
 						<li><a href="#">About Us</a></li>
 						<li>
 							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
@@ -450,7 +1046,7 @@
 			</div>
 		</header>
 		<main>
-        <img src="./img/IMG_20230814_121817.jpg" alt="picture" id="mypic">
+        <img src="/img/photoes/abdullah.jpg" alt="picture" id="mypic">
             <h2 id="name">Abdullah Sunulu</h2>
             <div id="paragraph">Merhabalar! Ben Abdullah Sunulu 15 yaşındayım, yazılım ve siber güvenlik ile uğraşıyorum. Yazılım hayatım 2015 - 2016 da başladı, ilk zamanlar basit batch programları yazıyordum daha sonra arduino ile tanıştım arduino'dan sonra temel düzeyde C# öğrendim şu an javascript öğreniyorum ve javascript öğrendikten sonra BackEnd developing'e adım atmayı düşünüyorum</div>
             
@@ -484,6 +1080,104 @@
                 </a>
               </div>
 		</main>
+
+		<footer>
+			<div class="footer-con">
+				<div class="footer-w">
+					<div class="1foot foot">
+						<div class="p-p">
+							<img src="/img/logo/light-small-logo.jpg" class="jsimg" alt="" />
+							<h1 class="footer_title_1">Cizup-JS Bulls</h1>
+						</div>
+						<hr style="height: 2px; background-color: white" />
+						<h2 class="footer_title_2">"Your dream, My passion"</h2>
+					</div>
+
+					<div class="both-foot">
+						<div class="foot">
+							<ul class="footer_list">
+								<li>
+									<a
+										class="footer_li_p"
+										href="/html/Abdulkhamid/abdulkhamidProfile.html"
+										>Abdulkhamid</a
+									>
+								</li>
+								<li>
+									<a class="footer_li_p" href="/html/Talha/Talha.html">Talha</a>
+								</li>
+								<li>
+									<a class="footer_li_p" href="/html/Minhazul/minhaz.html"
+										>Minhaz</a
+									>
+								</li>
+								<li>
+									<a class="footer_li_p" href="/html/Ibrahim/ibrahim.html"
+										>Ibrahim</a
+									>
+								</li>
+							</ul>
+						</div>
+
+						<div class="foot">
+							<ul class="footer_list">
+								<li>
+									<a class="footer_li_p" href="/html/Wanna/wanna.html">Wanna</a>
+								</li>
+								<li>
+									<a class="footer_li_p" href="/html/Abdullah/abdullah.html"
+										>Abdullah Sunulu</a
+									>
+								</li>
+								<li>
+									<a class="footer_li_p" href="/html/Mubarak/mubarak.html"
+										>Mubarak</a
+									>
+								</li>
+								<li>
+									<a
+										class="footer_li_p"
+										href="/html/Abdulsaid/saıdadyazpro.html"
+										>Absaid</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="fourthfoot">
+						<ul class="footer_list">
+							<li><p class="footer_li_p">telephone :03522213729</p></li>
+							<li><p class="footer_li_p">email : support@cizup.dev</p></li>
+							<li><p class="footer_li_p">link : https://cizup.dev</p></li>
+						</ul>
+						<div class="link-icons">
+							<li>
+								<a href="support@cizup.dev" class="footer_li_a"
+									><i class="bx bx-envelope"></i
+								></a>
+							</li>
+							<li>
+								<a href="03522213729" class="footer_li_a"
+									><i class="bx bx-phone"></i
+								></a>
+							</li>
+							<li>
+								<a href="https://cizup.dev" class="footer_li_a"
+									><i class="bx bx-link-alt"></i
+								></a>
+							</li>
+							<li>
+								<a href="https://github.com/cizup" class="footer_li_a"
+									><i class="bx bxl-github"></i
+								></a>
+							</li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="/js/abdulkhamid.js"></script>
 		<script>
 			//translate
 			function translateturkish(){
