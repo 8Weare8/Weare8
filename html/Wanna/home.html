@@ -51,83 +51,6 @@
 				height: auto;
 			}
 
-			.user-pro {
-				margin: 5rem;
-				height: 100vh;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
-
-			.user-image img {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 170px;
-				width: 170px;
-				object-fit: cover;
-				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-				border-radius: 50%;
-				padding: 1rem;
-				margin: 1rem;
-			}
-
-			.user-infor {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				border-radius: 2rem;
-				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-			}
-
-			.user-infor p {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				width: 150px;
-				margin: 1rem;
-				align-items: center;
-				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-				border-radius: 2rem;
-				padding: 1rem;
-			}
-
-			.goBack {
-				margin: 1rem;
-				color: #fff;
-				width: 150px;
-				margin: 1rem;
-				align-items: center;
-				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-				border-radius: 2rem;
-				padding: 2rem;
-			}
-
-			#body {
-				height: 100vh;
-				width: 100vw;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				z-index: 1000;
-			}
-
-			#loader {
-				height: 100px;
-				width: 100px;
-				border: 4px white solid;
-				border-color: white transparent white transparent;
-				border-radius: 50%;
-				animation: load 1.3s ease-in-out;
-			}
-
-			@keyframes load {
-				to {
-					transform: rotate(360deg);
-				}
-			}
-
 			.container {
 				position: absolute;
 				display: flex;
@@ -179,74 +102,16 @@
 				}
 			}
 
-			/* for login page */
 
-			.main {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding: 3rem;
-			}
+	
 
-			#form h2 {
-				font-family: 'Protest Revolution', sans-serif;
-
-				font-size: 3rem;
-			}
-
-			.form-box {
-				font-family: 'Roboto Mono', monospace;
-				padding: 0.3rem;
-			}
-
-			#form button {
-				width: 100%;
-				height: 30px;
-				margin: 2rem;
-				font-family: 'Roboto Mono', monospace;
-				font-weight: 900;
-			}
-
-			.form-box input {
-				width: 100%;
-			}
-
-			#form {
-				width: 300px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				background-color: rgba(86, 86, 86, 0.4);
-				padding: 1rem;
-				margin: 1rem;
-				border-radius: 0.5rem;
-				z-index: 1000;
-				backdrop-filter: blur(4px);
-			}
-
-			.reg {
-				height: auto;
-				display: flex;
-				flex-direction: column;
-				color: white;
-				justify-content: center;
-				align-items: center;
-				width: auto;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			/* background animation */
 
 			/* for nav */
 
 			body._lock {
 				overflow: hidden;
 			}
+
 			header {
 				font-family: 'Roboto Mono', monospace;
 				position: sticky;
@@ -308,9 +173,7 @@
 				padding: 0.5rem;
 			}
 
-			h2 {
-				font-family: oswald;
-			}
+			
 
 			@media screen and (min-width: 768px) {
 				#ul-menu {
@@ -376,66 +239,7 @@
 					text-decoration: none;
 				}
 
-				.de-proje {
-					background: rgba(0, 0, 0, 0.604);
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					border-radius: 1rem 0 0;
-					backdrop-filter: blur(4px);
-					display: flex;
-					justify-content: space-between;
-					padding: 0.5em;
-				}
 
-				.img-pro {
-					width: 145px;
-					height: 85px;
-					border-radius: 2em;
-					background-color: #c5c5c5;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					object-fit: cover;
-					display: flex;
-				}
-				.tobtn {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				}
-
-				.linkto {
-					border-radius: 50%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					text-decoration: none;
-					width: 3.5rem;
-					height: 3.5rem;
-					background-color: #006d6d;
-					color: #fff;
-					font-size: 3rem;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					backdrop-filter: blur(4px);
-				}
-
-				.linkto:hover {
-					transform: scale(1.22, 1.22);
-					background-color: #000000;
-					color: #00eeff;
-					padding: 0.45rem;
-					box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
-						0px 0px 40px rgba(39, 201, 255, 0.736),
-						0px 0px 80px rgb(0, 191, 255);
-					transition: all 0.35s ease-in-out;
-				}
-
-				.linkto:active {
-					transform: scale(1.12, 1.12);
-					background-color: #00d7d7;
-					color: #000000;
-					padding: 0.35rem;
-					box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
-					transition: all 0.35s ease-in-out;
-					opacity: 0.2;
-				}
 
 				.con {
 					display: flex;
@@ -755,69 +559,7 @@
 					align-items: center;
 				}
 
-				.de-proje {
-					background: rgba(0, 0, 0, 0.604);
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					border-radius: 1rem 0 0;
-					backdrop-filter: blur(4px);
-					display: flex;
-					flex-direction: column;
-					padding: 1.5em;
-				}
 
-				.img-pro {
-					width: 100%;
-					height: 30%;
-					border-radius: 2em;
-					background-color: #c5c5c5;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					object-fit: cover;
-					display: flex;
-				}
-
-				.tobtn {
-					width: 100%;
-					height: 100%;
-				}
-
-				.linkto {
-					border-radius: 1rem;
-					margin: 1rem;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					text-decoration: none;
-					width: 90%;
-					height: 3rem;
-					background-color: #00d7d7;
-					color: #fff;
-					font-size: 3rem;
-					background: #00d7d7;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					backdrop-filter: blur(4px);
-				}
-
-				.linkto:hover {
-					transform: scale(1.05, 1.05);
-					background-color: #000000;
-					color: #00eeff;
-					padding: 0.35rem;
-					box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
-						0px 0px 40px rgba(39, 201, 255, 0.736),
-						0px 0px 80px rgb(0, 191, 255);
-					transition: all 0.35s ease-in-out;
-					font-size: 3.4rem;
-				}
-
-				.linkto:active {
-					transform: scale(1.12, 1.12);
-					background-color: #00d7d7;
-					color: #000000;
-					padding: 0.35rem;
-					box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
-					transition: all 0.35s ease-in-out;
-					opacity: 0.2;
-				}
 
 				.con {
 					display: flex;
@@ -916,12 +658,7 @@
 					color: rgb(152, 112, 170);
 				}
 
-				h2 {
-					font-family: oswald;
-					color: #a674af;
-					text-align: center;
-					padding: 1rem;
-				}
+			
 
 				.both-foot {
 					display: flex;
@@ -1291,45 +1028,10 @@
 				transition: all 0.25s ease-in-out;
 			}
 
-			.link-icons a:hover {
-				color: black;
-				background-color: #fff;
-				border-radius: 50%;
-				border: 2px solid black;
-				transition: all 0.35s ease-in-out;
-			}
 
-			.foot ul {
-				padding: 1rem;
-				color: rgb(152, 112, 170);
-				font-size: 0.8rem;
-			}
-
-			.foot ul li a p {
-				font-family: oswald;
-			}
-
-			.foot .user-foot {
-				display: flex;
-				text-decoration: none;
-				line-height: 2;
-				align-items: stretch;
-			}
-
-			.foot .user-foot i {
-				padding: 0.5rem;
-			}
-
-			h2 {
-				font-family: oswald;
-			}
+			
 		</style>
 	</head>
-
-	<body>
-		<div id="body">
-			<div id="loader"></div>
-		</div>
 
 		<header>
 			<div class="header__container">
