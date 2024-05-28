@@ -668,15 +668,15 @@
 		<header>
 			<div class="header__container">
 				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
-				
+
 				<nav class="menu">
 					<ul class="nav-items">
 						<li class="header__list">
-							<a href="/index.html" class="header__link">Home</a>
+							<a href="#!" class="header__link" id="first1">Home</a>
 						</li>
 
 						<li class="header__list">
-							<a href="./html/contact.html" class="header__link">Contact</a>
+							<a href="./html/contact.html" class="header__link" id="first2">Contact</a>
 						</li>
 						<li class="header__list">
 							<a
@@ -689,6 +689,7 @@
 						</li>
 					</ul>
 				</nav>
+
 
 				<button class="dark-mode-btn">
 					<img
@@ -703,7 +704,6 @@
 					/>
 				</button>
 
-				
 				<img id="myImg00" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png">
 
 
@@ -759,7 +759,7 @@
 							<h1 class="footer_title_1">Weare8</h1>
 						</div>
 						<hr />
-						<h2 class="footer_title_2">"Your dream, My passion"</h2>
+						<h2 class="footer_title_2" id="slogan">"Your dream, My passion"</h2>
 					</div>
 
 					<div class="both-foot">
@@ -854,174 +854,163 @@
 
 
 		<script>
-			const menuButton = document.querySelector('.burger')
-			const btnDarkMode = document.querySelector('.dark-mode-btn')
-			const themeIcon = document.getElementById('logo_img1')
-			const themeIcon2 = document.getElementById('logo_img2')
+			const menuButton = document.querySelector('.burger');
+			const btnDarkMode = document.querySelector('.dark-mode-btn');
+			const themeIcon = document.getElementById('logo_img1');
+			const themeIcon2 = document.getElementById('logo_img2');
+		
 			if (menuButton) {
-				const menuBody = document.querySelector('.menu')
+				const menuBody = document.querySelector('.menu');
 				menuButton.addEventListener('click', function (e) {
-					document.body.classList.toggle('_lock')
-					menuButton.classList.toggle('_active')
-					menuBody.classList.toggle('_active')
-				})
+					document.body.classList.toggle('_lock');
+					menuButton.classList.toggle('_active');
+					menuBody.classList.toggle('_active');
+				});
 			}
-
-				// cheking dark mode from system settings
-				if (
-				window.matchMedia &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-			) {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+		
+			// Checking dark mode from system settings
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				btnDarkMode.classList.add('dark-mode-btn--active');
+				document.body.classList.add('dark');
+				themeIcon.src = '/img/logo/dark-small-logo.jpg';
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg';
 			}
-
-			// checking dark mode from local storage
+		
+			// Checking dark mode from local storage
 			if (localStorage.getItem('darkMode') === 'dark') {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+				btnDarkMode.classList.add('dark-mode-btn--active');
+				document.body.classList.add('dark');
+				themeIcon.src = '/img/logo/dark-small-logo.jpg';
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg';
 			} else if (localStorage.getItem('darkMode') === 'light') {
-				btnDarkMode.classList.remove('dark-mode-btn--active')
-				document.body.classList.remove('dark')
-				themeIcon.src = '/img/logo/light-small-logo.jpg'
-				themeIcon2.src = '/img/logo/light-small-logo.jpg'
+				btnDarkMode.classList.remove('dark-mode-btn--active');
+				document.body.classList.remove('dark');
+				themeIcon.src = '/img/logo/light-small-logo.jpg';
+				themeIcon2.src = '/img/logo/light-small-logo.jpg';
 			}
-
-			// if system settings change, change the scheme
-
-			window
-				.matchMedia('(prefers-color-scheme: dark)')
-				.addEventListener('change', (event) => {
-					const newColorScheme = event.matches ? 'dark' : 'light'
-
-					if (newColorScheme === 'dark') {
-						btnDarkMode.classList.add('dark-mode-btn--active')
-						document.body.classList.add('dark')
-						localStorage.setItem('darkMode', 'dark')
-						themeIcon.src = '/img/logo/dark-small-logo.jpg'
-						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					} else {
-						btnDarkMode.classList.remove('dark-mode-btn--active')
-						document.body.classList.remove('dark')
-						localStorage.setItem('darkMode', 'light')
-						themeIcon.src = '/img/logo/light-small-logo.jpg'
-						themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					}
-				})
-
-			// turn on dark mode when button is clicked
-
-			btnDarkMode.onclick = function () {
-				btnDarkMode.classList.toggle('dark-mode-btn--active')
-				const isDark = document.body.classList.toggle('dark')
-
-				if (isDark) {
-					themeIcon.src = '/img/logo/dark-small-logo.jpg'
-					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					localStorage.setItem('darkMode', 'dark')
+		
+			// If system settings change, change the scheme
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+				const newColorScheme = event.matches ? 'dark' : 'light';
+		
+				if (newColorScheme === 'dark') {
+					btnDarkMode.classList.add('dark-mode-btn--active');
+					document.body.classList.add('dark');
+					localStorage.setItem('darkMode', 'dark');
+					themeIcon.src = '/img/logo/dark-small-logo.jpg';
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg';
 				} else {
-					themeIcon.src = '/img/logo/light-small-logo.jpg'
-					themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					localStorage.setItem('darkMode', 'light')
+					btnDarkMode.classList.remove('dark-mode-btn--active');
+					document.body.classList.remove('dark');
+					localStorage.setItem('darkMode', 'light');
+					themeIcon.src = '/img/logo/light-small-logo.jpg';
+					themeIcon2.src = '/img/logo/light-small-logo.jpg';
 				}
+			});
+		
+			// Turn on dark mode when button is clicked
+			btnDarkMode.onclick = function () {
+				btnDarkMode.classList.toggle('dark-mode-btn--active');
+				const isDark = document.body.classList.toggle('dark');
+		
+				if (isDark) {
+					themeIcon.src = '/img/logo/dark-small-logo.jpg';
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+					localStorage.setItem('darkMode', 'dark');
+				} else {
+					themeIcon.src = '/img/logo/light-small-logo.jpg';
+					themeIcon2.src = '/img/logo/light-small-logo.jpg';
+					localStorage.setItem('darkMode', 'light');
+				}
+			};
+		
+			// Toggle language when flag is clicked
+			function toggleLanguage() {
+				console.log("Image clicked!");
+				const currentLanguage = document.documentElement.lang;
+				const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
+		
+				// Update document language
+				document.documentElement.lang = newLanguage;
+		
+				// Update flag image
+				document.getElementById('myImg00').src = newLanguage === 'en'
+					? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png'
+					: 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg';
+		
+				// Update title and paragraph content
+				const translations = {
+					'en': {
+						'ro-1': "3X THE BEST FIFA MENS PLAYER",
+						'ro-2': "5X WINNER BALON DOR",
+						'ro-3': "4X UEFA BEST PLAYER IN EUROPE",
+						'ro-4': "14X FOOTBALLER OF THE YEAR ",
+						'ro-5': "1X FIFA PUSKAS AWARD",
+						'ro-6': "19X TOP GOAL SCORER ",
+						'ro-7': "8X PLAYER OF THE YEAR",
+						'ro-8': "2X TM-PLAYER OF THE YEAR",
+						'ro-9': "1X EUROPEAN CHAMPION",
+						'ro-10': "5X CHAMPIONS LEAGUE WINNER",
+						'ro-11': "4X FIFA CLUB WORLD CUP WINNER",
+						'ro-12': "3X ENGLISH CHAMPIONS",
+						'ro-13': "1X WINNER UEFA NATIONS LEAGUE",
+						'ro-14': "3X UEFA SUPERCUP WINNER",
+						'first1': "Home",
+						'first2': "Contact",
+						'slogan': "Your dream, my passion"
+					},
+					'tr': {
+						'ro-1': "3X EN IYI FIFA ERKEK OYUNCU",
+						'ro-2': "5X KAZANAN BALON DOR",
+						'ro-3': "4X UEFA AVRUPANIN EN IYI OYUNCUSU",
+						'ro-4': "14X YILIN FUTBOLCUSU",
+						'ro-5': "1X FIFA PUSKAS ODULU",
+						'ro-6': "19X EN GOLCU",
+						'ro-7': "8X YILIN OYUNCUSU",
+						'ro-8': "2X TM YILIN OYUNCUSU",
+						'ro-9': "1X AVRUPA SAMPIYONLARI",
+						'ro-10': "5X SAMPIYONLAR LIGI GALIBI",
+						'ro-11': "4X FIFA KULUPLER DUNYA KUPASI GALIBI",
+						'ro-12': "3X INGILIZ SAMPIYONLARI",
+						'ro-13': "1X KAZANAN UEFA NATIONS LEAGUE",
+						'ro-14': "3X UEFA SUPER KUPA GALIBI",
+						'first1': "Ana sayfa",
+						'first2': "Ulaşım",
+						'slogan': "Senin rüyan, benim tutkum"
+					}
+				};
+		
+				document.getElementById('ro-1').textContent = translations[newLanguage]['ro-1'];
+				document.getElementById('ro-2').textContent = translations[newLanguage]['ro-2'];
+				document.getElementById('ro-3').textContent = translations[newLanguage]['ro-3'];
+				document.getElementById('ro-4').textContent = translations[newLanguage]['ro-4'];
+				document.getElementById('ro-5').textContent = translations[newLanguage]['ro-5'];
+				document.getElementById('ro-6').textContent = translations[newLanguage]['ro-6'];
+				document.getElementById('ro-7').textContent = translations[newLanguage]['ro-7'];
+				document.getElementById('ro-8').textContent = translations[newLanguage]['ro-8'];
+				document.getElementById('ro-9').textContent = translations[newLanguage]['ro-9'];
+				document.getElementById('ro-10').textContent = translations[newLanguage]['ro-10'];
+				document.getElementById('ro-11').textContent = translations[newLanguage]['ro-11'];
+				document.getElementById('ro-12').textContent = translations[newLanguage]['ro-12'];
+				document.getElementById('ro-13').textContent = translations[newLanguage]['ro-13'];
+				document.getElementById('ro-14').textContent = translations[newLanguage]['ro-14'];
+				document.getElementById('first1').textContent = translations[newLanguage]['first1'];
+				document.getElementById('first2').textContent = translations[newLanguage]['first2'];
+				document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
 			}
-
-			
-			    // Toggle language when flag is clicked
-				function toggleLanguage() {
-			console.log("Image clicked!"); 
-            const currentLanguage = document.documentElement.lang;
-            const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
-
-            // Update document language
-            document.documentElement.lang = newLanguage;
-
-            // Update flag image
-            document.getElementById('myImg00').src = newLanguage === 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png' : 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg' ;
-
-            // Update title and paragraph content
-            const translations = {
-                'en': {
-                    'ro-1': "3X THE BEST FIFA MENS PLAYER",
-                    'ro-2': "5X WINNER BALON DOR",
-					'ro-3': "4X UEFA BEST PLAYER IN EUROPE",
-                    'ro-4': "14X FOOTBALLER OF THE YEAR ",
-                    'ro-5': "1X FIFA PUSKAS AWARD",
-                    'ro-6': "19X TOP GOAL SCORER ",
-                    'ro-7': "8X PLAYER OF THE YEAR",
-                    'ro-8': "2X TM-PLAYER OF THE YEAR",
-                    'ro-9': "1X EUROPEAN CHAMPION",
-                    'ro-10': "5X CHAMPIONS LEAGUE WINNER",
-                    'ro-11': "4X FIFA CLUB WORLD CUP WINNER",
-                    'ro-12': " 3X ENGLISH CHAMPIONS",
-                    'ro-13': "1X WINNER UEFA NATIONS LEAGUE",
-                    'ro-14': "3X UEFA SUPERCUP WINNER",
-                    
-
-
-					'slogan': "Your dream, my passion"
-
-                    
-                },
-                'tr': {
-                
-                    'ro-1': "3X EN IYI FIFA ERKEK OYUNCU",
-                    'ro-2': "5X KAZANAN BALON DOR",
-					'ro-3': "4X UEFA AVRUPANIN EN IYI OYUNCUSU",
-                    'ro-4': "14X YILIN FUTBOLCUSU",
-                    'ro-5': "1X FIFA PUSKAS ODULU",
-                    'ro-6': "19X EN GOLCU",
-                    'ro-7': "8X YILIN OYUNNCUSU",
-                    'ro-8': "2X TM YILIN OYUNCUSU",
-                    'ro-9': "1X AVRUPA SAMPIYONLARI",
-                    'ro-10': "5X SAMPIYONLAR LIGI GALIBI",
-                    'ro-11': "4X FIFA KULUPLER DUNYA KUPASI GALIBI",
-                    'ro-12': "3X INGILIZ SAMPIYONLARI",
-                    'ro-13': "1X KAZANAN UEFA NATIONS LEAGUE",
-                    'ro-14': "3X UEFA SUPER KUPA GALIBI",
-                    
-
-
-					'slogan': "Senin rüyan, benim tutkum"
-	
-
-				}
-
-            };
-
-         
-            document.getElementById('ro-1').textContent = translations[newLanguage]['ro-1'];
-            document.getElementById('ro-2').textContent = translations[newLanguage]['ro-2'];
-            document.getElementById('ro-3').textContent = translations[newLanguage]['ro-3'];
-            document.getElementById('ro-4').textContent = translations[newLanguage]['ro-4'];
-            document.getElementById('ro-5').textContent = translations[newLanguage]['ro-5'];
-            document.getElementById('ro-6').textContent = translations[newLanguage]['ro-6'];
-            document.getElementById('ro-7').textContent = translations[newLanguage]['ro-7'];
-            document.getElementById('ro-8').textContent = translations[newLanguage]['ro-8'];
-            document.getElementById('ro-9').textContent = translations[newLanguage]['ro-9'];
-            document.getElementById('ro-10').textContent = translations[newLanguage]['ro-10'];
-            document.getElementById('ro-11').textContent = translations[newLanguage]['ro-11'];
-            document.getElementById('ro-12').textContent = translations[newLanguage]['ro-12'];
-            document.getElementById('ro-13').textContent = translations[newLanguage]['ro-13'];
-            document.getElementById('ro-14').textContent = translations[newLanguage]['ro-14'];
-           
-
-
-            document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
-
-
-
-
-        }
-
-        // Event listener to toggle flag and language when the image is clicked
-		const myImg = document.getElementById("myImg00");
-		myImg.addEventListener("click", toggleLanguage);
-
+		
+			// Event listener to toggle flag and language when the image is clicked
+			const myImg = document.getElementById("myImg00");
+			if (myImg) {
+				myImg.addEventListener("click", toggleLanguage);
+			}
+		
+			// Debugging console logs
+			console.log("Script loaded");
+			console.log("Dark mode button:", btnDarkMode);
+			console.log("Menu button:", menuButton);
+			console.log("Flag image:", myImg);
 		</script>
+		
 	</body>
 </html>

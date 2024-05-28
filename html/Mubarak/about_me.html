@@ -724,11 +724,11 @@ a {
 			<nav class="menu">
                 <ul class="nav-items">
                     <li class="header__list">
-                        <a href="/index.html" class="header__link">Home</a>
+                        <a href="/index.html" class="header__link" id="first1">Home</a>
                     </li>
 
                     <li class="header__list">
-                        <a href="./html/contact.html" class="header__link">Contact</a>
+                        <a href="./html/contact.html" class="header__link" id="first2">Contact</a>
                     </li>
                     <li class="header__list">
                         <a
@@ -814,7 +814,7 @@ a {
                         <h1 class="footer_title_1">Weare8</h1>
                     </div>
                     <hr />
-                    <h2 class="footer_title_2">"Your dream, My passion"</h2>
+                    <h2 class="footer_title_2" id="slogan">"Your dream, My passion"</h2>
                 </div>
 
                 <div class="both-foot">
@@ -906,148 +906,153 @@ a {
         </div>
     </footer>
   
-
-<script>
-    const menuButton = document.querySelector('.burger')
-    const btnDarkMode = document.querySelector('.dark-mode-btn')
-			const themeIcon = document.getElementById('logo_img1')
-			const themeIcon2 = document.getElementById('logo_img2')
-    if (menuButton) {
-        const menuBody = document.querySelector('.menu')
-        menuButton.addEventListener('click', function (e) {
-            document.body.classList.toggle('_lock')
-            menuButton.classList.toggle('_active')
-            menuBody.classList.toggle('_active')
-        })
-    }
-
-    function calculateAge() {
-  var birthdate = new Date(document.getElementById('birthdate').value);
-  var today = new Date();
-  var age = today.getFullYear() - birthdate.getFullYear();
-  var month = today.getMonth() - birthdate.getMonth();
-  
-  // If birthdate has not been reached this year, subtract one year
-  if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
-    age--;
-  }
-  
-  // Setting October 8, 2005 as the base date
-  var baseDate = new Date('2005-10-08');
-  var ageAtBaseDate = baseDate.getFullYear() - birthdate.getFullYear();
-  var monthAtBaseDate = baseDate.getMonth() - birthdate.getMonth();
-  
-  // If birthdate has not been reached this year, subtract one year
-  if (monthAtBaseDate < 0 || (monthAtBaseDate === 0 && baseDate.getDate() < birthdate.getDate())) {
-    ageAtBaseDate--;
-  }
-  
-  document.getElementById('ageDisplay').innerHTML = "Your age is " + age  + "years old.";
-}
-
-	// cheking dark mode from system settings
-    if (
-				window.matchMedia &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-			) {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+	<script>
+		const menuButton = document.querySelector('.burger');
+		const btnDarkMode = document.querySelector('.dark-mode-btn');
+		const themeIcon = document.getElementById('logo_img1');
+		const themeIcon2 = document.getElementById('logo_img2');
+	
+		if (menuButton) {
+			const menuBody = document.querySelector('.menu');
+			menuButton.addEventListener('click', function (e) {
+				document.body.classList.toggle('_lock');
+				menuButton.classList.toggle('_active');
+				menuBody.classList.toggle('_active');
+			});
+		}
+	
+		const usernameForm = document.getElementById('usernameForm');
+		if (usernameForm) {
+			usernameForm.addEventListener('submit', function (event) {
+				event.preventDefault(); // Prevent form submission
+	
+				const username = document.getElementById('usernameInput').value;
+				localStorage.setItem('username', username);
+				window.location.href = 'display_username.html';
+			});
+		}
+	
+		function calculateAge() {
+			const birthdate = new Date(document.getElementById('birthdate').value);
+			const today = new Date();
+			let age = today.getFullYear() - birthdate.getFullYear();
+			const month = today.getMonth() - birthdate.getMonth();
+	
+			if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+				age--;
 			}
-
-			// checking dark mode from local storage
-			if (localStorage.getItem('darkMode') === 'dark') {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-			} else if (localStorage.getItem('darkMode') === 'light') {
-				btnDarkMode.classList.remove('dark-mode-btn--active')
-				document.body.classList.remove('dark')
-				themeIcon.src = '/img/logo/light-small-logo.jpg'
-				themeIcon2.src = '/img/logo/light-small-logo.jpg'
+	
+			const baseDate = new Date('2005-10-08');
+			let ageAtBaseDate = baseDate.getFullYear() - birthdate.getFullYear();
+			const monthAtBaseDate = baseDate.getMonth() - birthdate.getMonth();
+	
+			if (monthAtBaseDate < 0 || (monthAtBaseDate === 0 && baseDate.getDate() < birthdate.getDate())) {
+				ageAtBaseDate--;
 			}
-
-			// if system settings change, change the scheme
-
-			window
-				.matchMedia('(prefers-color-scheme: dark)')
-				.addEventListener('change', (event) => {
-					const newColorScheme = event.matches ? 'dark' : 'light'
-
-					if (newColorScheme === 'dark') {
-						btnDarkMode.classList.add('dark-mode-btn--active')
-						document.body.classList.add('dark')
-						localStorage.setItem('darkMode', 'dark')
-						themeIcon.src = '/img/logo/dark-small-logo.jpg'
-						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					} else {
-						btnDarkMode.classList.remove('dark-mode-btn--active')
-						document.body.classList.remove('dark')
-						localStorage.setItem('darkMode', 'light')
-						themeIcon.src = '/img/logo/light-small-logo.jpg'
-						themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					}
-				})
-
-			// turn on dark mode when button is clicked
-
+	
+			document.getElementById('ageDisplay').innerHTML = "Your age is " + age + " years old.";
+		}
+	
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			btnDarkMode.classList.add('dark-mode-btn--active');
+			document.body.classList.add('dark');
+			themeIcon.src = '/img/logo/dark-small-logo.jpg';
+			themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+		}
+	
+		const savedDarkMode = localStorage.getItem('darkMode');
+		if (savedDarkMode === 'dark') {
+			btnDarkMode.classList.add('dark-mode-btn--active');
+			document.body.classList.add('dark');
+			themeIcon.src = '/img/logo/dark-small-logo.jpg';
+			themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+		} else if (savedDarkMode === 'light') {
+			btnDarkMode.classList.remove('dark-mode-btn--active');
+			document.body.classList.remove('dark');
+			themeIcon.src = '/img/logo/light-small-logo.jpg';
+			themeIcon2.src = '/img/logo/light-small-logo.jpg';
+		}
+	
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+			const newColorScheme = event.matches ? 'dark' : 'light';
+			if (newColorScheme === 'dark') {
+				btnDarkMode.classList.add('dark-mode-btn--active');
+				document.body.classList.add('dark');
+				localStorage.setItem('darkMode', 'dark');
+				themeIcon.src = '/img/logo/dark-small-logo.jpg';
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+			} else {
+				btnDarkMode.classList.remove('dark-mode-btn--active');
+				document.body.classList.remove('dark');
+				localStorage.setItem('darkMode', 'light');
+				themeIcon.src = '/img/logo/light-small-logo.jpg';
+				themeIcon2.src = '/img/logo/light-small-logo.jpg';
+			}
+		});
+	
+		if (btnDarkMode) {
 			btnDarkMode.onclick = function () {
-				btnDarkMode.classList.toggle('dark-mode-btn--active')
-				const isDark = document.body.classList.toggle('dark')
-
+				btnDarkMode.classList.toggle('dark-mode-btn--active');
+				const isDark = document.body.classList.toggle('dark');
 				if (isDark) {
-					themeIcon.src = '/img/logo/dark-small-logo.jpg'
-					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					localStorage.setItem('darkMode', 'dark')
+					themeIcon.src = '/img/logo/dark-small-logo.jpg';
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+					localStorage.setItem('darkMode', 'dark');
 				} else {
-					themeIcon.src = '/img/logo/light-small-logo.jpg'
-					themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					localStorage.setItem('darkMode', 'light')
+					themeIcon.src = '/img/logo/light-small-logo.jpg';
+					themeIcon2.src = '/img/logo/light-small-logo.jpg';
+					localStorage.setItem('darkMode', 'light');
 				}
-			}
-
-
-
-			    // Toggle language when flag is clicked
-				function toggleLanguage() {
-			console.log("Image clicked!"); 
-            const currentLanguage = document.documentElement.lang;
-            const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
-
-            // Update document language
-            document.documentElement.lang = newLanguage;
-
-            // Update flag image
-            document.getElementById('myImg00').src = newLanguage === 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png' : 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg' ;
-
-            // Update title and paragraph content
-            const translations = {
-                'en': {
-                    'yaz': "Mbarak Salim's journey from the sun-kissed shores of Zanzibar, Tanzania, to the vibrant cultural landscape of Turkey is a testament to his dedication to education and pursuit of opportunities. Born in Zanzibar, he embarked on his educational voyage within the Tanzanian borders, navigating the intricacies of primary school education with determination and diligence. However, it was his exceptional academic prowess that garnered him a scholarship to pursue advanced education in Turkey, a country renowned for its rich history and academic excellence. Currently enrolled in Class 11 at INTERNATIONAL KIV AIHL, Mbarak continues to thrive in his academic pursuits, blending the cultural tapestries of Tanzania and Turkey to enrich his educational experience  Beyond the confines of textbooks and classrooms, Mbarak finds solace and joy in his hobbies, indulging in the timeless pleasures of reading books, honing his skills on the football field, and immersing himself in the captivating narratives of movies  With each step he takes, Mbarak Salim epitomizes resilience, ambition, and a relentless pursuit of knowledge, embodying the essence of a global citizen poised to make a meaningful impact on the world.Last but not list you need to make mistake so as you can learn. and this is the first project i did i know its not perfect but i try my best"
-                    
-                },
-                'tr': {
-                    'yaz': "Mbarak Salim'in Tanzanya'nın güneşli Zanzibar kıyılarından Türkiye'nin canlı kültürel ortamına yaptığı yolculuk, onun eğitime ve fırsatların peşinde koşmaya olan bağlılığının bir kanıtıdır.Zanzibar'da doğdu, ilkokul eğitiminin inceliklerini kararlılık ve titizlikle aşarak Tanzanya sınırları içindeki eğitim yolculuğuna çıktı. Ancak, zengin tarihi ve akademik mükemmelliğiyle ünlü bir ülke olan Türkiye'de ileri eğitim alması için ona burs kazandıran şey, olağanüstü akademik becerisiydi. Şu anda INTERNATIONAL KIV AIHL'de 11. Sınıfa kayıtlı olan Mbarak, eğitim deneyimini zenginleştirmek için Tanzanya ve Türkiye'nin kültürel dokularını harmanlayarak akademik çalışmalarında gelişmeye devam ediyor. Ders kitaplarının ve sınıfların sınırlarının ötesinde, Mbarak teselliyi ve neşeyi hobilerinde buluyor, kitap okumanın zamansız zevklerine düşkün oluyor, futbol sahasında becerilerini geliştiriyor ve filmlerin büyüleyici anlatılarına kendini kaptırıyor. Mbarak Salim attığı her adımda dayanıklılığı, hırsı ve amansız bilgi arayışını örneklendirerek dünya üzerinde anlamlı bir etki yaratmaya hazır bir küresel vatandaşın özünü somutlaştırıyor. Son fakat liste değil, yapabildiğiniz kadar hata yapmalısınız öğrenmek. ve bu yaptığım ilk proje mükemmel olmadığını biliyorum ama elimden gelenin en iyisini yapmaya çalışıyorum"
-
+			};
+		}
+	
+		function toggleLanguage() {
+			const currentLanguage = document.documentElement.lang;
+			const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
+	
+			document.documentElement.lang = newLanguage;
+			document.getElementById('myImg00').src = newLanguage === 'en'
+				? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png'
+				: 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg';
+	
+			const translations = {
+				'en': {
+					
+					'first1': 'Home',
+					'first2': "Contact",
+					'slogan': "Your dream, my passion",
+					'yaz': "Mbarak Salim's journey from the sun-kissed shores of Zanzibar, Tanzania, to the vibrant cultural landscape of Turkey is a testament to his dedication to education and pursuit of opportunities. Born in Zanzibar, he embarked on his educational voyage within the Tanzanian borders, navigating the intricacies of primary school education with determination and diligence. However, it was his exceptional academic prowess that garnered him a scholarship to pursue advanced education in Turkey, a country renowned for its rich history and academic excellence. Currently enrolled in Class 11 at INTERNATIONAL KIV AIHL, Mbarak continues to thrive in his academic pursuits, blending the cultural tapestries of Tanzania and Turkey to enrich his educational experience  Beyond the confines of textbooks and classrooms, Mbarak finds solace and joy in his hobbies, indulging in the timeless pleasures of reading books, honing his skills on the football field, and immersing himself in the captivating narratives of movies  With each step he takes, Mbarak Salim epitomizes resilience, ambition, and a relentless pursuit of knowledge, embodying the essence of a global citizen poised to make a meaningful impact on the world.Last but not list you need to make mistake so as you can learn. and this is the first project i did i know its not perfect but i try my best"
+				},
+				'tr': {
+					
+					'first1': "Ana Sayfa",
+					'first2': 'Ulaşım',
+					'slogan': "Senin rüyan, benim tutkum",
+					'yaz': "Mbarak Salim'in Tanzanya'nın güneşli Zanzibar kıyılarından Türkiye'nin canlı kültürel ortamına yaptığı yolculuk, onun eğitime ve fırsatların peşinde koşmaya olan bağlılığının bir kanıtıdır.Zanzibar'da doğdu, ilkokul eğitiminin inceliklerini kararlılık ve titizlikle aşarak Tanzanya sınırları içindeki eğitim yolculuğuna çıktı. Ancak, zengin tarihi ve akademik mükemmelliğiyle ünlü bir ülke olan Türkiye'de ileri eğitim alması için ona burs kazandıran şey, olağanüstü akademik becerisiydi. Şu anda INTERNATIONAL KIV AIHL'de 11. Sınıfa kayıtlı olan Mbarak, eğitim deneyimini zenginleştirmek için Tanzanya ve Türkiye'nin kültürel dokularını harmanlayarak akademik çalışmalarında gelişmeye devam ediyor. Ders kitaplarının ve sınıfların sınırlarının ötesinde, Mbarak teselliyi ve neşeyi hobilerinde buluyor, kitap okumanın zamansız zevklerine düşkün oluyor, futbol sahasında becerilerini geliştiriyor ve filmlerin büyüleyici anlatılarına kendini kaptırıyor. Mbarak Salim attığı her adımda dayanıklılığı, hırsı ve amansız bilgi arayışını örneklendirerek dünya üzerinde anlamlı bir etki yaratmaya hazır bir küresel vatandaşın özünü somutlaştırıyor. Son fakat liste değil, yapabildiğiniz kadar hata yapmalısınız öğrenmek. ve bu yaptığım ilk proje mükemmel olmadığını biliyorum ama elimden gelenin en iyisini yapmaya çalışıyorum"
 				}
-
-            };
-
-            document.getElementById('yaz').textContent = translations[newLanguage]['yaz'];
-           
-            document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
-
-
-
-
-        }
-
-        // Event listener to toggle flag and language when the image is clicked
+			};
+	
+			
+			document.getElementById('first1').textContent = translations[newLanguage]['first1'];
+			document.getElementById('first2').textContent = translations[newLanguage]['first2'];
+			document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
+			document.getElementById('yaz').textContent = translations[newLanguage]['yaz'];
+		}
+	
 		const myImg = document.getElementById("myImg00");
-		myImg.addEventListener("click", toggleLanguage);
-</script>
+		if (myImg) {
+			myImg.addEventListener("click", toggleLanguage);
+		}
+	
+		// Debugging console logs
+		console.log("Script loaded");
+		console.log("Dark mode button:", btnDarkMode);
+		console.log("Menu button:", menuButton);
+		console.log("Username form:", usernameForm);
+		console.log("Flag image:", myImg);
+	</script>
+	
+	
 
 </body>
 </html>

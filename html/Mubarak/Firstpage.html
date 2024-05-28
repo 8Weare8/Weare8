@@ -817,11 +817,11 @@
 				<nav class="menu">
 					<ul class="nav-items">
 						<li class="header__list">
-							<a href="#!" class="header__link">Home</a>
+							<a href="#!" class="header__link" id="first1">Home</a>
 						</li>
 
 						<li class="header__list">
-							<a href="./html/contact.html" class="header__link">Contact</a>
+							<a href="./html/contact.html" class="header__link" id="first2">Contact</a>
 						</li>
 						<li class="header__list">
 							<a
@@ -893,7 +893,7 @@
 					<h1 class="footer_title_1">Weare8</h1>
 				</div>
 				<hr />
-				<h2 class="footer_title_2">"Your dream, My passion"</h2>
+				<h2 class="footer_title_2" id="slogan">"Your dream, My passion"</h2>
 			</div>
 
 			<div class="both-foot">
@@ -986,142 +986,130 @@
 </footer>
 
 		<script>
-			const menuButton = document.querySelector('.burger')
-			const btnDarkMode = document.querySelector('.dark-mode-btn')
-			const themeIcon = document.getElementById('logo_img1')
-			const themeIcon2 = document.getElementById('logo_img2')
-			if (menuButton) {
-				const menuBody = document.querySelector('.menu')
-				menuButton.addEventListener('click', function (e) {
-					document.body.classList.toggle('_lock')
-					menuButton.classList.toggle('_active')
-					menuBody.classList.toggle('_active')
-				})
-			}
 
-			document
-				.getElementById('usernameForm')
-				.addEventListener('submit', function (event) {
-					event.preventDefault() // Prevent form submission
+		
+    const menuButton = document.querySelector('.burger');
+    const btnDarkMode = document.querySelector('.dark-mode-btn');
+    const themeIcon = document.getElementById('logo_img1');
+    const themeIcon2 = document.getElementById('logo_img2');
 
-					// Get the username input value
-					var username = document.getElementById('usernameInput').value
+    if (menuButton) {
+        const menuBody = document.querySelector('.menu');
+        menuButton.addEventListener('click', function (e) {
+            document.body.classList.toggle('_lock');
+            menuButton.classList.toggle('_active');
+            menuBody.classList.toggle('_active');
+        });
+    }
 
-					// Store the username in localStorage
-					localStorage.setItem('username', username)
+    const usernameForm = document.getElementById('usernameForm');
+    if (usernameForm) {
+        usernameForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
 
-					// Redirect to another page
-					window.location.href = 'display_username.html'
-				})
+            const username = document.getElementById('usernameInput').value;
+            localStorage.setItem('username', username);
+            window.location.href = 'display_username.html';
+        });
+    }
 
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        btnDarkMode.classList.add('dark-mode-btn--active');
+        document.body.classList.add('dark');
+        themeIcon.src = '/img/logo/dark-small-logo.jpg';
+        themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+    }
 
-			// cheking dark mode from system settings
-			if (
-				window.matchMedia &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-			) {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-			}
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'dark') {
+        btnDarkMode.classList.add('dark-mode-btn--active');
+        document.body.classList.add('dark');
+        themeIcon.src = '/img/logo/dark-small-logo.jpg';
+        themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+    } else if (savedDarkMode === 'light') {
+        btnDarkMode.classList.remove('dark-mode-btn--active');
+        document.body.classList.remove('dark');
+        themeIcon.src = '/img/logo/light-small-logo.jpg';
+        themeIcon2.src = '/img/logo/light-small-logo.jpg';
+    }
 
-			// checking dark mode from local storage
-			if (localStorage.getItem('darkMode') === 'dark') {
-				btnDarkMode.classList.add('dark-mode-btn--active')
-				document.body.classList.add('dark')
-				themeIcon.src = '/img/logo/dark-small-logo.jpg'
-				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-			} else if (localStorage.getItem('darkMode') === 'light') {
-				btnDarkMode.classList.remove('dark-mode-btn--active')
-				document.body.classList.remove('dark')
-				themeIcon.src = '/img/logo/light-small-logo.jpg'
-				themeIcon2.src = '/img/logo/light-small-logo.jpg'
-			}
-
-			// if system settings change, change the scheme
-
-			window
-				.matchMedia('(prefers-color-scheme: dark)')
-				.addEventListener('change', (event) => {
-					const newColorScheme = event.matches ? 'dark' : 'light'
-
-					if (newColorScheme === 'dark') {
-						btnDarkMode.classList.add('dark-mode-btn--active')
-						document.body.classList.add('dark')
-						localStorage.setItem('darkMode', 'dark')
-						themeIcon.src = '/img/logo/dark-small-logo.jpg'
-						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					} else {
-						btnDarkMode.classList.remove('dark-mode-btn--active')
-						document.body.classList.remove('dark')
-						localStorage.setItem('darkMode', 'light')
-						themeIcon.src = '/img/logo/light-small-logo.jpg'
-						themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					}
-				})
-
-			// turn on dark mode when button is clicked
-
-			btnDarkMode.onclick = function () {
-				btnDarkMode.classList.toggle('dark-mode-btn--active')
-				const isDark = document.body.classList.toggle('dark')
-
-				if (isDark) {
-					themeIcon.src = '/img/logo/dark-small-logo.jpg'
-					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
-					localStorage.setItem('darkMode', 'dark')
-				} else {
-					themeIcon.src = '/img/logo/light-small-logo.jpg'
-					themeIcon2.src = '/img/logo/light-small-logo.jpg'
-					localStorage.setItem('darkMode', 'light')
-				}
-			}
-
-
-			
-			    // Toggle language when flag is clicked
-				function toggleLanguage() {
-			console.log("Image clicked!"); 
-            const currentLanguage = document.documentElement.lang;
-            const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
-
-            // Update document language
-            document.documentElement.lang = newLanguage;
-
-            // Update flag image
-            document.getElementById('myImg00').src = newLanguage === 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png' : 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg' ;
-
-            // Update title and paragraph content
-            const translations = {
-                'en': {
-                    'first0': "Hello",
-					'slogan': "Your dream, my passion"
-
-                    
-                },
-                'tr': {
-                    'first0': "Merhaba",
-                  
-					'slogan': "Senin rüyan, benim tutkum"
-	
-
-				}
-
-            };
-
-            document.getElementById('first0').textContent = translations[newLanguage]['first0'];
-            document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
-
-
-
-
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+        const newColorScheme = event.matches ? 'dark' : 'light';
+        if (newColorScheme === 'dark') {
+            btnDarkMode.classList.add('dark-mode-btn--active');
+            document.body.classList.add('dark');
+            localStorage.setItem('darkMode', 'dark');
+            themeIcon.src = '/img/logo/dark-small-logo.jpg';
+            themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+        } else {
+            btnDarkMode.classList.remove('dark-mode-btn--active');
+            document.body.classList.remove('dark');
+            localStorage.setItem('darkMode', 'light');
+            themeIcon.src = '/img/logo/light-small-logo.jpg';
+            themeIcon2.src = '/img/logo/light-small-logo.jpg';
         }
+    });
 
-        // Event listener to toggle flag and language when the image is clicked
-		const myImg = document.getElementById("myImg00");
-		myImg.addEventListener("click", toggleLanguage);
+    if (btnDarkMode) {
+        btnDarkMode.onclick = function () {
+            btnDarkMode.classList.toggle('dark-mode-btn--active');
+            const isDark = document.body.classList.toggle('dark');
+            if (isDark) {
+                themeIcon.src = '/img/logo/dark-small-logo.jpg';
+                themeIcon2.src = '/img/logo/dark-small-logo.jpg';
+                localStorage.setItem('darkMode', 'dark');
+            } else {
+                themeIcon.src = '/img/logo/light-small-logo.jpg';
+                themeIcon2.src = '/img/logo/light-small-logo.jpg';
+                localStorage.setItem('darkMode', 'light');
+            }
+        };
+    }
 
-		</script>
+    function toggleLanguage() {
+        const currentLanguage = document.documentElement.lang;
+        const newLanguage = currentLanguage === 'en' ? 'tr' : 'en';
+
+        document.documentElement.lang = newLanguage;
+        document.getElementById('myImg00').src = newLanguage === 'en'
+            ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1024px-Flag_of_England.svg.png'
+            : 'https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg';
+
+        const translations = {
+            'en': {
+                'first2': "Contact",
+                'first1': 'Home',
+                'first0': "Hello",
+                'slogan': "Your dream, my passion"
+            },
+            'tr': {
+                'first2': 'Ulaşım',
+                'first1': "Ana Sayfa",
+                'first0': "Merhaba",
+                'slogan': "Senin rüyan, benim tutkum"
+            }
+        };
+
+        document.getElementById('first1').textContent = translations[newLanguage]['first1'];
+        document.getElementById('first2').textContent = translations[newLanguage]['first2'];
+        document.getElementById('first0').textContent = translations[newLanguage]['first0'];
+        document.getElementById('slogan').textContent = translations[newLanguage]['slogan'];
+    }
+
+    const myImg = document.getElementById("myImg00");
+    if (myImg) {
+        myImg.addEventListener("click", toggleLanguage);
+    }
+
+    // Debugging console logs
+    console.log("Script loaded");
+    console.log("Dark mode button:", btnDarkMode);
+    console.log("Menu button:", menuButton);
+    console.log("Username form:", usernameForm);
+    console.log("Flag image:", myImg);
+</script>
+
+		
 	</body>
 </html>
+ 
