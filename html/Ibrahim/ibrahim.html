@@ -67,7 +67,15 @@
 }
 .dark #additionalContent .footer-con {
     color: white; /* Metin rengini beyaz olarak ayarlar */
-    background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
+    background-color: black; /* Arka plan rengini siyah olarak ayarlar */
+   
+
+}
+.dark .foot{
+	color: white;
+}
+.dark .foot a{
+	color: white;
 }
 .footer-con{
 	background-color:  white;
@@ -79,6 +87,12 @@
 }
 .foot a {
 	color: black;
+}
+.link-icons a{
+	color: black;
+}
+.dark .link-icons a{
+	color: white;
 }
 		.baslık {
 			text-decoration: underline;
@@ -134,6 +148,15 @@ align-items: center;
 margin-right: auto;
 
 }
+.fourthfoot ul li p {
+	color: black;
+}
+.dark .fourthfoot ul li p{
+	color: white;
+}
+.dark li, a {
+	color: white;
+}
 		@media screen and (min-width: 768px) {
 			ul {
 				display: flex;
@@ -164,6 +187,11 @@ margin-right: auto;
 			}
 		}
 		@media screen and (max-width: 768px) {
+
+          #logo_img1{
+            margin-top: 50px;
+          }
+
 			.burger {
 				z-index: 5;
 				display: block;
@@ -290,6 +318,7 @@ margin-right: auto;
 			display: flex;
 			flex-direction: column;
 			background-color: var(--bg-color);
+			margin: 0px;
 		}
 
 		body._lock {
@@ -306,7 +335,9 @@ margin-right: auto;
 			--hr-color: var(--text-color);
 			--footer-link-hover-color: black;
 			--footer-link-hover-background-color: white;
-			--footer-link-hover-border-color: white;
+			--footer-link-hover-border-color: white; 
+            --dropbtn-color: black;		
+		
 		}
 		header {
 			position: relative;
@@ -320,7 +351,7 @@ margin-right: auto;
 		}
 
 		.header__container {
-			margin-right: 20px;
+			margin-right: 0px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
@@ -337,7 +368,7 @@ margin-right: auto;
 			align-items: center;
 			z-index: 2;
 			border-radius: 50%;
-			
+			justify-content:c
 		}
 
 		/* Dark Mode Btn */
@@ -345,14 +376,13 @@ margin-right: auto;
 			order: 9;
 			z-index: 2;
 			position: relative;
-			display: flex;
 			justify-content: space-between;
 			width: 51px;
 			height: 26px;
 			padding: 5px;
 			border-radius: 50px;
 			background-color: #272727;
-			margin-left: -60px;
+			margin-left: -20px;
 		}
 		.dark-mode-btn::before {
 			content: '';
@@ -386,7 +416,7 @@ margin-right: auto;
 		/* Dropdown Button */
 
 .dropbtn {
-    background-color: black;
+    background-color: white;
     color: var(--text-color);
     padding: 13px;
     font-weight: bolder;
@@ -414,7 +444,7 @@ margin-right: auto;
     position: absolute;
     background-color: var(--footer-bg-color);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -429,18 +459,27 @@ margin-right: auto;
 
 
 .dropdown-content a:hover {
-    background-color: #00847d;
+    background-color: black;
+	color: white;
 }
-
+.dark .dropdown-content a:hover{
+	background-color: white;
+	color: black;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #00918a57;
+    background-color: white;
+	color: black;
 }
+ .dropbtn{
+background-color: transparent;
 
+
+}
 
 		@media screen and (min-width: 768px) {
 			.nav-items {
@@ -450,6 +489,7 @@ margin-right: auto;
 				align-items: center;
 				padding: 0px 0px 0px 0px;
 				margin: 0px 0px 0px 0px;
+				margin: 20px;
 			}
 
 			.header__list,
@@ -465,13 +505,15 @@ margin-right: auto;
 				transform: translateY(-10px);
 			}
 		}
-
+.dark .header__container{
+	background-color: black;
+}
 		
 		@media screen and (max-width: 768px) {
 			.dark-mode-btn {
 				order: 0;
 			}
-		
+			
 			.burger {
 				z-index: 5;
 				display: block;
@@ -480,11 +522,13 @@ margin-right: auto;
 				height: 18px;
 				cursor: pointer;
 			}
-
+.dropbtn{
+	margin-left: 0px;
+}
 			.burger span,
 			.burger::before,
 			.burger::after {
-				left: 0;
+				left: -42px;
 				position: absolute;
 				height: 10%;
 				width: 100%;
@@ -570,17 +614,21 @@ margin-right: auto;
 				transform: translateY(-10px);
 			}
 		}
+.foto-1{
+	margin-top: 5px;
+}
+
 	</style>
 	<body>
-		<header>
-
+<nav>
 			<div class="header__container">
 			
 			<a href="/index.html">
 			<img  src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
 			</a>
 			
-			
+			<div class="burger">
+				<span></span>
 			<nav class="menu">
 			<ul class="nav-items">
 			<li class="header__list">
@@ -600,15 +648,7 @@ margin-right: auto;
 			>
 			
 		</li>
-			
-			
-			
-			
-			<ul>
-
-
-
-
+              <ul>
 				<li>
 					<div class="dropdown">
 					<button class="dropbtn">Lang <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
@@ -634,12 +674,11 @@ margin-right: auto;
 			class="dark-mode-btn__icon"
 			/>
 			</button>
-			
-			<div class="burger"></div>
 			</div>
-			</li>
-			</ul>
-			</nav>
+		</nav>
+
+	
+			
 			
 			
 			
@@ -984,7 +1023,7 @@ function birinci() {
 			}
 			function eleventh(){
 				let en ="Home"
-				document.getElementById("iletişim").innerHTML = en;
+				document.getElementById("home").innerHTML = en;
 			}
 			function onikinci() {
 				let tr = "İletişim"
