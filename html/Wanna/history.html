@@ -24,20 +24,6 @@
 			href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
 			rel="stylesheet"
 		/>
-		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || []
-			function gtag() {
-				dataLayer.push(arguments)
-			}
-			gtag('js', new Date())
-
-			gtag('config', 'G-69T39QB2S5')
-		</script>
 		<style>
 			* {
 				padding: 0;
@@ -266,11 +252,7 @@
 				transform: translate(-50%, -50%);
 				height: 100%;
 				width: 100vw;
-				filter: blur(3rem);
-				background-image: linear-gradient(
-					rgba(0, 6, 90, 0.508),
-					rgba(87, 0, 99, 0.579)
-				);
+				background-image: var(--spin-gra);
 			}
 
 			.spin-div {
@@ -280,8 +262,8 @@
 				transform: translate(-50%, -50%);
 				width: 35%;
 				height: 35%;
-				background-color: #ff0000;
-				border: 2.5rem rgb(157, 0, 255) solid;
+				background-color:var(--spin-inside);
+				border: 2.5rem var(--spin-border) solid;
 				filter: blur(5rem);
 				animation: spin 15s linear infinite;
 			}
@@ -364,14 +346,14 @@
 				overflow: hidden;
 			}
 			header {
-				font-family: 'Roboto Mono', monospace;
+				
 				position: sticky;
 				width: 100%;
 				top: 0;
 				left: 0;
 				height: 55px;
 				z-index: 100;
-				background-color: white;
+				background-color: var(--nav-color);
 				color: #000000;
 			}
 
@@ -430,236 +412,264 @@
 			}
 
 			@media screen and (min-width: 768px) {
-				#ul-menu {
-					display: flex;
-					gap: 50px;
-					list-style: none;
-					align-items: center;
-				}
-				.li-menu,
-				a {
-					text-decoration: none;
-					color: rgb(0, 0, 0);
-					transition: transform 0.5s;
-					font-weight: bolder;
-				}
-				#cz {
-					color: #ff0000;
-					font-size: 1.5rem;
-				}
-				.li-menu:hover {
-					transform: translateY(-10px);
-				}
 
-				.firstBlock img {
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					width: 90%;
-					height: 75%;
-					object-fit: cover;
-					margin: 3rem;
-					display: flex;
-					align-items: flex-start;
-					border-radius: 1.3rem;
-				}
+.nav-items {
+display: flex;
+gap: 50px;
+list-style: none;
+align-items: center;
+padding: 0px 0px 0px 0px;
+margin: 0px 0px 0px 0px;
+}
 
-				.f-line {
-					display: flex;
-					border-radius: 1rem;
-					padding: 0.5rem;
-					justify-content: space-between;
-					height: auto;
-				}
+.header__list,
+.header__link {
+color: var(--text-color);
+font-weight: bolder;
+transition: transform 0.5s;
+}
+#cz {
+color: red;
+}
+.header__list:hover {
+transform: translateY(-10px);
+}
 
-				.secondBlock {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					font-size: 2.5rem;
-					padding: 1rem;
-					margin-top: 1rem;
-					border-radius: 0.5rem;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					height: 1200px;
-				}
 
-				.secondBlock ul li {
-					list-style-type: none;
-					padding: 0.6rem;
-				}
+#ul-menu {
+	display: flex;
+	gap: 50px;
+	list-style: none;
+	align-items: center;
+}
+.li-menu,
+a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	transition: transform 0.5s;
+	font-weight: bolder;
+}
+#cz {
+	color: #ff0000;
+	font-size: 1.5rem;
+}
+.li-menu:hover {
+	transform: translateY(-10px);
+}
 
-				.secondBlock ul li a {
-					color: #fff;
-					text-decoration: none;
-				}
+.firstBlock img {
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	width: 90%;
+	height: 75%;
+	object-fit: cover;
+	display: flex;
+	align-items: flex-start;
+	border-radius: 1.3rem;
+}
 
-				.de-proje {
-					background: rgba(0, 0, 0, 0.604);
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					border-radius: 1rem 0 0;
-					backdrop-filter: blur(4px);
-					display: flex;
-					justify-content: space-between;
-					padding: 0.5em;
-				}
+.f-line {
+	display: flex;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	justify-content: space-between;
+	height: auto;
+}
 
-				.img-pro {
-					width: 145px;
-					height: 85px;
-					border-radius: 2em;
-					background-color: #c5c5c5;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					object-fit: cover;
-					display: flex;
-				}
-				.tobtn {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				}
+.secondBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5rem;
+	padding: 1rem;
+	margin-top: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
-				.linkto {
-					border-radius: 50%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					text-decoration: none;
-					width: 3.5rem;
-					height: 3.5rem;
-					background-color: #006d6d;
-					color: #fff;
-					font-size: 3rem;
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					backdrop-filter: blur(4px);
-				}
+}
 
-				.linkto:hover {
-					transform: scale(1.22, 1.22);
-					background-color: #000000;
-					color: #00eeff;
-					padding: 0.45rem;
-					box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
-						0px 0px 40px rgba(39, 201, 255, 0.736),
-						0px 0px 80px rgb(0, 191, 255);
-					transition: all 0.35s ease-in-out;
-				}
+.secondBlock ul li {
+	list-style-type: none;
+	padding: 0.6rem;
+}
 
-				.linkto:active {
-					transform: scale(1.12, 1.12);
-					background-color: #00d7d7;
-					color: #000000;
-					padding: 0.35rem;
-					box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
-					transition: all 0.35s ease-in-out;
-					opacity: 0.2;
-				}
+.secondBlock ul li a {
+	color: #fff;
+	text-decoration: none;
+}
 
-				.con {
-					display: flex;
-					flex-direction: column;
-					width: 30%;
-					text-align: center;
-					z-index: 111;
-					align-items: center;
-					justify-content: center;
-					border-radius: 0.6rem;
-					color: #fff;
-					background: rgba(65, 65, 65, 0.604);
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-					margin-top: 2rem;
-				}
+.de-proje {
+	background: rgba(0, 0, 0, 0.604);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	border-radius: 1rem 0 0;
+	backdrop-filter: blur(4px);
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	padding: 0.5em;
+}
 
-				.con i {
-					box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.67);
-					border-radius: 50%;
-					font-size: 7rem;
-					padding: 0;
-					margin: 1rem;
-				}
+.de-his{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
-				.main-con {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					position: absolute;
-					height: 100vh;
-					width: 100vw;
-				}
+.img-pro {
+	width: 90px;
+	height: 145px;
+	border-radius: 2em;
+	background-color: #c5c5c5;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	object-fit: cover;
+	display: flex;
+}
+.tobtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
 
-				.icons:hover {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					transform: scale(1.1, 1.1);
-					background-color: #00d7d7;
-					color: #000000;
-					padding: 0.5rem;
-					box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
-						0px 0px 40px rgba(39, 201, 255, 0.736),
-						0px 0px 80px rgb(0, 191, 255);
-					transition: all 0.35s ease-in-out;
-				}
+.linkto {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	width: 3.5rem;
+	height: 3.5rem;
+	background-color: transparent;
+	border: 1.3px solid white;
+	color: #fff;
+	font-size: 3rem;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	backdrop-filter: blur(4px);
+}
 
-				.icons:active {
-					transform: scale(1.1, 1.1);
-					background-color: #00d7d7;
-					color: #000000;
-					padding: 0.35rem;
-					box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
-					transition: all 0.35s ease-in-out;
-					opacity: 0.2;
-				}
+.linkto:hover {
+	transform: scale(1.22, 1.22);
+	background-color: #000000;
+	color: #00eeff;
+	padding: 0.45rem;
+	box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
+		0px 0px 40px rgba(39, 201, 255, 0.736),
+		0px 0px 80px rgb(0, 191, 255);
+	transition: all 0.35s ease-in-out;
+}
 
-				.both-foot {
-					display: flex;
-				}
+.linkto:active {
+	transform: scale(1.12, 1.12);
+	background-color: #00d7d7;
+	color: #000000;
+	padding: 0.35rem;
+	box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
+	transition: all 0.35s ease-in-out;
+	opacity: 0.2;
+}
 
-				.footer-con {
-					padding: 0.3rem;
-					width: 100%;
-					margin: auto;
-					background-color: rgb(22, 0, 36);
-					height: auto;
-					overflow: visible;
-					font-family: oswald;
-				}
+.con {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	text-align: center;
+	z-index: 111;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.6rem;
+	color: #fff;
+	background: rgba(65, 65, 65, 0.604);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	margin-top: 2rem;
+}
 
-				.slo {
-					font-family: oswald;
-					color: rgb(152, 112, 170);
-				}
+.con i {
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.67);
+	border-radius: 50%;
+	font-size: 7rem;
+	padding: 0;
+	margin: 1rem;
+}
 
-				.footer-w {
-					padding: 1rem;
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: space-evenly;
-				}
+.main-con {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+}
 
-				ul {
-					list-style: none;
-				}
+.icons:hover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(1.1, 1.1);
+	background-color: #00d7d7;
+	color: #000000;
+	padding: 0.5rem;
+	box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
+		0px 0px 40px rgba(39, 201, 255, 0.736),
+		0px 0px 80px rgb(0, 191, 255);
+	transition: all 0.35s ease-in-out;
+}
+
+.icons:active {
+	transform: scale(1.1, 1.1);
+	background-color: #00d7d7;
+	color: #000000;
+	padding: 0.35rem;
+	box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
+	transition: all 0.35s ease-in-out;
+	opacity: 0.2;
+}
+
+.both-foot {
+display: flex;
+}
+
+.footer-con {
+padding: 1rem;
+width: 100%;
+margin: auto;
+background-color: var(--footer-bg-color);
+height: 285px;
+overflow: hidden;
+}
+
+.footer-w {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+}
+.footer_list {
+font-family: oswald;
+}
 
 .footer_li_p {
 padding: 8px;
 font-family: oswald;
+color: var(--text-color);
+
 }
 
-				.foot {
-					display: flex;
-					flex-direction: column;
-					align-items: stretch;
-					font-size: 15px;
-					color: rgb(152, 112, 170);
-				}
+.foot {
+display: flex;
+flex-direction: column;
+margin: 8px;
+align-items: stretch;
+font-size: 15px;
+color: var(--text-color);
+}
 
-				.jsimg {
-					width: 70px;
-					height: 70px;
-					object-fit: cover;
-					margin-left: 1rem;
-				}
+#logo_img2 {
+width: 70px;
+height: 70px;
+object-fit: cover;
+margin-left: 1rem;
+border-radius: 50%;
+}
 
 .footer_title_1 {
 font-size: 2.5rem;
@@ -668,50 +678,43 @@ font-family: oswald;
 }
 .footer_title_2 {
 font-size: 22.5px;
+color: var(--text-color);
+
 }
 
-				.foot a {
-					color: #a674af;
-				}
+.foot a {
+color: var(--text-color);
+font-family: oswald;
+}
 
-				.fourthfoot {
-					color: #a674af;
-					list-style: none;
-					font-family: oswald;
-				}
+.fourthfoot {
+color: var(--text-color);
+list-style: none;
+}
 
-				.foot-p p {
-					color: #a674af;
-					padding: 0.8rem;
-					font-weight: 600;
-				}
+.fourthfoot ul {
+padding: 1rem;
+font-family: oswald;
+}
 
-				.fourthfoot p {
-					font-family: oswald;
-					color: #a674af;
-					padding: 1rem;
-				}
+.link-icons {
+display: flex;
+justify-content: center;
+padding: 0.4rem;
+}
 
-				.link-icons {
-					display: flex;
-					justify-content: center;
-					padding: 0.4rem;
-					font-family: oswald;
-				}
-
-				.link-icons a {
-					padding: 0.5rem;
-					color: rgb(152, 112, 170);
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					font-size: 1.5rem;
-					border-radius: 50%;
-					font-family: oswald;
-					text-decoration: none;
-				}
-			}
+.link-icons a {
+padding: 0.5rem;
+color: var(--text-color);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 1.5rem;
+border-radius: 50%;
+text-decoration: none;
+}
+}
 
 
 		
@@ -1161,12 +1164,45 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 				width: 3rem;
 				height: 3rem;
 				display: flex;
+				z-index: 10000;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				text-decoration: none;
 			}
 
+			.side-container li a:hover {
+				color: black;
+				background-color: #00eeff;
+				border-radius: 50%;
+				transition: all 0.4s ease-in;
+				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+			}
+
+			.icons:hover {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transform: scale(1.1, 1.1);
+					background-color: #00d7d7;
+					color: #000000;
+					padding: 0.5rem;
+					box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.507),
+						0px 0px 40px rgba(39, 201, 255, 0.736),
+						0px 0px 80px rgb(0, 191, 255);
+					transition: all 0.35s ease-in-out;
+				}
+
+				.icons:active {
+					transform: scale(1.1, 1.1);
+					background-color: #00d7d7;
+					color: #000000;
+					padding: 0.35rem;
+					box-shadow: 0.8px 1.2px 1rem rgb(0, 0, 0);
+					transition: all 0.35s ease-in-out;
+					opacity: 0.2;
+				}
+				
 			.side-container li {
 				list-style: none;
 				display: flex;
@@ -1409,34 +1445,138 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 				width: 100%;
 				height: 0;
 			}
+
+			
+			#myImg00{
+			z-index: 100000;
+            width: 50px;
+            height: 30px;
+            object-fit: cover; 
+            border-radius: 0.8%;  
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+            cursor: pointer; 
+        }
+
+		/* Dropdown Button */
+.dropbtn {
+  display: flex;
+  
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  align-items: center;
+  padding: 13px;
+  font-weight: bolder;
+  font-size: 16px;
+  border: none
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--footer-bg-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #00847d;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #00918a57;}
 		</style>
 	</head>
 
 	<body>
 		<header>
 			<div class="header__container">
-				<img src="/img/jslogo.png" alt="logo" id="logo__img" />
+				<img src="/img/logo/light-small-logo.jpg" alt="logo" id="logo_img1" />
+
+				<button class="dark-mode-btn">
+					<img
+						src="/icons/sun.svg"
+						alt="Light Mode"
+						class="dark-mode-btn__icon"
+					/>
+					<img
+						src="/icons/moon.svg"
+						alt="Dark Mode"
+						class="dark-mode-btn__icon"
+					/>
+				</button>
+				
+								<nav class="menu">
+									<ul class="nav-items">
+										<li class="header__list">
+											<a href="/index.html" class="header__link" id="home1">Home</a> 
+										</li>
+				
+										<li class="header__list">
+											<a href="./html/contact.html" class="header__link" id="home2">Contact</a>
+										</li>
+										<li class="header__list">
+											<a
+												href="https://www.cizup.dev"
+												target="_blank"
+												id="cz"
+												class="header__link"
+												>CizUp</a
+											>
+										</li>
+										<li>
+											<div class="dropdown">
+												<button class="dropbtn">
+													Lang
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														width="16"
+														height="16"
+														fill="currentColor"
+														class="bi bi-globe"
+														viewBox="0 0 16 16"
+														style="margin-left: 4px;"
+													>
+														<path
+															d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+														/>
+													</svg>
+												</button>
+												<div class="dropdown-content">
+													<a onclick="translateTurkish()">Türkçe</a>
+													<a onclick="translateEnglish()">English</a>
+												</div>
+											</div>
+									</li>
+									</ul>
+								</nav>
+
+
 
 				<div class="burger">
 					<span></span>
 				</div>
-
-				<nav class="menu">
-					<ul id="ul-menu">
-						<li class="li-menu">
-							<a class="a-menu" href="/index.html">Home</a>
-						</li>
-
-						<li class="li-menu">
-							<a class="a-menu" href="../contact.html">Contact</a>
-						</li>
-						<li class="li-menu">
-							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 		</header>
+
 
 		<div class="side-container">
 			<div class="side-bar" id="side-bar">
@@ -1491,7 +1631,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							></a>
 						</div>
 					</div>
-					<p>
+					<p id="second00">
 						A Youtube channel about digital art and
 						<span>architure</span> building.
 					</p>
@@ -1512,7 +1652,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							></a>
 						</div>
 					</div>
-					<p>
+					<p id="second0">
 						My first web project. I did a lots of <span>mistake</span> and learn
 						a lot of lesson.
 					</p>
@@ -1520,7 +1660,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 				<div class="de-his">
 					<div class="de-proje">
 						<img src="/img/now.png" alt="" class="img-pro" />
-						<h2>My Portfolio</h2>
+						<h2 id="second1">My Portfolio</h2>
 						<hr />
 						<div class="tobtn">
 							<a href="#" class="linkto"
@@ -1528,7 +1668,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							></a>
 						</div>
 					</div>
-					<p>
+					<p id="second2">
 						Here, I learned the value of <span>time-management</span>.But also
 						faced a lot of errors. Especially JavaScript.
 					</p>
@@ -1540,7 +1680,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							alt=""
 							class="img-pro"
 						/>
-						<h2>Coming</h2>
+						<h2 id="second3">Coming</h2>
 						<hr />
 						<div class="tobtn">
 							<a href="#" class="linkto"
@@ -1548,7 +1688,7 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							></a>
 						</div>
 					</div>
-					<p>
+					<p id="second4">
 						I am very excited for my future projects. And ready to
 						<span>learn </span>as much as I can.
 					</p>
@@ -1556,16 +1696,21 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 			</div>
 		</div>
 
+	
 		<footer>
 			<div class="footer-con">
 				<div class="footer-w">
 					<div class="1foot foot">
 						<div class="p-p">
-							<img src="/img/jslogo.png" class="jsimg" alt="" />
-							<h1>Cizup-JS BULLS</h1>
+							<img
+								src="/img/logo/light-small-logo.jpg"
+								id="logo_img2"
+								alt="logo"
+							/>
+							<h1 class="footer_title_1">Weare8</h1>
 						</div>
 						<hr />
-						<h2 class="slo">"Your dream, My passion"</h2>
+						<h2 class="footer_title_2" id="slogan">"Your dream, My passion"</h2>
 					</div>
 
 					<div class="both-foot">
@@ -1573,21 +1718,23 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 							<ul class="footer_list">
 								<li>
 									<a
-										class="footer_li_p"
-										href="/html/Abdulkhamid/abdulkhamidProfile.html"
+										class="footer_li_a"
+										href="./html/Abdulkhamid/abdulkhamidProfile.html"
 										>Abdulkhamid</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Talha/Talha.html">Talha</a>
+									<a class="footer_li_a" href="./html/Talha/Talha.html"
+										>Talha</a
+									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Minhazul/minhaz.html"
+									<a class="footer_li_a" href="./html/Minhazul/minhaz.html"
 										>Minhaz</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Ibrahim/ibrahim.html"
+									<a class="footer_li_a" href="./html/Ibrahim/ibrahim.html"
 										>Ibrahim</a
 									>
 								</li>
@@ -1597,22 +1744,24 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 						<div class="foot">
 							<ul class="footer_list">
 								<li>
-									<a class="footer_li_p" href="/html/Wanna/wanna.html">Wanna</a>
+									<a class="footer_li_a" href="./html/Wanna/wanna.html"
+										>Wanna</a
+									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Abdullah/abdullah.html"
+									<a class="footer_li_a" href="./html/Abdullah/abdullah.html"
 										>Abdullah Sunulu</a
 									>
 								</li>
 								<li>
-									<a class="footer_li_p" href="/html/Mubarak/mubarak.html"
+									<a class="footer_li_a" href="./html/Mubarak/mubarak.html"
 										>Mubarak</a
 									>
 								</li>
 								<li>
 									<a
-										class="footer_li_p"
-										href="/html/Abdulsaid/saıdadyazpro.html"
+										class="footer_li_a"
+										href="./html/Abdulsaid/saıdadyazpro.html"
 										>Absaid</a
 									>
 								</li>
@@ -1621,23 +1770,29 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 					</div>
 
 					<div class="fourthfoot">
-						<ul class="fourth-p">
-							<li><p>telephone :03522213729</p></li>
-							<li><p>email : support@cizup.dev</p></li>
-							<li><p>link : https://cizup.dev</p></li>
+						<ul class="footer_list">
+							<li><p class="footer_li_p">telephone :03522213729</p></li>
+							<li><p class="footer_li_p">email : support@cizup.dev</p></li>
+							<li><p class="footer_li_p">link : https://cizup.dev</p></li>
 						</ul>
 						<div class="link-icons">
 							<li>
-								<a href="support@cizup.dev"><i class="bx bx-envelope"></i></a>
+								<a href="support@cizup.dev" class="footer_li_a"
+									><i class="bx bx-envelope"></i
+								></a>
 							</li>
 							<li>
-								<a href="03522213729"><i class="bx bx-phone"></i></a>
+								<a href="03522213729" class="footer_li_a"
+									><i class="bx bx-phone"></i
+								></a>
 							</li>
 							<li>
-								<a href="https://cizup.dev"><i class="bx bx-link-alt"></i></a>
+								<a href="https://cizup.dev" class="footer_li_a"
+									><i class="bx bx-link-alt"></i
+								></a>
 							</li>
 							<li>
-								<a href="https://github.com/cizup"
+								<a href="https://github.com/cizup" class="footer_li_a"
 									><i class="bx bxl-github"></i
 								></a>
 							</li>
@@ -1648,7 +1803,77 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 		</footer>
 
 		<script>
+
 			const menuButton = document.querySelector('.burger')
+			const btnDarkMode = document.querySelector('.dark-mode-btn')
+			const themeIcon = document.getElementById('logo_img1')
+			const themeIcon2 = document.getElementById('logo_img2')
+			
+
+			// cheking dark mode from system settings
+			if (
+				window.matchMedia &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches
+			) {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+			}
+
+			// checking dark mode from local storage
+			if (localStorage.getItem('darkMode') === 'dark') {
+				btnDarkMode.classList.add('dark-mode-btn--active')
+				document.body.classList.add('dark')
+				themeIcon.src = '/img/logo/dark-small-logo.jpg'
+				themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+			} else if (localStorage.getItem('darkMode') === 'light') {
+				btnDarkMode.classList.remove('dark-mode-btn--active')
+				document.body.classList.remove('dark')
+				themeIcon.src = '/img/logo/light-small-logo.jpg'
+				themeIcon2.src = '/img/logo/light-small-logo.jpg'
+			}
+
+			// if system settings change, change the scheme
+
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) => {
+					const newColorScheme = event.matches ? 'dark' : 'light'
+
+					if (newColorScheme === 'dark') {
+						btnDarkMode.classList.add('dark-mode-btn--active')
+						document.body.classList.add('dark')
+						localStorage.setItem('darkMode', 'dark')
+						themeIcon.src = '/img/logo/dark-small-logo.jpg'
+						themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+					} else {
+						btnDarkMode.classList.remove('dark-mode-btn--active')
+						document.body.classList.remove('dark')
+						localStorage.setItem('darkMode', 'light')
+						themeIcon.src = '/img/logo/light-small-logo.jpg'
+						themeIcon2.src = '/img/logo/light-small-logo.jpg'
+					}
+				})
+
+			// turn on dark mode when button is clicked
+
+			btnDarkMode.onclick = function () {
+				btnDarkMode.classList.toggle('dark-mode-btn--active')
+				const isDark = document.body.classList.toggle('dark')
+
+				if (isDark) {
+					themeIcon.src = '/img/logo/dark-small-logo.jpg'
+					themeIcon2.src = '/img/logo/dark-small-logo.jpg'
+					localStorage.setItem('darkMode', 'dark')
+				} else {
+					themeIcon.src = '/img/logo/light-small-logo.jpg'
+					themeIcon2.src = '/img/logo/light-small-logo.jpg'
+					localStorage.setItem('darkMode', 'light')
+				}
+			}
+			
+			
 			if (menuButton) {
 				const menuBody = document.querySelector('.menu')
 				menuButton.addEventListener('click', function (e) {
@@ -1658,44 +1883,45 @@ border: 1px solid rgba(0, 0, 0, 0.23);
 				})
 			}
 
-			function login(event) {
-				event.preventDefault()
-
-				var name = document.getElementById('name').value
-
-				window.location.href = 'home.html?name=' + encodeURIComponent(name)
-			}
-
-			function getQueryParam(name) {
-				const params = new URLSearchParams(window.location.search)
-				return params.get(name)
-			}
-
-			var username = getQueryParam('name')
-			document.getElementById('hello').innerText = 'Hey,' + username
-
-			function calculateDaysDifference() {
-				var myDateStr = document.getElementById('myDate').value
-				var myDateObj = new Date(myDateStr)
-
-				var userDateStr = document.getElementById('userDate').value
-				var userDateObj = new Date(userDateStr)
-
-				var timeDiff = Math.abs(userDateObj.getTime() - myDateObj.getTime())
-
-				var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24))
-
-				document.getElementById('result').textContent =
-					'it has been: ' + diffDays + ' days since i did the projects'
-			}
+		
 
 			//loader
 
-			setTimeout(() => {
-				const body = document.getElementById('body')
+		
 
-				body.style.display = 'none'
-			}, 900)
+
+      
+            
+
+
+           
+	function translateTurkish() {
+	document.getElementById('second00').innerHTML = "Bir YouTube kanalı, dijital sanat ve mimari yapılar hakkında.";
+    document.getElementById('second0').innerHTML = "İlk web projem. Birçok hatam oldu ve birçok ders öğrendim.";
+    document.getElementById('second1').innerHTML = "Benim portföyüm";
+    document.getElementById('second2').innerHTML = "Burada, zaman yönetiminin değerini öğrendim. Ancak, özellikle JavaScript'te birçok hatayla karşılaştım.";
+    document.getElementById('second3').innerHTML = "Yakında";
+    document.getElementById('second4').innerHTML = "Gelecek projelerim için çok heyecanlıyım. Ve mümkün olduğunca çok şey öğrenmeye hazırım.";
+    document.getElementById('slogan').innerHTML = "Senin rüyan, benim tutkum";
+    document.getElementById('home1').innerHTML = "Ana Sayfa";
+    document.getElementById('home2').innerHTML = "İletişim";
+}
+
+function translateEnglish() {
+
+    document.getElementById('second00').innerHTML = "A Youtube channel about digital art and architure building.";
+    document.getElementById('second0').innerHTML = "My first web project. I did a lots of mistake and learn a lot of lesson.";
+    document.getElementById('second1').innerHTML = "My Portfolio";
+    document.getElementById('second2').innerHTML = "Here, I learned the value of time-management .But also faced a lot of errors. Especially JavaScript";
+	document.getElementById('second3').innerHTML = "Coming";
+    document.getElementById('second4').innerHTML = "I am very excited for my future projects. And ready to learn as much as I can.";
+    document.getElementById('slogan').innerHTML = "Your dream, my passion";
+    document.getElementById('home1').innerHTML = "Home";
+    document.getElementById('home2').innerHTML = "Contact";
+}
+
+          
+
 		</script>
 	</body>
 </html>
