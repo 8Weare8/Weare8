@@ -47,11 +47,11 @@
 			background-color: #aad9bb;
 			padding: 10px;
 		}
-		.dark #additionalContent .metin {
+		.dark #ilk .metin {
     color: white; /* Metin rengini beyaz olarak ayarlar */
     background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
 }
-.dark #additionalContent .footer-con {
+.dark #ilk .footer-con {
     color: white; /* Metin rengini beyaz olarak ayarlar */
     background-color: black; /* Arka plan rengini siyah olarak ayarlar */
    
@@ -99,9 +99,7 @@
 		.yazı {
 			font-size: medium;
 		}
-		body._lock {
-			overflow: hidden;
-		}
+	
 		header {
 			position: relative;
 			background-color: white;
@@ -307,9 +305,7 @@ margin-right: auto;
 			margin: 0px;
 		}
 
-		body._lock {
-			overflow: hidden;
-		}
+		
 
 		.dark {
 			--text-color: white;
@@ -474,7 +470,7 @@ background-color: transparent;
 				list-style: none;
 				align-items: center;
 				padding: 0px 0px 0px 0px;
-				margin: 0px 0px 0px 0px;
+				margin: 20px 0px 0px 0px;
 				margin: 20px;
 			}
 
@@ -680,25 +676,25 @@ background-color: transparent;
 
 
 		<script>
-			function showAdditionalContent() {
+			function showilk() {
 				document.getElementById('helloText').style.display = 'none'
-				document.getElementById('additionalContent').style.display = 'block'
+				document.getElementById('ilk').style.display = 'block'
 			}
 		</script>
 
 		<div
 			class="giriş"
 			id="helloText"
-			onclick="showAdditionalContent()"
+			onclick="showilk()"
 			style="cursor: pointer"
 		>
 			<h1  id="hg"   style="font-size: xx-large;">Hoşgeldiniz Ben İbrahim Talha ÜYEL</h1>
 			<p  id="tıkla" class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
 		</div>
-		<div id="helloText"></div>
+		
 
-		<div id="additionalContent" style="display: none">
-			<!-- Buraya yaş hesaplama bölümünü ekleyebilirsiniz -->
+		<div id="ilk" style="display: none">
+			
 
 			<div class="container">
 				<div class="fotoğraf">
