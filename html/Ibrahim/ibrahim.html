@@ -61,11 +61,11 @@
 			background-color: #aad9bb;
 			padding: 10px;
 		}
-		.dark #additionalContent .metin {
+		.dark #ilk .metin {
     color: white; /* Metin rengini beyaz olarak ayarlar */
     background-color: #252526; /* Arka plan rengini siyah olarak ayarlar */
 }
-.dark #additionalContent .footer-con {
+.dark #ilk .footer-con {
     color: white; /* Metin rengini beyaz olarak ayarlar */
     background-color: black; /* Arka plan rengini siyah olarak ayarlar */
    
@@ -113,9 +113,7 @@
 		.yazı {
 			font-size: medium;
 		}
-		body._lock {
-			overflow: hidden;
-		}
+	
 		header {
 			position: relative;
 			background-color: white;
@@ -154,10 +152,18 @@ margin-right: auto;
 .dark .fourthfoot ul li p{
 	color: white;
 }
+
 .dark li, a {
 	color: white;
 }
+#themeIcon2{
+
+	
+}
 		@media screen and (min-width: 768px) {
+			
+
+			
 			ul {
 				display: flex;
 				
@@ -281,7 +287,7 @@ margin-right: auto;
 			a {
 				text-decoration: none;
 				color: #fff;
-				margin-bottom: 50px;
+			
 				transition: transform 0.5s;
 			}
 			#cz {
@@ -292,7 +298,7 @@ margin-right: auto;
 			}
 		}
 
-
+	
 
 
 		:root {
@@ -321,9 +327,7 @@ margin-right: auto;
 			margin: 0px;
 		}
 
-		body._lock {
-			overflow: hidden;
-		}
+		
 
 		.dark {
 			--text-color: white;
@@ -337,7 +341,7 @@ margin-right: auto;
 			--footer-link-hover-background-color: white;
 			--footer-link-hover-border-color: white; 
             --dropbtn-color: black;		
-		
+		    --hr-color:white;
 		}
 		header {
 			position: relative;
@@ -361,6 +365,7 @@ margin-right: auto;
 		}
 
 		#logo_img1 {
+			margin-top: 5px;
 			width: 55px;
 			height: 55px;
 			margin-left: 50px;
@@ -482,13 +487,16 @@ background-color: transparent;
 }
 
 		@media screen and (min-width: 768px) {
+
+			
+			
 			.nav-items {
 				display: flex;
 				gap: 50px;
 				list-style: none;
 				align-items: center;
 				padding: 0px 0px 0px 0px;
-				margin: 0px 0px 0px 0px;
+				margin: 20px 0px 0px 0px;
 				margin: 20px;
 			}
 
@@ -505,6 +513,8 @@ background-color: transparent;
 				transform: translateY(-10px);
 			}
 		}
+
+
 .dark .header__container{
 	background-color: black;
 }
@@ -618,6 +628,277 @@ background-color: transparent;
 	margin-top: 5px;
 }
 
+	/* footer styles */
+    footer {
+			margin-top: auto;
+		}
+
+
+        @media screen and (min-width: 786px) {
+			.both-foot {
+				display: flex;
+			}
+
+			.footer-con {
+				padding: 1rem;
+				width: 100%;
+				margin: auto;
+				background-color: var(--footer-bg-color);
+				height: 285px;
+				overflow: hidden;
+			}
+
+			.footer-w {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+			}
+			.footer_list {
+				font-family: oswald;
+			}
+
+			.footer_li_p {
+				padding: 8px;
+				font-family: oswald;
+			}
+
+			.foot {
+				display: flex;
+				flex-direction: column;
+				margin: 8px;
+				align-items: stretch;
+				font-size: 15px;
+				color: var(--text-color);
+			}
+
+			#logo_img2 {
+				width: 70px;
+				height: 70px;
+				object-fit: cover;
+				margin-left: 1rem;
+				border-radius: 50%;
+			}
+
+			.footer_title_1 {
+				font-size: 2.5rem;
+				color: var(--text-color);
+				font-family: oswald;
+				font-weight: inherit;
+				margin: 0;
+			}
+			.footer_title_2 {
+				font-size: 22.5px;
+				font-weight: inherit;
+				margin: 0;
+			}
+
+			.foot a {
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.fourthfoot {
+				color: var(--text-color);
+				list-style: none;
+			}
+
+			.fourthfoot ul {
+				padding: 1rem;
+				font-family: oswald;
+				margin: 0;
+			}
+
+			.link-icons {
+				display: flex;
+				justify-content: center;
+				padding: 0.4rem;
+			}
+
+			.link-icons a {
+				padding: 0.5rem;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-size: 1.5rem;
+				border-radius: 50%;
+				text-decoration: none;
+			}
+		}
+
+		@media screen and (max-width: 786px) {
+			.foot a {
+				color: var(--text-color);
+			}
+			.jsimg{
+				height: 50px;
+			} 
+			.footer-3{
+				font-size: 16px;
+			}
+			.footer-con {
+				width: 100%;
+				margin: auto;
+				background-color: var(--footer-bg-color);
+				height: auto;
+				overflow: hidden;
+			}
+
+			.footer-w {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+
+			.foot {
+				width: 100%;
+			}
+
+			.foot .p-p {
+				display: flex;
+				justify-content: space-between;
+				padding: 1rem;
+			}
+
+			.p-p img {
+				margin-top: 25px;
+				width: 50px;
+				height: 50px;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+
+			.footer_title_1 {
+				font-size: 2.5rem;
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.footer_title_2 {
+				font-family: oswald;
+				color: var(--text-color);
+				text-align: center;
+				padding: 1rem;
+				font-size: 22.5px;
+			}
+
+			.both-foot {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				width: 100%;
+			}
+
+			.footer_list_p {
+				padding: 3px;
+				font-family: oswald;
+			}
+
+			.fourthfoot {
+				display: flex;
+				color: var(--text-color);
+				list-style: none;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			.fourthfoot ul {
+				list-style: none;
+				padding: 1rem;
+			}
+
+			.fourthfoot ul li p {
+				padding: 0.3rem;
+				color: var(--text-color);
+				font-family: oswald;
+			}
+
+			.foot .p-p {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+			.link-icons {
+				display: flex;
+
+				justify-content: flex-start;
+				align-items: flex-start;
+				padding: 0.4rem;
+			}
+
+			.link-icons a {
+				padding: 0.5rem;
+				color: var(--text-color);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 1.5rem;
+				border-radius: 50%;
+				text-decoration: none;
+			}
+		}
+
+		.link-icons a:hover {
+			color: var(--footer-link-hover-color);
+			background-color: var(--footer-link-hover-background-color);
+			border-radius: 50%;
+			border: 2px solid var(--footer-link-hover-border-color);
+			transition: all 0.35s ease-in-out;
+		}
+
+		.foot ul {
+			display: flex;
+			flex-direction: column;
+
+			row-gap: 30px;
+			padding: 1rem;
+			color: var(--text-color);
+			font-size: 0.8rem;
+			font-family: oswald;
+		}
+
+		.foot ul li a p {
+			font-family: oswald;
+		}
+
+		.foot .user-foot {
+			display: flex;
+			text-decoration: none;
+			line-height: 2;
+			align-items: stretch;
+		}
+
+		.foot .user-foot i {
+			padding: 0.5rem;
+		}
+
+		.footer_title_2 {
+			font-family: oswald;
+		}
+		li {
+			list-style: none;
+		}
+
+    .c-c{
+				font-family: oswald;
+              margin: 0px;
+			
+    }
+		hr {
+			width: 100%;
+			height: 2px;
+			border: 0;
+			background-color: var(--hr-color);
+			margin: 5px 0px;
+		}
+
+
+
 	</style>
 	<body>
 <nav>
@@ -694,25 +975,25 @@ background-color: transparent;
 
 
 		<script>
-			function showAdditionalContent() {
+			function showilk() {
 				document.getElementById('helloText').style.display = 'none'
-				document.getElementById('additionalContent').style.display = 'block'
+				document.getElementById('ilk').style.display = 'block'
 			}
 		</script>
 
 		<div
 			class="giriş"
 			id="helloText"
-			onclick="showAdditionalContent()"
+			onclick="showilk()"
 			style="cursor: pointer"
 		>
 			<h1  id="hg"   style="font-size: xx-large;">Hoşgeldiniz Ben İbrahim Talha ÜYEL</h1>
 			<p  id="tıkla" class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
 		</div>
-		<div id="helloText"></div>
+		
 
-		<div id="additionalContent" style="display: none">
-			<!-- Buraya yaş hesaplama bölümünü ekleyebilirsiniz -->
+		<div id="ilk" style="display: none">
+			
 
 			<div class="container">
 				<div class="fotoğraf">
@@ -832,13 +1113,13 @@ background-color: transparent;
 			<footer>
 				<div class="footer-con">
 					<div class="footer-w">
-						<div class="1foot foot">
+						<div class="foot-1 foot">
 							<div class="p-p">
-								<img src="/img/logo/dark-small-logo.jpg" class="jsimg" alt="" />
-								<h1>Cizup</h1>
+								<img src="/img/logo/light-small-logo.jpg"  class="jsimg "   alt="logo" id="logo_img2"/>
+								<h1 class="c-c">Weare8</h1>
 							</div>
-							<hr style="height: 2px; background-color: white; width: 100%" />
-							<h2>"Your dream, My passion"</h2>
+							<hr  class="hr"    style=""   />
+							<h2 class="c-c" style="text-align: center;">"Your dream, My passion"</h2>
 						</div>
 
 						<div class="both-foot">
